@@ -6,7 +6,7 @@ Chapter 13 connected four observations into an actionable alert. An alert is not
 
 The compromised maintainer session is still active, the release path may still accept attacker-controlled work, the admitted artifact remains associated with `order-worker`, and orders are in flight. Immediate deletion could erase volatile evidence and business state. Investigation without containment would leave authority open.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-12-attack chapter-13-attack chapter-14-open chapter-14-baseline

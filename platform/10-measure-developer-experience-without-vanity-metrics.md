@@ -26,7 +26,7 @@ samples:
 
 It does not identify Chapter 1 jobs, later proofs as owned indicators, samples for those proofs, or an explicit non-metric register. “Everyone is on the road” may be true after the unofficial path is deleted. Fulfillment’s wait moved from 48 hours to 120. Storefront’s order-success ratio can stay green through that wait. The inherited observability contract already tracks `order_success_ratio` and `order_latency`. Those are tenant workload outcomes. They are not platform-product **SLIs (Service Level Indicators)**, and they are not portfolio **SLOs (Service Level Objectives)**.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 10 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 10 baseline:
 
 ```bash
 make chapter-10-baseline

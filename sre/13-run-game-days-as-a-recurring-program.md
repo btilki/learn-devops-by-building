@@ -20,7 +20,7 @@ status: complete
 
 It files Platform Chapter 14’s mixed-backup fixture as the year’s game day and marks the program complete. It never exercises a Chapter 4 freeze, a Chapter 6 page path, a Chapter 8 dependency loss, or a Chapter 12 tabletop. “We restored a backup once” may describe an isolation test. It cannot complete a reliability game-day program.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 13 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 13 baseline:
 
 ```bash
 make chapter-13-baseline

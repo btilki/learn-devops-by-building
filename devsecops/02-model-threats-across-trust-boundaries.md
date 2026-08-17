@@ -19,7 +19,7 @@ threatens: [be-secure]
 
 The words sound security-related, but none supports a production decision. The actor capability is undefined. The prerequisite says nothing about existing access. The action does not follow a real Northwind flow. The threatened goal is not a known invariant. No owner can determine whether the path is plausible, interrupted, detectable, or accepted.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-02-baseline

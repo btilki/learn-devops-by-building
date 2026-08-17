@@ -21,7 +21,7 @@ recovery: devops-reconstruction
 
 It applies newest state across tenants and regions, puts Fulfillment intent into Storefront, and stamps recovered because DevOps reconstruction ran. Plane last known good `1.0` and `tenant-storage-1.0` collapse again. Isolation does not survive. **SLOs (Service Level Objectives)** for `accept-and-complete-order` and `dispatch-fulfillment` are not checked. Informal heroics have been given a restore job.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 14 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 14 baseline:
 
 ```bash
 make chapter-14-baseline

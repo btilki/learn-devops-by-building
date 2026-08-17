@@ -27,7 +27,7 @@ make audit
 
 ## Commands
 
-Chapter targets follow the pattern in Chapter 0. Not every chapter uses every command. `make chapter-NN-recover` is chapter-scoped. Only `make chapter-15-verify-recovery` produces the bounded restored-trust claim.
+Chapter targets follow the pattern in How to Use This Book. Not every chapter uses every command. `make chapter-NN-recover` is chapter-scoped. Only `make chapter-15-verify-recovery` produces the bounded restored-trust claim.
 
 Some commands mutate operational files. Those mutations persist. Files later chapters may change include:
 

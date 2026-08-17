@@ -28,7 +28,7 @@ error_budget_indicators: [order_success_ratio]
 
 It does not identify a Chapter 4 on-call, a split between platform-product and tenant-application, a living approver, or Chapter 8’s retained plane last known good `1.0`. “Just patch it” may clear the chat. The reconciler approves itself. Last known good moves to the version Chapter 8 already failed. Fulfillment’s warehouse delay is closed because a survey smiled. Storefront’s order-success stands in for the platform-product job-time budget.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 13 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 13 baseline:
 
 ```bash
 make chapter-13-baseline

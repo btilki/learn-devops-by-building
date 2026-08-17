@@ -23,7 +23,7 @@ verified: true
 
 It has a polished postmortem. It names no owner, no due date, and no verification independent of the write-up. The Chapter 9 cascade has no owned change. The platform-product trace has neither a record nor an expiring waiver. “We talked about it” may describe last week’s meeting. It cannot complete a learning program.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 11 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 11 baseline:
 
 ```bash
 make chapter-11-baseline

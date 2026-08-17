@@ -23,7 +23,7 @@ justification: leadership-can-see-it
 
 It does not identify a Chapter 1 journey, a good-event definition, a remaining owner for job-time, or a review trigger. “Leadership can see it” may justify a conversation. It cannot complete an SLI decision.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 2 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 2 baseline:
 
 ```bash
 make chapter-02-baseline

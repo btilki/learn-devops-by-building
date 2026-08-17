@@ -23,7 +23,7 @@ expires_at: "2026-12-01T00:00:00Z"
 
 It does not identify Chapter 5 remaining guardrails as the default set, a living platform owner, an exit that is still allowed, or expiry resolved from the inherited exception. Copying `expires_at` onto the platform row lets someone extend a date without renewing the DevSecOps exception. Forbidding exits turns the paved road into a cage. “Green” may describe a portal badge. It cannot survive an expired exception and a disabled digest.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 9 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 9 baseline:
 
 ```bash
 make chapter-09-baseline

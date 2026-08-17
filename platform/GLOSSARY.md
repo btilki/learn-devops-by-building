@@ -19,7 +19,7 @@
 | **TTL (Time To Live)** | The Chapter 6 lease lifetime. Chapter 12’s freeze window is one TTL: 168 hours. |
 | **VPC (Virtual Private Cloud)** | A real network the local lab does not provision. A lease models isolation; it does not create a VPC. |
 
-Chapter 0 writes **CI/CD (Continuous Integration and Continuous Delivery)** on first use for the combined delivery surface. **SLI** and **SLO** are expanded on first use in each reader-facing chapter because the book must keep platform-product indicators distinct from portfolio objectives.
+How to Use This Book writes **CI/CD (Continuous Integration and Continuous Delivery)** on first use for the combined delivery surface. **SLI** and **SLO** are expanded on first use in each reader-facing chapter because the book must keep platform-product indicators distinct from portfolio objectives.
 
 ## Production terms
 

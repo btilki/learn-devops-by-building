@@ -21,7 +21,7 @@ recovery:
 
 It points at inherited restores and calls them regional recovery. It has no second region, no fail-over order, no numeric objectives, and no isolation constraint. “We have backups” may describe one environment’s durable data. It cannot complete a regional-loss architecture.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 12 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 12 baseline:
 
 ```bash
 make chapter-12-baseline

@@ -16,7 +16,7 @@ treatment: fix-now
 
 It does not identify a deployed asset, attack path, exposure, reachability, business harm, uncertainty, owner, residual risk, or review trigger. “Critical” may justify immediate investigation. It cannot complete the decision.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-03-baseline

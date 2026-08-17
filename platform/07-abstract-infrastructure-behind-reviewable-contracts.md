@@ -23,7 +23,7 @@ parameters:
 
 It does not identify a tenant-visible field list Fulfillment can keep sending, a hidden-module boundary, a compatibility rule for rename, or inherited federated identity. “We refactored the module” may be true in the platform repo. Fulfillment still sends `class`. The request now includes a Terraform address. The network request can name `peer-tenant-workload-network`. Compatibility does not call parameter rename breaking.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 7 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 7 baseline:
 
 ```bash
 make chapter-07-baseline

@@ -6,7 +6,7 @@ Chapters 4 through 10 created policies for identity, privilege, source, release,
 
 A release manager proposes one broad waiver that disables dependency and production-admission checks, covers every change, has no compensating detection, and never expires. No attacker is required; organizational pressure alone can reopen the compromised-maintainer path.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-11-baseline

@@ -95,6 +95,6 @@ When evaluating a new control, tool, exception, or assurance claim, ask:
 
 > What asset and harm justify this decision, what trust and authority cross the boundary, what evidence could falsify the claim, what happens when prevention fails, and how will we prove that trustworthy operation—not merely availability—has been restored?
 
-That is the same reading contract Chapter 0 set. It keeps concepts subordinate to production work. It also prevents “best practice” from becoming a copied control, and “compliance” from becoming a report that outlives its evidence.
+That is the same reading contract How to Use This Book set. It keeps concepts subordinate to production work. It also prevents “best practice” from becoming a copied control, and “compliance” from becoming a report that outlives its evidence.
 
 The Northwind model and companion implementation are complete for the promise of this book. The lasting skill is not reproducing Northwind's YAML, schemas, or checkpoint commands. It is being able to redesign the same security path when the assets, attackers, identities, dependencies, evidence quality, and recovery obligations are different.

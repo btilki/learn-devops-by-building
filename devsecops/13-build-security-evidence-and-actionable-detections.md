@@ -6,7 +6,7 @@ Chapter 12 produced attributable runtime events. Northwind also has identity den
 
 A credential misuse denial, unusual dependency change, denied elevation, and blocked runtime egress exist in four systems. Each looks locally contained. Together they describe the compromised-maintainer path progressing from identity through source and privilege to runtime.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-12-attack chapter-13-baseline

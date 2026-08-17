@@ -6,7 +6,7 @@ Chapter 6 established which source and dependency inputs Northwind may trust. Th
 
 The compromised maintainer obtains build-token authority and submits an artifact produced by `compromised-builder-v2`. Its signature is cryptographically valid. Its provenance also says the builder was neither isolated nor hermetic.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-07-baseline

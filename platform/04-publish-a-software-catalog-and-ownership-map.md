@@ -22,7 +22,7 @@ reported_status: green
 
 It does not identify a living Chapter 1 user, a Chapter 3 tenant, an escalation path that can be paged, or a review timestamp inside the freshness window. “Green” may describe a portal page. It cannot complete an ownership decision. A renamed team that leaves a deleted group in the catalog is an orphan with a badge.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 4 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 4 baseline:
 
 ```bash
 make chapter-04-baseline

@@ -21,7 +21,7 @@ justification: temporary-to-ship-faster
 
 It does not identify a tenant owner, isolation dimensions, prohibited inherited roles, or a blast-radius statement that stops at Fulfillment. “Temporarily” may justify a conversation. It cannot complete an isolation decision. A namespace name is a label. It is not a boundary.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 3 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 3 baseline:
 
 ```bash
 make chapter-03-baseline

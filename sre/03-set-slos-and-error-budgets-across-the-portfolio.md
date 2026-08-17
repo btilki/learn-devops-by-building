@@ -26,7 +26,7 @@ sla: "99.9 percent availability per customer contract"
 
 It does not give `dispatch-fulfillment` a window. It treats an SLA sentence as a target. It emits remaining budget instead of computing it from observations. 99.9 percent on Storefront is not a portfolio.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 3 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 3 baseline:
 
 ```bash
 make chapter-03-baseline

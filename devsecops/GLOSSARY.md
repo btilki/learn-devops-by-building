@@ -19,7 +19,7 @@
 | **SRE (Site Reliability Engineering)** | Reliability engineering through service objectives, operations, and learning. |
 | **STRIDE (Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege)** | A mnemonic threat catalog used as a prompt, not as proof of coverage. |
 
-Chapter 0 writes **CI/CD (Continuous Integration and Continuous Delivery)** on first use for the combined delivery surface. Later chapters may use **CI** alone when they mean the integration system that stored or disclosed a secret.
+How to Use This Book writes **CI/CD (Continuous Integration and Continuous Delivery)** on first use for the combined delivery surface. Later chapters may use **CI** alone when they mean the integration system that stored or disclosed a secret.
 
 ## Production terms
 

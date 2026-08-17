@@ -6,7 +6,7 @@ Chapter 8 made vulnerability risk explicit. A reusable secret can still collapse
 
 Northwind's payment-provider credential is stored as a **CI (Continuous Integration)** variable and injected as plaintext. A scanner can identify its synthetic marker, but no inventory proves its owner, consumers, custody, active version, or revocation state.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-09-baseline

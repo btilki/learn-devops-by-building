@@ -6,7 +6,7 @@ Chapter 14 stopped known attacker actions, preserved evidence, and retained busi
 
 Northwind’s release path is frozen and `order-worker` is isolated. That prevents immediate reuse of known authority, but it does not answer which trust roots produced the affected system or which descendants must be replaced. Returning traffic because the alert is quiet would confuse inactivity with recovery.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-14-checkpoint chapter-14-contain chapter-14-recover chapter-15-baseline

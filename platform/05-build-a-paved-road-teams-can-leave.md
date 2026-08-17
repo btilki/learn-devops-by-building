@@ -20,7 +20,7 @@ defaults_present: [latest-tag]
 
 It does not identify the Chapter 1 job, the inherited digest-promotion default, workload-identity claims, a scaffold that implements the path, or a registered exit. “We skipped the slow template” may justify a conversation. It cannot complete `ship-on-paved-road`. Identity and artifact defaults are gone. Support has nothing left to support.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 5 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 5 baseline:
 
 ```bash
 make chapter-05-baseline

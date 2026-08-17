@@ -246,4 +246,4 @@ Use only when a concept or decision must immediately govern an implementation. T
 3. Audit topic coverage and remove overlap, gaps, and topics that belong to another book.
 4. Define the companion-lab architecture and verifier contract.
 5. Freeze the reviewed plan with a dated decision record.
-6. Only then draft Chapter 0 and Chapter 1.
+6. Only then draft How to Use This Book and Chapter 1.

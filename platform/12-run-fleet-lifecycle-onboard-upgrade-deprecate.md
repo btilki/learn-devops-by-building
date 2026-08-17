@@ -25,7 +25,7 @@ remaining_tenants: [fulfillment]
 
 It does not identify a freeze, a Storefront-then-Fulfillment cohort, rollback to `1.0`, or an open deprecation window. “Just cut over” may ship `sku` this week. Fulfillment still sends `class`. Chapter 7 already refused that rename on a single version. Doing it to the whole fleet in one step is the same break, now with a schedule. Cluster-admin so onboarding works is Chapter 8’s residual wearing a lifecycle coat.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 12 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 12 baseline:
 
 ```bash
 make chapter-12-baseline

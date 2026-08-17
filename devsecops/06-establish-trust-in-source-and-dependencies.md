@@ -6,7 +6,7 @@ Chapter 5 bounded exceptional authority. A valid maintainer identity can still p
 
 The compromised maintainer changes the payment dependency from `northwind-payment` to the plausible-looking `northwind-payments`. Resolution selects a high version from a public registry. The same maintainer supplies the only approval.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-06-baseline

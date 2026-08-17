@@ -28,7 +28,7 @@ showback:
 
 It does not identify a floor, a ceiling, a quality gate, or the Chapter 6 lease commitment the floor must cover. Isolation labels may still say Storefront cannot be starved below a floor. There is no floor. Fulfillment uses 24 of 32. Storefront’s leases still commit 12. Eight remain. `32 - 24 = 8`, and `8 < 12`. Storefront’s order-success ratio can stay green through that squeeze. The inherited observability contract already tracks `order_success_ratio`. Chapter 10 already refused it as product evidence. Billing it as a platform unit is the same borrow, now in currency.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 11 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 11 baseline:
 
 ```bash
 make chapter-11-baseline

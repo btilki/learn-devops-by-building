@@ -26,7 +26,7 @@ rollback: "1.0"
 
 It notices Storefront is red. It still lets the fleet step run because the inherited freeze was scheduled for the contract bump. Copying `freeze`, `cohorts`, and `rollback` onto this policy pretends Platform already answered the reliability question. Platform answered a different one.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 4 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 4 baseline:
 
 ```bash
 make chapter-04-baseline

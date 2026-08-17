@@ -6,7 +6,7 @@ Chapter 15 restored trust within a declared scope. Northwind now has prevention,
 
 Point-in-time reviews reward collected screenshots and passing reports. Production changes between reviews: exceptions age, telemetry disappears, attack paths gain steps, owners move, and evidence no longer proves the claim it once supported.
 
-Work from the lab working tree using the Chapter 0 procedure after completing Chapter 15. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure after completing Chapter 15. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-15-verify-recovery chapter-16-baseline

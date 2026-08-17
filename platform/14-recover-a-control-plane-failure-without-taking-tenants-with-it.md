@@ -26,7 +26,7 @@ recovered_indicators: [order_success_ratio]
 
 It does not identify Chapter 8’s retained plane `1.0`, a snapshot that is not mixed, an explicit tenant decision, or a restore subject that is not the reconciler. “Just restore newest” may bring the API back. Storefront receives Fulfillment’s `1.0` `class` intent. Both tenants freeze because the plane was down. Order-success stands in for platform recovery. The unofficial `1.1` patch Chapter 13 refused becomes last known good.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 14 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 14 baseline:
 
 ```bash
 make chapter-14-baseline

@@ -6,7 +6,7 @@ Chapter 9 governed authority-bearing secrets. Northwind still holds customer and
 
 The notification service needs an order identifier, customer email, and total to send a confirmation. A malicious dependency requests `payment_reference` as well, then attempts to place the expanded record in telemetry and a non-production fixture. Encryption at rest would protect neither authorized retrieval nor excessive copying.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-10-baseline

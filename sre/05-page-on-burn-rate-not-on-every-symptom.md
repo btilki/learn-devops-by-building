@@ -26,7 +26,7 @@ A weak record says:
 
 It pages a component symptom at a catalog contact and treats journey burn as a tile. “The CPU is high” may justify a ticket. It cannot complete a page. `user_impact: true` written by the page is a slogan.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 5 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 5 baseline:
 
 ```bash
 make chapter-05-baseline

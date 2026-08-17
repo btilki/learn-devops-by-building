@@ -20,7 +20,7 @@ mutated_by: fulfillment-team
 
 It does not identify a Chapter 1 job, a Chapter 3 tenant environment, a request, an expiry, a quota bound, or inherited federated identity. “Dev cluster admin” may sound narrower than `cluster-admin`. It is still shared change authority. Fulfillment can scale Storefront’s environment and consume the shared pool. The paved road has somewhere to deploy, and every tenant’s blast radius is that somewhere.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 6 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 6 baseline:
 
 ```bash
 make chapter-06-baseline

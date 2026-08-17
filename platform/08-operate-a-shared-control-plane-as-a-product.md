@@ -21,7 +21,7 @@ approved_by: plane-reconciler
 
 It does not identify a Chapter 3 sharing mode, a plane identity distinct from tenant identity, an admitted contract version, inherited GitOps state, or last known good after a failed upgrade. “So onboarding works” may ship `fulfillment-api` this week. Fulfillment intent can rewrite Storefront. The plane can approve its own upgrade and keep running the version that failed.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 8 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 8 baseline:
 
 ```bash
 make chapter-08-baseline

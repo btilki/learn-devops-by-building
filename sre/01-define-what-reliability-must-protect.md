@@ -25,7 +25,7 @@ Consider four examples:
 
 The Storefront order path can remain operable through all four. Northwind still does not have a reliability program.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 1 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 1 baseline:
 
 ```bash
 make chapter-01-baseline

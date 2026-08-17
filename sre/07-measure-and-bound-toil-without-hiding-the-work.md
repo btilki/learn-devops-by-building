@@ -23,7 +23,7 @@ justification: on-call-already-watches-email
 
 It does not classify the week’s work, name a fraction, name an owner, or compute hours. “Already watches email” may describe last night’s inbox. It cannot complete a toil decision. It reopens a Chapter 3 non-critical system as a critical SLO so the heroics look like scope.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 7 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 7 baseline:
 
 ```bash
 make chapter-07-baseline

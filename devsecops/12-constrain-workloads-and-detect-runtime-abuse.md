@@ -6,7 +6,7 @@ Chapter 11 placed policy at explicit boundaries. A policy-admitted artifact can 
 
 The order worker remains available and processes orders while a malicious dependency searches for credentials, launches a shell, and attempts outbound command-and-control traffic. Health checks answer whether the process responds; they do not answer whether its behavior remains authorized.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-12-baseline

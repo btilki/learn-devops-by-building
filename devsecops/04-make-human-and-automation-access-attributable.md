@@ -8,7 +8,7 @@ This chapter makes human and automation actions attributable and authorization d
 
 Northwind begins with shared access patterns, reusable automation tokens, and inherited roles. A maintainer credential can propose source changes, but accumulated production authority makes the same session capable of attempting deployment. Automation tokens survive beyond one run and can be replayed outside their intended system.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-04-baseline

@@ -22,7 +22,7 @@ handoff: none
 
 It copies the catalog contact as the system id. It pages chat history. It has no secondary, no load limit, no recorded handoff, and no authority that consumes `self_approval_forbidden`. “Someone is in Slack” may describe last night. It cannot complete an on-call system.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 6 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 6 baseline:
 
 ```bash
 make chapter-06-baseline

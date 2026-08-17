@@ -14,7 +14,7 @@
 | **SLO (Service Level Objective)** | The internal reliability contract for a journey over a window. Error budget is computed from it. |
 | **SRE (Site Reliability Engineering)** | Reliability engineering across a service portfolio: SLOs, error budgets, on-call, learning, game days, and regional fail-over. |
 
-Chapter 0 writes **SRE (Site Reliability Engineering)**, **CI/CD (Continuous Integration and Continuous Delivery)**, **SLOs (Service Level Objectives)**, and **SLIs (Service Level Indicators)** on first use. Later reader-facing chapters expand an abbreviation again on first use in that document.
+How to Use This Book writes **SRE (Site Reliability Engineering)**, **CI/CD (Continuous Integration and Continuous Delivery)**, **SLOs (Service Level Objectives)**, and **SLIs (Service Level Indicators)** on first use. Later reader-facing chapters expand an abbreviation again on first use in that document.
 
 ## Production terms
 

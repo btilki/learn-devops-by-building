@@ -25,7 +25,7 @@ Consider four examples:
 
 The Storefront order outcome can remain green through all four. Northwind still does not have a platform product.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 1 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 1 baseline:
 
 ```bash
 make chapter-01-baseline

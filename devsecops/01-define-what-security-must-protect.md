@@ -27,7 +27,7 @@ Consider four examples:
 
 The DevOps outcome helps expose the damage, but it does not name all protected authority, data, or trust. Northwind needs an explicit security model before it chooses more controls.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run the Chapter 1 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run the Chapter 1 baseline:
 
 ```bash
 make chapter-01-baseline

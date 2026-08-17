@@ -6,7 +6,7 @@ Chapter 4 bounded normal identity and authorization. Production still needs exce
 
 A compromised maintainer claims an emergency, approves their own elevation, requests production reconciliation for a day, and records a review before the session has even ended. The word “emergency” does not make the authority legitimate, and a completed field does not prove that a lifecycle occurred.
 
-Work from the lab working tree using the Chapter 0 procedure. From the DevSecOps lab root, run:
+Work from the lab working tree using the How to Use This Book procedure. From the DevSecOps lab root, run:
 
 ```bash
 make chapter-05-baseline

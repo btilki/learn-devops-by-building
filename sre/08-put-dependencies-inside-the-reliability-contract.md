@@ -24,7 +24,7 @@ A weak record says:
 
 It treats a payment timeout as someone else’s graph. It pages confirmation email as if it were the order journey. Warehouse may be missing, or copied onto Storefront so Fulfillment never burns. “The provider status page is green” may describe a vendor dashboard. It cannot complete a Northwind contract.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 8 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 8 baseline:
 
 ```bash
 make chapter-08-baseline

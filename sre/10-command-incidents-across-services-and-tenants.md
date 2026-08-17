@@ -23,7 +23,7 @@ affected: [accept-and-complete-order]
 
 It reuses DevOps one-change command. It closes on a Storefront **SLI (Service Level Indicator)** while dispatch is still failing. It never pages `platform-oncall` for a platform-product issue. “Orders look green” may describe one path. It cannot complete a portfolio incident.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 10 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 10 baseline:
 
 ```bash
 make chapter-10-baseline

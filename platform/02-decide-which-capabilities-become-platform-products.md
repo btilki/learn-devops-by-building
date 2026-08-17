@@ -22,7 +22,7 @@ demand: two-teams-asked
 
 It does not identify a user job from the product brief, repetition beyond ticket count, isolation impact, support cost, remaining owner, or review trigger. “Two teams asked” may justify a conversation. It cannot complete a productization decision.
 
-Work from the lab working tree using the Chapter 0 procedure. From the Platform lab root, run the Chapter 2 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the Platform lab root, run the Chapter 2 baseline:
 
 ```bash
 make chapter-02-baseline

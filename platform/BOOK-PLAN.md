@@ -247,4 +247,4 @@ Use only when a concept or decision must immediately govern an implementation. T
 
 ## Authorized drafting
 
-The planning set is frozen. Draft Chapter 0, then Chapter 1, and scaffold the companion lab according to `LAB-PLAN.md`. Do not change the promise, boundaries, chapter count or order, cumulative narrative, evidence taxonomy, inherited-baseline strategy, or safety contract without a new planning version.
+The planning set is frozen. Draft How to Use This Book, then Chapter 1, and scaffold the companion lab according to `LAB-PLAN.md`. Do not change the promise, boundaries, chapter count or order, cumulative narrative, evidence taxonomy, inherited-baseline strategy, or safety contract without a new planning version.

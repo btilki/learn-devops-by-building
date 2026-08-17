@@ -24,7 +24,7 @@ page_cause: fulfillment-oncall
 
 It keeps accepting orders while payment is slow. It treats those accepts as good events. It retries until shared capacity takes Fulfillment with it. It pages `fulfillment-oncall` as if dispatch were the cause. “The accept graph is green” may describe a counter. It cannot complete a degradation design.
 
-Work from the lab working tree using the Chapter 0 procedure. From the SRE lab root, run the Chapter 9 baseline:
+Work from the lab working tree using the How to Use This Book procedure. From the SRE lab root, run the Chapter 9 baseline:
 
 ```bash
 make chapter-09-baseline
