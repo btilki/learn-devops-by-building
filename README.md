@@ -28,7 +28,6 @@ Runnable Northwind labs live under [labs/](labs/). Each book’s lab root is `la
 | [SERIES-DECISIONS.md](SERIES-DECISIONS.md) | Cross-book decisions |
 | [SERIES-PUBLICATION-STYLE.md](SERIES-PUBLICATION-STYLE.md) | Publication style |
 | [releases/](releases/) | Published PDFs (Word files are not in this repository) |
-| [tools/](tools/) | DOCX and PDF helpers |
 
 ## License
 

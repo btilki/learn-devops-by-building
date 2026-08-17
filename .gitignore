@@ -29,6 +29,10 @@ labs/**/build-output/
 labs/**/dist/
 labs/**/.northwind-infra/
 
+# Local editor and publication helpers — do not publish
+.cursor/
+tools/
+
 # Editor and OS
 .DS_Store
 **/.DS_Store
