@@ -1,0 +1,9 @@
+schema_version: 1
+kind: chapter-expectations
+id: chapter-01
+required_assets: [order-outcome, payment-authority, customer-order-data, release-authority]
+required_invariants:
+  - correct-order-terminal-state
+  - attributable-payment-effects
+  - governed-order-data
+  - governed-production-release

@@ -1,0 +1,22 @@
+schema_version: 1
+kind: recovery-isolation
+id: northwind-recovery-isolation
+tenants:
+  - tenant: storefront
+    decision: freeze
+    source: accident
+    replayed_from: fulfillment
+    mutated_tenants: [storefront, fulfillment]
+    granted_role: cluster-admin
+    restored_capability: tenant-storage
+    restored_version: "1.0"
+    quota_units: 24
+  - tenant: fulfillment
+    decision: freeze
+    source: accident
+    replayed_from: fulfillment
+    mutated_tenants: [fulfillment]
+    granted_role: tenant-operator
+    restored_capability: tenant-storage
+    restored_version: "1.0"
+    quota_units: 12

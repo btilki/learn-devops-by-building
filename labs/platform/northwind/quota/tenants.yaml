@@ -1,0 +1,13 @@
+schema_version: 1
+kind: quota-policy
+id: northwind-quota-policy
+owner: platform-team
+pool: cluster-capacity-pool
+capacity: 32
+tenants:
+  - tenant: storefront
+    floor: 12
+    ceiling: 20
+  - tenant: fulfillment
+    floor: 12
+    ceiling: 20

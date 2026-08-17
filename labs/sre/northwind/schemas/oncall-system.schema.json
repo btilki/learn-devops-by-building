@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "oncall-system.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "systems"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "oncall-systems"},
+    "id": {"type": "string", "minLength": 1},
+    "systems": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "catalog_contact",
+          "owner",
+          "journeys",
+          "page_load_limit",
+          "compensation",
+          "training"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "catalog_contact": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "journeys": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "page_load_limit": {"type": "integer", "minimum": 1},
+          "compensation": {"const": "operational-constraint"},
+          "training": {"const": "operational-constraint"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

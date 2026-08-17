@@ -1,0 +1,7 @@
+schema_version: 1
+kind: asset-register
+assets:
+  - id: payment-token
+    name: Payment token configuration value
+    owner: unassigned
+    harms: []

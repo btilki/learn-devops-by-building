@@ -1,0 +1,28 @@
+schema_version: 1
+kind: recovery-verification
+case_id: INC-2026-0815-01
+criteria:
+  old_credentials_fail: true
+  old_artifact_denied: true
+  rebuilt_chain_complete: true
+  persistence_absent_within_inventory: true
+  detection_active: true
+  business_reconciled: true
+evidence_windows:
+  minimum_consecutive: 2
+  required_indicators:
+    - desired_actual_agreement
+    - healthy_consecutive_samples
+    - terminal_order_outcomes
+evidence:
+  mechanism_evidence:
+    - trust graph and release admission evaluation
+  decision_evidence:
+    - ordered eradication and traffic-return gates
+  outcome_evidence:
+    - terminal order and payment reconciliation
+  recovery_evidence:
+    - consecutive security and service evidence windows
+limitations:
+  - Trust restoration is bounded to the modeled inventory and collected evidence; it is not proof that all possible persistence is absent.
+owner: security-response

@@ -1,0 +1,50 @@
+schema_version: 1
+kind: inherited-interface-manifest
+id: practical-devops-engineering-v1.1
+source:
+  release: v1.1
+  published_book_version: v1.0
+  companion_lab_commit: 4c6dc1ff486d101c12e6dbee1480a49ec9eca485
+interfaces:
+  - id: observability-contract
+    source_path: observability/contract.json
+    source_sha256: 0dd98e8129353e72b9f6582e2540e87376326f440d3673d67193c574540dea42
+    local_path: observability/interface.yaml
+    local_sha256: 27d8ebb307e30e255a22a36d97d44cedf1785da4b179f04b13b6a7c566d755c0
+    representation: reduced-interface
+    consumers: [1, 2, 5]
+  - id: incident-recovery-expectations
+    source_path: incident/recovery-expectations.json
+    source_sha256: fc5783400c0c40b952eefd1ce65c65ca5db41ae807f6a76440427b5ace5c7831
+    local_path: incident/interface.yaml
+    local_sha256: f512cf32ba64b6be13a1cb05385e2784e471bc19e4aeaafcb834b2134a6fc31d
+    representation: reduced-interface
+    consumers: [10]
+  - id: restore-contract
+    source_path: recovery/restore-contract.json
+    source_sha256: 90679bdeb4fedad665b36d3cba15fa3adb1c7187472943d8f587f018260c665a
+    local_path: recovery/interface.yaml
+    local_sha256: 01b1a274def1645fff954cc3f58f3871ac499a41317e785755edf37d4db0fa45
+    representation: reduced-interface
+    consumers: [12, 14]
+  - id: release-expectations
+    source_path: release/expectations.json
+    source_sha256: 9a951a1c33de2931faf5c041a7dd82279ecc4138fa1f7dad27eb34c2cab4f7aa
+    local_path: release/interface.yaml
+    local_sha256: cdfde948e75ea97e5b29dfaa43777cf09ce4e72d25a404e9546094aa28eef745
+    representation: reduced-interface
+    consumers: [4]
+  - id: workload-identity
+    source_path: security/workload-identity.json
+    source_sha256: 7c82af8fa3a937c4772e13995c246c36b6da7044d32c0dbba695389095336e15
+    local_path: identity/interface.yaml
+    local_sha256: 0035685076eb00b2eba9230846cc75ec3a8a14326badadaf5d0e191dee996241
+    representation: reduced-interface
+    consumers: [6]
+  - id: gitops-reconciliation
+    source_path: gitops/reconciliation.json
+    source_sha256: 37ea8deb00bd929779b3fc40daa8b3b4c1720be25b5d3d916992b5cae8fdda3a
+    local_path: gitops/interface.yaml
+    local_sha256: fc4878dee01e6cd775d347838512094123220ed24064520a5c97be6f1baead2c
+    representation: reduced-interface
+    consumers: [4]

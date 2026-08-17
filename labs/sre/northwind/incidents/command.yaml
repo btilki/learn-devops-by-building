@@ -1,0 +1,15 @@
+schema_version: 1
+kind: portfolio-incident-command
+id: northwind-incident-command
+owner: reliability-program
+cadence: 30m
+forbidden_commanders:
+  - slack
+  - chat-history
+  - whoever-answered
+insufficient_close_evidence:
+  - desired_actual_agreement
+  - healthy_consecutive_samples
+  - terminal_order_outcomes
+  - order_success_ratio
+review_trigger: spanning-incident-or-support-kind-changes

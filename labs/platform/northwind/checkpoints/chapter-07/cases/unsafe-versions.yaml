@@ -1,0 +1,21 @@
+schema_version: 1
+kind: infrastructure-versions
+id: northwind-infrastructure-versions
+versions:
+  - capability: tenant-storage
+    version: "1.0"
+    tenant_parameters: [sku, size-gb]
+    hidden_module: [terraform-resource-address, provider-project]
+  - capability: workload-identity
+    version: "1.0"
+    credential_model: referenced-rotatable-secret
+    tenant_parameters: [subject]
+    hidden_module: [oidc-provider-thumbprint, iam-role-arn]
+  - capability: tenant-network
+    version: "1.0"
+    tenant_parameters: [isolation]
+    hidden_module: [cni-plugin-config, security-group-id]
+  - capability: artifact-promotion
+    version: "1.0"
+    tenant_parameters: [artifact-digest]
+    hidden_module: [registry-credentials, helm-release-name]

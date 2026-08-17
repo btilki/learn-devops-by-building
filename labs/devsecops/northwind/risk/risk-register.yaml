@@ -1,0 +1,25 @@
+schema_version: 1
+kind: risk-register
+risks:
+  - id: maintainer-supply-chain-payment-risk
+    attack_path: compromised-maintainer-to-payment
+    assets: [release-authority, payment-authority, order-outcome]
+    exposure: external
+    likelihood: medium
+    impact: critical
+    uncertainty: [maintainer-session-compromise-rate, dependency-review-effectiveness, runtime-detection-coverage]
+    treatment: mitigate
+    residual_risk: A valid session may still influence reviewed source; independent admission and runtime detection must bound progression.
+    owner: delivery-security
+    review_trigger: identity-model-dependency-policy-builder-or-runtime-boundary-changes
+  - id: support-data-purpose-risk
+    attack_path: overprivileged-support-data-access
+    assets: [customer-order-data]
+    exposure: internal
+    likelihood: medium
+    impact: high
+    uncertainty: [field-level-access-frequency, purpose-evidence-completeness]
+    treatment: mitigate
+    residual_risk: Authorized support access can still be misused within permitted fields and requires attributable detection.
+    owner: data-governance
+    review_trigger: support-role-data-classification-or-access-purpose-changes

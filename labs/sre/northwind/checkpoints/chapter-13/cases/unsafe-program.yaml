@@ -1,0 +1,13 @@
+schema_version: 1
+kind: gameday-program
+id: northwind-gameday-program
+owner: reliability-program
+cadence: annual
+status: complete
+required_kinds:
+  - mixed-backup
+abort_when: never
+learning_join: none
+forbidden_complete_on: []
+not_chapter_14_failover: false
+review_trigger: never

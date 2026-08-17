@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dependency-criticality.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "assignments"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "dependency-criticality"},
+    "id": {"type": "string", "minLength": 1},
+    "assignments": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "provider", "criticality", "failure_effect"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "provider": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "journey": {"type": "string", "minLength": 1},
+          "sli": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+          "criticality": {"enum": ["critical", "non-critical"]},
+          "failure_effect": {"enum": ["journey-burn", "record"]},
+          "remaining_owner": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

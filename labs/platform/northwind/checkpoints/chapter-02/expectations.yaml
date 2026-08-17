@@ -1,0 +1,9 @@
+required_treatments:
+  - productize
+  - leave
+  - decline
+required_productize:
+  - environment-provisioning
+  - artifact-promotion
+required_decline:
+  - order-pricing-logic

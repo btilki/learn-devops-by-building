@@ -1,0 +1,12 @@
+schema_version: 1
+kind: vulnerability-exceptions
+exceptions:
+  - id: exception-legacy-pdf-2026-09
+    finding: CVE-2026-4100|legacy-pdf|1.8.0
+    owner: document-services
+    rationale: Replacement is scheduled; vulnerable code path is disabled and monitored.
+    scope: legacy-pdf-1.8.0-disabled-export
+    compensating_controls: [module-disabled, import-alert]
+    evidence: [runtime-module-inventory, import-alert-coverage]
+    expires_at: "2026-09-15T00:00:00Z"
+    removal_path: upgrade-to-legacy-pdf-2.0-and-remove-exception

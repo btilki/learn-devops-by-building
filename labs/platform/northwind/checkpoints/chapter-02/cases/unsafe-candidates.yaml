@@ -1,0 +1,10 @@
+schema_version: 1
+kind: intake-candidates
+id: northwind-capability-candidates
+candidates:
+  - id: environment-provisioning
+    summary: Tenant-scoped environments requested by ticket and copied YAML.
+  - id: artifact-promotion
+    summary: Digest-pinned promotion that each team currently reimplements.
+  - id: order-pricing-logic
+    summary: Custom commercial pricing rules that two teams asked the platform to host.

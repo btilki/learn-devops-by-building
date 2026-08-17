@@ -1,0 +1,28 @@
+schema_version: 1
+kind: raw-vulnerability-findings
+claims:
+  - scanner: image-scanner
+    vulnerability: CVE-2026-4100
+    component: legacy-pdf
+    affected_version: 1.8.0
+    severity: critical
+  - scanner: sbom-scanner
+    vulnerability: CVE-2026-4100
+    component: legacy-pdf
+    affected_version: 1.8.0
+    severity: critical
+  - scanner: old-scan-cache
+    vulnerability: CVE-2025-9911
+    component: legacy-pdf
+    affected_version: 1.7.0
+    severity: critical
+  - scanner: image-scanner
+    vulnerability: CVE-2026-2207
+    component: order-parser
+    affected_version: 4.2.0
+    severity: high
+  - scanner: runtime-inventory
+    vulnerability: CVE-2026-2207
+    component: order-parser
+    affected_version: 4.2.0
+    severity: high

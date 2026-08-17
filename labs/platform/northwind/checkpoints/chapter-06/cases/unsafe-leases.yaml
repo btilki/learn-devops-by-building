@@ -1,0 +1,40 @@
+schema_version: 1
+kind: environment-leases
+id: northwind-environment-leases
+leases:
+  - id: lease-storefront-nonprod
+    request: request-storefront-nonprod
+    tenant: storefront
+    environment: storefront-nonprod
+    granted_role: dev-cluster-admin
+    mutated_by: fulfillment-team
+    expires_at: "2026-08-23T00:00:00Z"
+    quota:
+      pool: cluster-capacity-pool
+      units: 4
+    credentials:
+      subject: storefront-nonprod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: tenant-scoped
+    isolation:
+      network: peer-tenant-workload-network
+      secrets: peer-tenant-secret-read
+  - id: lease-fulfillment-nonprod
+    request: request-fulfillment-nonprod
+    tenant: fulfillment
+    environment: fulfillment-nonprod
+    granted_role: dev-cluster-admin
+    quota:
+      pool: cluster-capacity-pool
+      units: 99
+    credentials:
+      subject: storefront-nonprod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: cluster-admin
+    isolation:
+      network: tenant-default-deny
+      secrets: tenant-scoped

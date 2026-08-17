@@ -1,0 +1,21 @@
+schema_version: 1
+kind: guardrail-defaults
+id: northwind-guardrail-defaults
+owner: platform-team
+exits_allowed: true
+defaults:
+  - id: artifact-digest
+    owner: platform-team
+    enforcement_point: artifact-promotion
+    inherited_policy: devops-v1.1-release
+    applies_to: [paved, exit]
+  - id: workload-identity-claims
+    owner: platform-team
+    enforcement_point: workload-identity
+    inherited_policy: devops-v1.1-workload-identity
+    applies_to: [paved, exit]
+  - id: no-cluster-admin
+    owner: platform-team
+    enforcement_point: kubernetes-control-plane
+    inherited_policy: kubernetes-control-plane
+    applies_to: [paved, exit]

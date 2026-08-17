@@ -1,0 +1,23 @@
+schema_version: 1
+kind: security-invariant-register
+invariants:
+  - id: correct-order-terminal-state
+    statement: A valid order reaches one correct terminal state without duplicate charge or invalid inventory.
+    assets: [order-outcome, payment-authority]
+    harms: [duplicate-charge, invalid-inventory, permanent-order-loss]
+    owner: commerce-operations
+  - id: attributable-payment-effects
+    statement: Only an authorized attributable workload may cause a payment effect for an accepted order.
+    assets: [payment-authority, order-outcome]
+    harms: [unauthorized-charge, payment-fraud]
+    owner: payments-security
+  - id: governed-order-data
+    statement: Order data is disclosed or modified only for an authorized purpose by an attributable subject.
+    assets: [customer-order-data]
+    harms: [unauthorized-disclosure, unauthorized-modification]
+    owner: data-governance
+  - id: governed-production-release
+    statement: Every production release is attributable, reviewed, policy-conformant, and bound to trusted evidence.
+    assets: [release-authority]
+    harms: [malicious-release, unreviewed-production-change]
+    owner: delivery-security

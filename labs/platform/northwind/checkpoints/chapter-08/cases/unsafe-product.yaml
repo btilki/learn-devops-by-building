@@ -1,0 +1,10 @@
+schema_version: 1
+kind: control-plane-product
+id: northwind-control-plane-product
+owner: platform-team
+plane: kubernetes-control-plane
+jobs: [obtain-bounded-environment, ship-on-paved-road]
+credential_model: referenced-rotatable-secret
+forbidden_roles: []
+controller_may_rewrite_source: true
+sharing_mode: shared-control-plane

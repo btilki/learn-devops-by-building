@@ -1,0 +1,30 @@
+schema_version: 1
+kind: burn-alerts
+id: northwind-burn-alerts
+owner: reliability-program
+minimum_evidence_volume: 1
+window_pairs:
+  fast:
+    short_window: 5m
+    long_window: 1h
+    threshold: 14.4
+  slow:
+    short_window: 30m
+    long_window: 6h
+    threshold: 6
+burns:
+  - id: panel-order-success
+    sli: order_success_ratio
+    class: user-journey-sli
+    disposition: dashboard
+    review_trigger: never
+  - id: cpu-utilization-symptom
+    sli: cpu-utilization
+    class: component-uptime
+    disposition: page
+    review_trigger: never
+  - id: time-to-first-environment-burn
+    sli: time-to-first-environment
+    class: platform-product-sli
+    disposition: page
+    review_trigger: never

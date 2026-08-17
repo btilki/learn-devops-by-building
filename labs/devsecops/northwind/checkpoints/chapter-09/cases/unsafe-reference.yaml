@@ -1,0 +1,4 @@
+schema_version: 1
+kind: secret-references
+references:
+  - {workload: order-worker, secret: payment-provider-credential, version: payment-v1, reference: null, value: SYNTHETIC_SECRET_DO_NOT_USE}

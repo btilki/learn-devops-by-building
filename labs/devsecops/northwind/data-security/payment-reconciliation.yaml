@@ -1,0 +1,14 @@
+schema_version: 1
+kind: payment-reconciliation
+case_id: INC-2026-0815-01
+collected_at: "2026-08-15T10:18:00Z"
+sources:
+  - order-store
+  - payment-provider-ledger
+sample:
+  order_id: synthetic-order-1
+  order_state: accepted
+  payment_state: authorized
+  payment_reference: synthetic-payment-1
+divergence_found: false
+scope: sampled-incident-window

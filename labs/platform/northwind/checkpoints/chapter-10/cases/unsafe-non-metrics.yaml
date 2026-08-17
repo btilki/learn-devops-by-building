@@ -1,0 +1,7 @@
+schema_version: 1
+kind: devex-non-metrics
+id: northwind-devex-non-metrics
+non_metrics:
+  - id: ticket-volume
+    category: vanity
+    reason: queue-noise-is-not-finished-work

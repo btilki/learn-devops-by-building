@@ -1,0 +1,23 @@
+consumers:
+  payment: storefront
+  warehouse: fulfillment
+  notification-service: storefront
+required_burns:
+  payment:
+    journey: accept-and-complete-order
+    sli: order_success_ratio
+    criticality: critical
+    failure_effect: journey-burn
+  warehouse:
+    journey: dispatch-fulfillment
+    sli: dispatch_success_ratio
+    criticality: critical
+    failure_effect: journey-burn
+required_non_critical:
+  - notification-service
+forbidden_page_providers:
+  - notification-service
+required_fallbacks:
+  payment: fail-closed
+  warehouse: fail-closed
+  notification-service: skip-and-record

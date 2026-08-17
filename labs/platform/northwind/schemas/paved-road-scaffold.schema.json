@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paved-road-scaffold.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "contract", "owner", "template", "implements"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "paved-road-scaffold"},
+    "id": {"type": "string", "minLength": 1},
+    "contract": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "template": {"type": "string", "minLength": 1},
+    "implements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+    }
+  },
+  "additionalProperties": false
+}

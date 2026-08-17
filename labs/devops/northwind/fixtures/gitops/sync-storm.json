@@ -1,0 +1,25 @@
+{
+  "source_revision": "7f21storm",
+  "controllers": [
+    {"name": "northwind-a", "requested_parallel_applies": 8, "retry_offset_seconds": 2},
+    {"name": "northwind-b", "requested_parallel_applies": 8, "retry_offset_seconds": 5},
+    {"name": "northwind-c", "requested_parallel_applies": 8, "retry_offset_seconds": 9}
+  ],
+  "control_plane": {
+    "maximum_concurrent_applies": 12,
+    "degraded": true
+  },
+  "waves": [
+    {"name": "foundation", "resources": 6, "healthy_after_apply": true},
+    {"name": "workloads", "resources": 24, "healthy_after_apply": false},
+    {"name": "optional-jobs", "resources": 20, "healthy_after_apply": true}
+  ],
+  "prune_requests": 7,
+  "expected": {
+    "peak_concurrent_applies": 10,
+    "applied_resources": 30,
+    "last_applied_wave": "workloads",
+    "pruned_resources": 0,
+    "source_revision_after": "7f21storm"
+  }
+}

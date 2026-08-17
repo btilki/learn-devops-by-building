@@ -1,0 +1,16 @@
+schema_version: 1
+kind: slo-observations
+id: northwind-failover-observations
+observations:
+  - id: observe-failover-accept-and-complete-order
+    slo: slo-accept-and-complete-order
+    good_events: 500
+    valid_events: 1000
+  - id: observe-failover-accept-and-complete-order-latency
+    slo: slo-accept-and-complete-order-latency
+    good_events: 500
+    valid_events: 1000
+  - id: observe-failover-dispatch-fulfillment
+    slo: slo-dispatch-fulfillment
+    good_events: 500
+    valid_events: 1000

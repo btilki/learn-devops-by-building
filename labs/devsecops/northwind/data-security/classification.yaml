@@ -1,0 +1,8 @@
+schema_version: 1
+kind: data-classification
+fields:
+  - {id: order_id, class: internal, owner: order-domain, harm: order-correlation}
+  - {id: customer_email, class: confidential, owner: data-governance, harm: customer-disclosure}
+  - {id: payment_reference, class: restricted, owner: payments-team, harm: payment-linkage-and-fraud}
+  - {id: order_total, class: confidential, owner: order-domain, harm: commercial-disclosure}
+  - {id: order_state, class: internal, owner: order-domain, harm: workflow-disclosure}

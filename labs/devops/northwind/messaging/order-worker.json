@@ -1,0 +1,49 @@
+{
+  "delivery": "at-least-once",
+  "message_identity": "stable-business-operation-id",
+  "ordering_scope": "per-order",
+  "processing": {
+    "deduplication_store": "transactional-inbox",
+    "deduplication_unique": true,
+    "state_transition_atomic": true,
+    "payment_idempotency_key": "message-id"
+  },
+  "publication": {
+    "order_event": "same-transaction-outbox",
+    "transactional_outbox": true
+  },
+  "acknowledgement": {
+    "timing": "after-durable-outcome"
+  },
+  "lease": {
+    "exceeds_processing_timeout": true,
+    "renewal_supported": true
+  },
+  "retry": {
+    "classification": "transient-only",
+    "backoff": "exponential",
+    "jitter": true,
+    "maximum_attempts": 8
+  },
+  "quarantine": {
+    "enabled": true,
+    "preserve_message_identity": true,
+    "reviewed_replay": true
+  },
+  "legacy_cutover": {
+    "initial_effect_owner": "legacy-worker",
+    "new_worker_mode": "shadow-without-external-effects",
+    "ownership_transition": "single-reviewed-switch",
+    "abort": "restore-legacy-owner-preserve-identities",
+    "exit_requires": [
+      "zero-legacy-backlog",
+      "reconciled-terminal-outcomes",
+      "rollback-window-closed"
+    ]
+  },
+  "evidence": {
+    "duplicate_count": true,
+    "oldest_message_age": true,
+    "terminal_outcome": true
+  }
+}

@@ -1,0 +1,13 @@
+required_plane: kubernetes-control-plane
+required_sharing_mode: shared-control-plane
+required_jobs:
+  - obtain-bounded-environment
+  - ship-on-paved-road
+forbidden_roles:
+  - cluster-admin
+  - dev-cluster-admin
+required_environments:
+  - storefront-nonprod
+  - fulfillment-nonprod
+plane_subject: plane-reconciler
+as_of: "2026-08-16T12:00:00Z"

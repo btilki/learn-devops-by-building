@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "oncall-rotations.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "rotations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "oncall-rotations"},
+    "id": {"type": "string", "minLength": 1},
+    "rotations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "system",
+          "primary",
+          "secondary",
+          "living_primary",
+          "as_of"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "system": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "primary": {"type": "string", "minLength": 1},
+          "secondary": {"type": "string", "minLength": 1},
+          "living_primary": {"const": true},
+          "as_of": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

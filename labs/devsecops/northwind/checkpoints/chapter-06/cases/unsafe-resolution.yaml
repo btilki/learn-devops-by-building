@@ -1,0 +1,17 @@
+schema_version: 1
+kind: dependency-resolution
+resolution_id: sha256:dd9f48891ebf815b72007b6470f496aef0bb7e8a53a325394378d11ae7f06a1e
+source:
+  origin: https://github.com/northwind/order-platform.git
+  revision: badc0de
+  ref: refs/heads/main
+  changed_paths: [services/payment/requirements.yaml]
+  author: compromised-maintainer
+  claim_id: maintainer-claim-993
+  approvers: [compromised-maintainer]
+dependencies:
+  - name: northwind-payments
+    requested: "*"
+    resolved: 99.0.0
+    registry: pypi.org
+    sha256: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

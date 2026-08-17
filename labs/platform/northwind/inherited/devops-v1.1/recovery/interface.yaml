@@ -1,0 +1,5 @@
+schema_version: 1
+kind: inherited-recovery-interface
+id: devops-v1.1-recovery
+required_roots: [reviewed_intent, artifact_identity, configuration_identity, durable_data, identity_policy]
+traffic_return_requires: [reconciled_business_state, verified_service_outcome]

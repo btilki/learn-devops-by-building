@@ -1,0 +1,13 @@
+schema_version: 1
+kind: platform-users
+id: northwind-platform-users
+users:
+  - id: storefront-team
+    role: application-team
+    jobs: [obtain-bounded-environment, ship-on-paved-road]
+  - id: fulfillment-team
+    role: application-team
+    jobs: [obtain-bounded-environment, ship-on-paved-road]
+  - id: platform-team
+    role: platform-product-owner
+    jobs: [publish-owned-path]

@@ -1,0 +1,10 @@
+required_job: obtain-bounded-environment
+required_environments:
+  - storefront-nonprod
+  - fulfillment-nonprod
+required_shared_plane: kubernetes-control-plane
+required_quota_pool: cluster-capacity-pool
+forbidden_roles:
+  - cluster-admin
+  - dev-cluster-admin
+as_of: "2026-08-16T12:00:00Z"

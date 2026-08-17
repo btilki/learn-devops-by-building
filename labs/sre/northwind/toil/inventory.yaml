@@ -1,0 +1,25 @@
+schema_version: 1
+kind: toil-inventory
+id: northwind-toil-inventory
+items:
+  - id: manual-alert-silences
+    class: toil
+    kind: interrupt
+    hours_per_week: 6
+    rotation: storefront-primary-rotation
+  - id: copy-paste-runbooks
+    class: toil
+    kind: interrupt
+    hours_per_week: 5
+    rotation: storefront-primary-rotation
+  - id: notification-ticket-triage
+    class: toil
+    kind: interrupt
+    hours_per_week: 3
+    criticality: non-critical
+    rotation: storefront-primary-rotation
+  - id: error-budget-policy-engineering
+    class: engineering
+    kind: project
+    hours_per_week: 6
+    rotation: storefront-primary-rotation

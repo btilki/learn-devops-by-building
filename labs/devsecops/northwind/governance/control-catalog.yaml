@@ -1,0 +1,92 @@
+schema_version: 1
+kind: control-catalog
+id: northwind-security-controls
+owner: delivery-security
+objectives:
+  - id: obj-supply-chain-admission
+    control: dependency-origin-admission
+    control_type: prevent
+    risk: maintainer-supply-chain-payment-risk
+    attack_paths: [compromised-maintainer-to-payment]
+    owner: delivery-security
+    implementation:
+      - policy/enforcement-points.yaml#source-merge
+      - policy/bundle/rules.yaml#dependency-admission
+    review_trigger: attack-path-control-or-evidence-changes
+    limitations: [Modeled policy engine and enforcement points only.]
+  - id: obj-correlated-detection
+    control: correlated-runtime-behavior
+    control_type: detect
+    risk: maintainer-supply-chain-payment-risk
+    attack_paths: [compromised-maintainer-to-payment]
+    owner: security-response
+    implementation:
+      - detection/hypotheses.yaml#compromised-maintainer-progression
+      - detection/rules/correlate-progression.yaml
+    review_trigger: telemetry-hypothesis-or-attack-path-changes
+    limitations: [Coverage is bounded to modeled event sources and hypotheses.]
+  - id: obj-incident-containment
+    control: revoke-and-isolate-path
+    control_type: respond
+    risk: maintainer-supply-chain-payment-risk
+    attack_paths: [compromised-maintainer-to-payment]
+    owner: security-response
+    implementation:
+      - response/containment-plan.yaml
+    review_trigger: authority-workload-or-business-state-changes
+    limitations: [Containment covers inventoried authority and workloads.]
+  - id: obj-trust-restoration
+    control: rebuild-from-trusted-roots
+    control_type: recover
+    risk: maintainer-supply-chain-payment-risk
+    attack_paths: [compromised-maintainer-to-payment]
+    owner: security-response
+    implementation:
+      - recovery/eradication-plan.yaml
+      - recovery/rebuild-manifest.yaml
+    review_trigger: trust-root-recovery-or-evidence-changes
+    limitations: [Trust restoration is bounded to the modeled inventory.]
+  - id: obj-cache-persistence-control
+    control: registry-cache-invalidation
+    control_type: recover
+    risk: maintainer-supply-chain-payment-risk
+    attack_paths: [compromised-maintainer-to-payment]
+    covers: [registry-cache]
+    does_not_cover: [node-cache]
+    owner: delivery-security
+    implementation:
+      - recovery/eradication-plan.yaml#invalidate-caches
+    review_trigger: registry-cache-controller-or-artifact-changes
+    limitations:
+      - Covers the modeled registry cache only. A node-local cache is a different persistence layer with a different owner and evidence requirement.
+  - id: obj-support-field-authorization
+    control: purpose-and-field-authorization
+    control_type: prevent
+    risk: support-data-purpose-risk
+    attack_paths: [overprivileged-support-data-access]
+    owner: data-governance
+    implementation:
+      - data-security/access-policy.yaml
+      - data-security/uses.yaml
+    review_trigger: support-workflow-or-data-use-changes
+    limitations: [Field policy covers declared uses and stores, not every support workflow variation.]
+  - id: obj-support-field-detection
+    control: sensitive-field-access-detection
+    control_type: detect
+    risk: support-data-purpose-risk
+    attack_paths: [overprivileged-support-data-access]
+    owner: data-governance
+    implementation:
+      - policy/enforcement-points.yaml#data-query
+    review_trigger: support-telemetry-or-field-policy-changes
+    limitations: [Detection is bounded to modeled query enforcement points.]
+  - id: obj-support-session-revocation
+    control: revoke-support-session
+    control_type: respond
+    risk: support-data-purpose-risk
+    attack_paths: [overprivileged-support-data-access]
+    owner: data-governance
+    implementation:
+      - build/chapter-10-containment.json#quarantined_copy_ids
+    review_trigger: support-session-or-copy-inventory-changes
+    limitations: [Response covers modeled copies and sessions, not every derived store.]

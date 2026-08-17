@@ -1,0 +1,51 @@
+schema_version: 1
+kind: trust-boundary-register
+boundaries:
+  - id: human-to-source
+    from_zone: human-session
+    to_zone: reviewed-source
+    validates: [subject, session-assurance, branch-authority, independent-approval]
+    assumptions: [maintainer-device-not-compromised, approval-not-colluding]
+    owner: delivery-security
+  - id: source-to-build
+    from_zone: reviewed-source
+    to_zone: build-execution
+    validates: [source-revision, dependency-lock, workflow-identity]
+    assumptions: [source-host-evidence-complete, runner-bootstrap-trusted]
+    owner: delivery-security
+  - id: build-to-registry
+    from_zone: build-execution
+    to_zone: artifact-storage
+    validates: [builder-subject, artifact-digest, provenance-subject]
+    assumptions: [builder-isolation-effective, registry-preserves-digest]
+    owner: delivery-security
+  - id: registry-to-production
+    from_zone: artifact-storage
+    to_zone: deployment-control
+    validates: [artifact-digest, source-identity, builder-identity, admission-policy]
+    assumptions: [attestation-verifier-independent, policy-source-protected]
+    owner: delivery-security
+  - id: control-plane-to-runtime
+    from_zone: deployment-control
+    to_zone: production-runtime
+    validates: [controller-subject, reviewed-intent, workload-identity]
+    assumptions: [runtime-enforces-policy, controller-scope-bounded]
+    owner: commerce-operations
+  - id: workload-to-provider
+    from_zone: production-runtime
+    to_zone: payment-provider
+    validates: [workload-subject, audience, operation-id, order-context]
+    assumptions: [provider-idempotency-correct, provider-evidence-available]
+    owner: payments-security
+  - id: workload-to-data
+    from_zone: production-runtime
+    to_zone: protected-data
+    validates: [workload-subject, query-authority, data-purpose]
+    assumptions: [database-audit-complete, application-enforces-order-context]
+    owner: data-governance
+  - id: human-to-data
+    from_zone: support-session
+    to_zone: protected-data
+    validates: [subject, support-role, access-purpose, field-policy]
+    assumptions: [support-device-not-compromised, database-audit-complete]
+    owner: data-governance

@@ -1,0 +1,13 @@
+schema_version: 1
+kind: oncall-authority
+id: northwind-oncall-authority
+authority:
+  - id: storefront-freeze-authority
+    system: storefront-oncall
+    action: freeze-storefront-releases
+    self_approval_forbidden: false
+    break_glass:
+      requester: storefront-primary-a
+      approver: storefront-primary-a
+      expiry: "2026-08-16T04:00:00Z"
+      after_action_review: false

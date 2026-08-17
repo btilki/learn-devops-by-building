@@ -1,0 +1,76 @@
+schema_version: 1
+kind: environment-leases
+id: northwind-environment-leases
+leases:
+  - id: lease-storefront-nonprod
+    request: request-storefront-nonprod
+    tenant: storefront
+    environment: storefront-nonprod
+    granted_role: tenant-operator
+    expires_at: "2026-08-23T00:00:00Z"
+    quota:
+      pool: cluster-capacity-pool
+      units: 4
+    credentials:
+      subject: storefront-nonprod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: tenant-scoped
+    isolation:
+      network: tenant-default-deny
+      secrets: tenant-scoped
+  - id: lease-storefront-prod
+    request: request-storefront-prod
+    tenant: storefront
+    environment: storefront-prod
+    granted_role: tenant-operator
+    expires_at: "2026-11-16T00:00:00Z"
+    quota:
+      pool: cluster-capacity-pool
+      units: 8
+    credentials:
+      subject: storefront-prod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-11-16T00:00:00Z"
+      policy: tenant-scoped
+    isolation:
+      network: tenant-default-deny
+      secrets: tenant-scoped
+  - id: lease-fulfillment-nonprod
+    request: request-fulfillment-nonprod
+    tenant: fulfillment
+    environment: fulfillment-nonprod
+    granted_role: tenant-operator
+    expires_at: "2026-08-23T00:00:00Z"
+    quota:
+      pool: cluster-capacity-pool
+      units: 4
+    credentials:
+      subject: fulfillment-nonprod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: tenant-scoped
+    isolation:
+      network: tenant-default-deny
+      secrets: tenant-scoped
+  - id: lease-fulfillment-prod
+    request: request-fulfillment-prod
+    tenant: fulfillment
+    environment: fulfillment-prod
+    granted_role: tenant-operator
+    expires_at: "2026-11-16T00:00:00Z"
+    quota:
+      pool: cluster-capacity-pool
+      units: 8
+    credentials:
+      subject: fulfillment-prod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-11-16T00:00:00Z"
+      policy: tenant-scoped
+    isolation:
+      network: tenant-default-deny
+      secrets: tenant-scoped

@@ -1,0 +1,8 @@
+schema_version: 1
+kind: paved-road-scaffold
+id: northwind-production-scaffold
+contract: northwind-production-path
+owner: platform-team
+template: northwind-service-template
+implements:
+  - catalog-entry

@@ -1,0 +1,4 @@
+schema_version: 1
+kind: inherited-platform-tenancy-interface
+id: platform-v1.0-tenancy
+tenants: [storefront, fulfillment]

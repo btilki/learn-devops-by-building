@@ -1,0 +1,4 @@
+schema_version: 1
+kind: source-ownership
+paths:
+  services/payment/: [compromised-maintainer]

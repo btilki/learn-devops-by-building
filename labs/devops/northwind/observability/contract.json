@@ -1,0 +1,60 @@
+{
+  "service": "storefront-api",
+  "logs": {
+    "format": "json",
+    "fields": [
+      "timestamp",
+      "level",
+      "message",
+      "service",
+      "route",
+      "status",
+      "dependency",
+      "trace_id",
+      "request_id"
+    ]
+  },
+  "metrics": {
+    "request_counter": {
+      "labels": ["method", "route", "status", "dependency"]
+    }
+  },
+  "traces": {
+    "propagate": ["traceparent", "tracestate"],
+    "required_spans": ["http.server", "payment.client", "queue.publish"]
+  },
+  "resource_attributes": [
+    "service.name",
+    "service.version",
+    "deployment.environment.name"
+  ],
+  "service_level_indicators": [
+    "order_success_ratio",
+    "order_latency"
+  ],
+  "service_level_objectives": [
+    {
+      "indicator": "order_success_ratio",
+      "target": 0.995,
+      "window": "30d"
+    }
+  ],
+  "alerts": [
+    {
+      "name": "order-error-budget-fast-burn",
+      "signal": "error_budget_burn",
+      "indicator": "order_success_ratio",
+      "short_window": "5m",
+      "long_window": "1h",
+      "threshold": 14.4
+    },
+    {
+      "name": "order-error-budget-slow-burn",
+      "signal": "error_budget_burn",
+      "indicator": "order_success_ratio",
+      "short_window": "30m",
+      "long_window": "6h",
+      "threshold": 6
+    }
+  ]
+}

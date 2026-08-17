@@ -1,0 +1,5 @@
+schema_version: 1
+kind: inherited-authorization-interface
+id: devsecops-v1.0-authorization
+required_fields: [subject, action, resource, context, policy_identity, result, reason]
+self_approval_forbidden: true

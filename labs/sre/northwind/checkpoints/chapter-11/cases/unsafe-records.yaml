@@ -1,0 +1,11 @@
+schema_version: 1
+kind: learning-records
+id: northwind-learning-records
+records:
+  - id: polished-postmortem
+    incident: spanning-payment-and-dispatch
+    owner: reliability-program
+    contributing_factors:
+      - we-talked-about-it
+    verified: true
+waivers: []

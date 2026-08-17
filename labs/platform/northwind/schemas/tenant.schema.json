@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tenant.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "tenants"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "tenants"},
+    "id": {"type": "string", "minLength": 1},
+    "tenants": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "owner",
+          "environments",
+          "isolation_dimensions",
+          "prohibited_inherited_roles",
+          "blast_radius"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "environments": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "isolation_dimensions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "prohibited_inherited_roles": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "blast_radius": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

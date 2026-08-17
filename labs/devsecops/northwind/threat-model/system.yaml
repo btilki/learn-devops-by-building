@@ -1,0 +1,62 @@
+schema_version: 1
+kind: system-flow-model
+components:
+  - {id: maintainer, type: actor, owner: delivery-security}
+  - {id: support-user, type: actor, owner: data-governance}
+  - {id: source-host, type: external-service, owner: delivery-security}
+  - {id: build-runner, type: automation, owner: delivery-security}
+  - {id: artifact-registry, type: external-service, owner: delivery-security}
+  - {id: deployment-controller, type: automation, owner: delivery-security}
+  - {id: storefront-api, type: service, owner: commerce-operations}
+  - {id: order-worker, type: service, owner: commerce-operations}
+  - {id: orders-db, type: data-store, owner: data-governance}
+  - {id: payment-provider, type: external-service, owner: payments-security}
+flows:
+  - id: maintainer-source-change
+    from: maintainer
+    to: source-host
+    carries: [source-change, dependency-declaration, approval]
+    authority: [propose-source, approve-source]
+    boundary: human-to-source
+  - id: source-build-input
+    from: source-host
+    to: build-runner
+    carries: [reviewed-source, dependency-lock]
+    authority: [trigger-build]
+    boundary: source-to-build
+  - id: build-artifact-publication
+    from: build-runner
+    to: artifact-registry
+    carries: [artifact, sbom, provenance]
+    authority: [publish-artifact]
+    boundary: build-to-registry
+  - id: artifact-deployment
+    from: artifact-registry
+    to: deployment-controller
+    carries: [artifact-digest, attestations]
+    authority: [propose-deployment]
+    boundary: registry-to-production
+  - id: controller-runtime-change
+    from: deployment-controller
+    to: order-worker
+    carries: [artifact-digest, runtime-configuration]
+    authority: [change-production-workload]
+    boundary: control-plane-to-runtime
+  - id: order-payment-effect
+    from: order-worker
+    to: payment-provider
+    carries: [order-id, payment-request, operation-id]
+    authority: [cause-payment]
+    boundary: workload-to-provider
+  - id: order-state-write
+    from: order-worker
+    to: orders-db
+    carries: [order-state, payment-result]
+    authority: [change-order-state]
+    boundary: workload-to-data
+  - id: support-data-access
+    from: support-user
+    to: orders-db
+    carries: [customer-order-data, access-purpose]
+    authority: [read-order-data]
+    boundary: human-to-data

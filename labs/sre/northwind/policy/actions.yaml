@@ -1,0 +1,38 @@
+schema_version: 1
+kind: error-budget-actions
+id: northwind-error-budget-actions
+actions:
+  - id: freeze-storefront-releases
+    slo: slo-accept-and-complete-order
+    action: freeze
+    change_kind: release
+    target: storefront-releases
+    promotion_identity: artifact_digest
+    owner: reliability-program
+    expires_at: "2026-08-23T00:00:00Z"
+    review_trigger: remaining-budget-recovers-or-window-elapses
+  - id: freeze-fleet-storage-upgrade
+    slo: slo-accept-and-complete-order
+    action: freeze
+    change_kind: fleet
+    target: storage-1-0-to-2-0
+    freeze_reason: exhausted-storefront-error-budget
+    owner: reliability-program
+    expires_at: "2026-08-23T00:00:00Z"
+    review_trigger: remaining-budget-recovers-or-fulfillment-cohort-replanned
+  - id: slow-fulfillment-releases
+    slo: slo-dispatch-fulfillment
+    action: slow
+    change_kind: release
+    target: fulfillment-releases
+    promotion_identity: artifact_digest
+    owner: reliability-program
+    expires_at: "2026-08-23T00:00:00Z"
+    review_trigger: dispatch-remaining-budget-band-changes
+  - id: continue-notification-templates
+    action: continue
+    change_kind: non-critical
+    target: notification-service
+    owner: reliability-program
+    expires_at: "2026-08-23T00:00:00Z"
+    review_trigger: notification-becomes-a-critical-journey

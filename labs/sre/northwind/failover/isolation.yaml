@@ -1,0 +1,19 @@
+schema_version: 1
+kind: failover-isolation
+id: northwind-failover-isolation
+tenants:
+  - id: storefront
+    serving: continue
+    change: freeze
+    policy_join: freeze-storefront-releases
+    last_known_good: region-standby-storefront-lkg
+  - id: fulfillment
+    serving: continue
+    change: slow
+    policy_join: slow-fulfillment-releases
+    last_known_good: region-standby-fulfillment-lkg
+rejected_replays:
+  - mixed-tenant
+  - mixed-region
+survives_failover: true
+source: explicit-tenant-decision

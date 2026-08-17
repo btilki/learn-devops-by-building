@@ -1,0 +1,8 @@
+schema_version: 1
+kind: product-brief
+id: northwind-internal-platform
+promise: Application teams finish production jobs on a reviewed paved road inside an explicit tenant boundary without inheriting shared cluster authority.
+owner: platform-team
+success_evidence:
+  - time-to-first-environment
+  - paved-road-completion

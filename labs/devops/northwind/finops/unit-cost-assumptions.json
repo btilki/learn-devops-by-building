@@ -1,0 +1,14 @@
+{
+  "currency": "USD",
+  "observation_window": "one-hour-cohort",
+  "cost_basis": "amortized",
+  "workload_cost_components": [
+    "direct-worker-cost",
+    "allocated-shared-runtime-cost"
+  ],
+  "delivery_cost_treatment": "reported-separately",
+  "discount_treatment": "amortized-into-workload-cost",
+  "one_time_credit_treatment": "excluded-and-reported-separately",
+  "denominator": "quality-qualified-terminal-orders",
+  "shared_allocation_method": "documented-fixed-capacity-share"
+}

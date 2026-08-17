@@ -1,0 +1,7 @@
+schema_version: 1
+kind: reliability-owners
+id: northwind-reliability-owners
+owners:
+  - id: storefront-team
+    role: application-team
+    journeys: [accept-and-complete-order]

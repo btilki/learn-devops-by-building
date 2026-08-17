@@ -1,0 +1,12 @@
+schema_version: 1
+kind: data-access-policy
+deny_undeclared_fields: true
+store_class_limits:
+  primary: restricted
+  runtime-memory: confidential
+  support-session: confidential
+  telemetry: internal
+  nonproduction: internal
+  backup: restricted
+require_purpose: true
+require_subject: true

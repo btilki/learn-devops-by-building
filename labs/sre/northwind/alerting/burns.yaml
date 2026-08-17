@@ -1,0 +1,58 @@
+schema_version: 1
+kind: burn-alerts
+id: northwind-burn-alerts
+owner: reliability-program
+minimum_evidence_volume: 50
+window_pairs:
+  fast:
+    short_window: 5m
+    long_window: 1h
+    threshold: 14.4
+  slow:
+    short_window: 30m
+    long_window: 6h
+    threshold: 6
+burns:
+  - id: order-success-fast-burn
+    sli: order_success_ratio
+    slo: slo-accept-and-complete-order
+    class: user-journey-sli
+    window_pair: fast
+    disposition: page
+    review_trigger: order-path-changes-good-event-definition
+  - id: order-success-slow-burn
+    sli: order_success_ratio
+    slo: slo-accept-and-complete-order
+    class: user-journey-sli
+    window_pair: slow
+    disposition: page
+    review_trigger: order-path-changes-good-event-definition
+  - id: dispatch-success-fast-burn
+    sli: dispatch_success_ratio
+    slo: slo-dispatch-fulfillment
+    class: user-journey-sli
+    window_pair: fast
+    disposition: page
+    review_trigger: warehouse-contract-changes-good-event-definition
+  - id: dispatch-success-slow-burn
+    sli: dispatch_success_ratio
+    slo: slo-dispatch-fulfillment
+    class: user-journey-sli
+    window_pair: slow
+    disposition: page
+    review_trigger: warehouse-contract-changes-good-event-definition
+  - id: time-to-first-environment-burn
+    sli: time-to-first-environment
+    class: platform-product-sli
+    disposition: ticket
+    review_trigger: platform-product-jobs-change
+  - id: replica-ready-symptom
+    sli: replica-ready
+    class: component-uptime
+    disposition: ticket
+    review_trigger: theater-graph-proposed-as-page
+  - id: cpu-utilization-symptom
+    sli: cpu-utilization
+    class: component-uptime
+    disposition: record
+    review_trigger: theater-graph-proposed-as-page

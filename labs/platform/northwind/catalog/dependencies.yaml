@@ -1,0 +1,18 @@
+schema_version: 1
+kind: catalog-dependencies
+id: northwind-catalog-dependencies
+dependencies:
+  - system: storefront-api
+    depends_on: [postgresql, durable-queue, order-worker]
+  - system: order-worker
+    depends_on: [postgresql, payment-provider, notification-service]
+  - system: notification-service
+    depends_on: [email-provider]
+  - system: fulfillment-api
+    depends_on: [warehouse-dispatch]
+  - system: software-catalog
+    depends_on: []
+  - system: environment-provisioning
+    depends_on: [kubernetes-control-plane]
+  - system: artifact-promotion
+    depends_on: []

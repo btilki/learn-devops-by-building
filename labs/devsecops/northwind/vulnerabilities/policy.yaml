@@ -1,0 +1,13 @@
+schema_version: 1
+kind: vulnerability-triage-policy
+severity_order: [critical, high, medium, low]
+active_versions:
+  legacy-pdf: 1.8.0
+  order-parser: 4.2.0
+critical_assets: [order-outcome, payment-authority, release-authority]
+expedited_if:
+  reachable_and_internet: true
+  reachable_and_critical_asset: true
+  known_exploitation_and_deployed: true
+urgent_treatment: remediate
+urgent_max_days: 7

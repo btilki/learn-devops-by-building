@@ -1,0 +1,14 @@
+schema_version: 1
+kind: degradation-shedding
+id: northwind-degradation-shedding
+owner: reliability-program
+rules:
+  - id: shed-storefront-payment-overload
+    provider: payment
+    worker: order-worker
+    journey: accept-and-complete-order
+    action: refuse-new-accepts
+    retry_limit: 1
+    distinct_from:
+      - platform-tenant-quota
+      - devops-unit-cost-scaling

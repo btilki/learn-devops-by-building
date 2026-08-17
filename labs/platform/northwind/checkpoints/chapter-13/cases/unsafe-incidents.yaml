@@ -1,0 +1,18 @@
+schema_version: 1
+kind: support-incidents
+id: northwind-support-incidents
+incidents:
+  - id: fulfillment-warehouse-delay
+    system: fulfillment-api
+    class: tenant-application
+    owner: fulfillment-team
+    escalation: chat-history
+    closed_reason: csat
+    reported_status: green
+  - id: environment-lease-wait
+    system: environment-provisioning
+    class: tenant-application
+    owner: platform-team
+    escalation: platform-oncall
+    indicator: order_success_ratio
+    recovery_evidence: [terminal_order_outcomes]

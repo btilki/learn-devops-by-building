@@ -1,0 +1,6 @@
+schema_version: 1
+kind: inherited-exception-interface
+id: devsecops-v1.0-exception
+required_fields: [id, owner, scope, rationale, compensating_controls, evidence, expires_at, removal_path, status]
+duplicate_lifecycle_fields_in_platform_bindings: false
+example_exception_id: exception-dependency-mirror-2026-08

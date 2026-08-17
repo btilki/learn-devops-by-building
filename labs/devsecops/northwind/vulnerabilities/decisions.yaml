@@ -1,0 +1,22 @@
+schema_version: 1
+kind: vulnerability-decisions
+decisions:
+  - finding: CVE-2026-2207|order-parser|4.2.0
+    priority: 1
+    treatment: remediate
+    decided_at: "2026-08-15T00:00:00Z"
+    deadline: "2026-08-17T00:00:00Z"
+    rationale: Internet reachable, known exploited, and able to harm the order outcome.
+    verification: deploy-fixed-parser-and-confirm-version-and-order-health
+    owner: storefront-team
+    uncertainty: [runtime-reachability-coverage, exploitation-intelligence-latency]
+  - finding: CVE-2026-4100|legacy-pdf|1.8.0
+    priority: 2
+    treatment: monitor
+    decided_at: "2026-08-15T00:00:00Z"
+    deadline: "2026-09-15T00:00:00Z"
+    rationale: Deployed but unreachable in the disabled configuration; retain monitoring and review triggers.
+    verification: confirm-module-disabled-and-alert-on-import
+    owner: document-services
+    uncertainty: [module-inventory-freshness, future-feature-enablement]
+    exception: exception-legacy-pdf-2026-09

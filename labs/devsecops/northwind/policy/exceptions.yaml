@@ -1,0 +1,16 @@
+schema_version: 1
+kind: policy-exceptions
+exceptions:
+  - id: exception-dependency-mirror-2026-08
+    rule: dependency-admission
+    enforcement_points: [source-merge]
+    scope: northwind-public-http-signing-2.1.0-mirror
+    owner: platform-security
+    rationale: Approved registry mirror is temporarily unavailable.
+    compensating_controls: [verify-locked-hash, alert-on-resolution]
+    compensation_enforcement_points: [runtime-observation]
+    evidence: [mirror-incident-441, locked-resolution-id]
+    effective_at: "2026-08-15T10:00:00Z"
+    expires_at: "2026-08-15T12:00:00Z"
+    removal_path: restore-approved-mirror-and-remove-exception
+    status: active

@@ -1,0 +1,10 @@
+schema_version: 1
+kind: paved-road-conformance
+id: northwind-production-conformance
+entries:
+  - system: storefront-api
+    path: paved
+    defaults_present: [latest-tag]
+  - system: fulfillment-api
+    path: unofficial
+    defaults_present: [latest-tag]

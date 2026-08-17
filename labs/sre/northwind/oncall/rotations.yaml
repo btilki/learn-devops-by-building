@@ -1,0 +1,22 @@
+schema_version: 1
+kind: oncall-rotations
+id: northwind-oncall-rotations
+rotations:
+  - id: storefront-primary-rotation
+    system: storefront-oncall-system
+    primary: storefront-primary-a
+    secondary: storefront-secondary-a
+    living_primary: true
+    as_of: "2026-08-16T00:00:00Z"
+  - id: fulfillment-primary-rotation
+    system: fulfillment-oncall-system
+    primary: fulfillment-primary-a
+    secondary: fulfillment-secondary-a
+    living_primary: true
+    as_of: "2026-08-16T00:00:00Z"
+  - id: platform-primary-rotation
+    system: platform-oncall-system
+    primary: platform-primary-a
+    secondary: platform-secondary-a
+    living_primary: true
+    as_of: "2026-08-16T00:00:00Z"

@@ -1,0 +1,8 @@
+events:
+  - time: "2026-08-15T12:15:00Z"
+    source: modeled-runtime-sensor
+    subject: order-worker
+    action: undeclared-egress
+    outcome: blocked
+    policy_version: runtime-v2-recovery
+    integrity: verified

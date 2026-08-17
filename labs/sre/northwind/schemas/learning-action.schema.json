@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "learning-action.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "actions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "learning-actions"},
+    "id": {"type": "string", "minLength": 1},
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "incident",
+          "owner",
+          "due_at",
+          "change",
+          "addresses",
+          "verification"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "incident": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "owner": {"type": "string", "minLength": 1},
+          "due_at": {"type": "string", "minLength": 1},
+          "change": {"type": "string", "minLength": 1},
+          "addresses": {"const": "chapter-09-cascade"},
+          "verification": {
+            "type": "object",
+            "required": ["producer", "independent_of_record"],
+            "properties": {
+              "producer": {"type": "string", "minLength": 1},
+              "independent_of_record": {"const": true}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

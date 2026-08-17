@@ -1,0 +1,10 @@
+schema_version: 1
+kind: error-budget-exceptions
+id: northwind-error-budget-exceptions
+exceptions:
+  - id: exception-notification-template
+    owner: reliability-program
+    scope: notification-service
+    remaining_journey_risk: order-path-unchanged-confirmation-only
+    expires_at: "2026-08-20T00:00:00Z"
+    removal_path: revert-template-or-wait-for-budget-recovery

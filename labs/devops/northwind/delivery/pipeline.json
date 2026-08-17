@@ -1,0 +1,8 @@
+{
+  "queue_seconds": 40,
+  "stages": [
+    {"name": "lint", "seconds": 35, "needs": []},
+    {"name": "test", "seconds": 130, "needs": ["lint"]},
+    {"name": "build", "seconds": 220, "needs": ["test"]}
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fleet-upgrades.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "upgrades"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "fleet-upgrades"},
+    "id": {"type": "string", "minLength": 1},
+    "upgrades": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "capability",
+          "from_version",
+          "to_version",
+          "freeze",
+          "cohorts",
+          "rollback",
+          "approved_by",
+          "result",
+          "source_rewritten"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "capability": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "from_version": {"type": "string", "minLength": 1},
+          "to_version": {"type": "string", "minLength": 1},
+          "freeze": {
+            "type": "object",
+            "required": ["starts_at", "ends_at"],
+            "properties": {
+              "starts_at": {"type": "string", "minLength": 1},
+              "ends_at": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          },
+          "cohorts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "tenants", "status"],
+              "properties": {
+                "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+                "tenants": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+                },
+                "status": {"enum": ["pending", "complete"]}
+              },
+              "additionalProperties": false
+            }
+          },
+          "rollback": {
+            "type": "object",
+            "required": ["last_known_good", "allowed"],
+            "properties": {
+              "last_known_good": {"type": "string", "minLength": 1},
+              "allowed": {"type": "boolean"}
+            },
+            "additionalProperties": false
+          },
+          "approved_by": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "result": {"enum": ["in-progress", "complete", "failed", "rolled-back"]},
+          "source_rewritten": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

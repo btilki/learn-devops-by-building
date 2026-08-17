@@ -1,0 +1,7 @@
+kind: synthetic-secret-exposure
+secret: payment-provider-credential
+version: payment-v1
+subject: compromised-maintainer
+claim_id: maintainer-claim-993
+location: ci-log-build-8841
+synthetic_marker: SYNTHETIC_SECRET_DO_NOT_USE

@@ -1,0 +1,12 @@
+spanning_trace_id: spanning-payment-and-dispatch
+platform_trace_id: platform-product-job-time
+required_spanning_journeys:
+  - accept-and-complete-order
+  - dispatch-fulfillment
+required_spanning_systems:
+  - storefront-oncall-system
+  - fulfillment-oncall-system
+required_freeze_joins:
+  - freeze-storefront-releases
+  - freeze-fleet-storage-upgrade
+required_platform_system: platform-oncall-system

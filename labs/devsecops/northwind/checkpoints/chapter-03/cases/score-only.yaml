@@ -1,0 +1,2 @@
+risks:
+  - {id: scanner-critical, severity: critical, treatment: fix-now}

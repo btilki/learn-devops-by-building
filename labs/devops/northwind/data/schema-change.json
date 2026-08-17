@@ -1,0 +1,41 @@
+{
+  "change": "rename-orders-total-cents-to-order-total-cents",
+  "strategy": "expand-migrate-contract",
+  "coexistence": {
+    "old_version_writes": "total_cents",
+    "new_version_reads": "order_total_cents",
+    "old_writer_supported": true,
+    "new_reader_fallback": true
+  },
+  "expand": {
+    "add_column": "order_total_cents",
+    "nullable": true
+  },
+  "writes": {
+    "mode": "dual-write"
+  },
+  "backfill": {
+    "batched": true,
+    "idempotent": true,
+    "checkpointed": true,
+    "validation": "counts-and-values"
+  },
+  "enforcement": {
+    "requires_old_version_retired": true,
+    "requires_backfill_validated": true
+  },
+  "cutover": {
+    "traffic_shift": "progressive",
+    "compatibility_gate": "old-and-new-versions",
+    "abort": "restore-old-route-keep-expanded-schema",
+    "exit_requires": [
+      "zero-legacy-writes",
+      "validated-backfill",
+      "rollback-window-closed"
+    ]
+  },
+  "contract": {
+    "drop_legacy_column": "later-reviewed-release",
+    "rollback_preserves_legacy_reads": true
+  }
+}

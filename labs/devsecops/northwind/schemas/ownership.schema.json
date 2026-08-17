@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ownership.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "owners"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "ownership-register"},
+    "owners": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "accountable_for", "escalation"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "accountable_for": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "escalation": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

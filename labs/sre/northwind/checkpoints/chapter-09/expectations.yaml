@@ -1,0 +1,9 @@
+required_mode:
+  id: payment-overload-degraded
+  sli: order_success_ratio
+required_shed:
+  worker: order-worker
+  action: refuse-new-accepts
+required_denial:
+  must_not_page: fulfillment-oncall
+  must_not_burn: dispatch-fulfillment

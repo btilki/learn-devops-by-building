@@ -1,0 +1,7 @@
+schema_version: 1
+kind: regional-objectives
+id: northwind-regional-objectives
+owner: reliability-program
+rto_seconds: 14400
+rpo_seconds: 900
+review_trigger: journeys-regions-or-provider-regionality-change

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "degradation-shedding.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owner", "rules"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "degradation-shedding"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "provider",
+          "worker",
+          "journey",
+          "action",
+          "retry_limit",
+          "distinct_from"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "provider": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "worker": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "journey": {"type": "string", "minLength": 1},
+          "action": {"enum": ["refuse-new-accepts"]},
+          "retry_limit": {"type": "integer", "minimum": 0, "maximum": 2},
+          "distinct_from": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "enum": ["platform-tenant-quota", "devops-unit-cost-scaling"]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

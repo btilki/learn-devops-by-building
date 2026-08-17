@@ -1,0 +1,5 @@
+schema_version: 1
+kind: source-ownership
+paths:
+  services/payment/: [payments-team, security-reviewer]
+  supply-chain/: [platform-security]

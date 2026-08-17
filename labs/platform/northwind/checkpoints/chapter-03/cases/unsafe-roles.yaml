@@ -1,0 +1,16 @@
+schema_version: 1
+kind: tenancy-roles
+id: northwind-tenancy-roles
+roles:
+  - id: cluster-admin
+    scope: tenant
+    never_inherit: []
+bindings:
+  - principal: storefront-team
+    tenant: storefront
+    role: cluster-admin
+    justification: existing-unofficial-path
+  - principal: fulfillment-team
+    tenant: fulfillment
+    role: cluster-admin
+    justification: temporary-to-ship-faster

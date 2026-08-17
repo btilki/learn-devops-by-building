@@ -1,0 +1,10 @@
+schema_version: 1
+kind: environment-product
+id: northwind-environment-product
+owner: platform-team
+job: obtain-bounded-environment
+shared_plane: kubernetes-control-plane
+quota_pool: cluster-capacity-pool
+credential_model: referenced-rotatable-secret
+forbidden_roles: []
+ttl_hours: 168

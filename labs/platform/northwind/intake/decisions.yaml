@@ -1,0 +1,54 @@
+schema_version: 1
+kind: intake-decisions
+id: northwind-capability-decisions
+decisions:
+  - id: decide-environment-provisioning
+    candidate: environment-provisioning
+    treatment: productize
+    user_job: obtain-bounded-environment
+    demand: both-tenants-wait-on-tickets
+    repetition: storefront-and-fulfillment-copy-environment-manifests
+    isolation_impact: shared-cluster-admin-if-left-as-a-ticket
+    support_cost: one-ticket-per-environment-with-no-lease
+    owner: platform-team
+    review_trigger: new-tenant-or-environment-class
+  - id: decide-artifact-promotion
+    candidate: artifact-promotion
+    treatment: productize
+    user_job: ship-on-paved-road
+    demand: fulfillment-cannot-reuse-storefront-promotion
+    repetition: each-team-rebuilds-digest-promotion
+    isolation_impact: unofficial-latest-tags-if-left-tribal
+    support_cost: platform-debugs-every-team-pipeline
+    owner: platform-team
+    review_trigger: new-artifact-type-or-registry
+  - id: decide-software-catalog
+    candidate: software-catalog
+    treatment: productize
+    user_job: publish-owned-path
+    demand: owners-live-in-chat
+    repetition: every-incident-asks-who-owns-the-service
+    isolation_impact: none-until-tenancy-exists-but-orphans-accumulate
+    support_cost: platform-is-the-phone-book
+    owner: platform-team
+    review_trigger: team-rename-or-new-system
+  - id: decide-order-pricing-logic
+    candidate: order-pricing-logic
+    treatment: decline
+    remaining_owner: storefront-team
+    demand: two-application-teams-requested-hosting
+    repetition: commercial-rules-differ-per-team
+    isolation_impact: platform-would-own-differentiating-business-logic
+    support_cost: perpetual-pricing-change-tickets
+    owner: platform-team
+    review_trigger: pricing-becomes-a-shared-regulated-capability
+  - id: decide-application-dashboard-layout
+    candidate: application-dashboard-layout
+    treatment: leave
+    remaining_owner: storefront-team
+    demand: storefront-wants-custom-widgets
+    repetition: one-team-today
+    isolation_impact: none-if-left-with-the-service-owner
+    support_cost: platform-would-theme-every-service-board
+    owner: platform-team
+    review_trigger: three-or-more-teams-share-the-same-widget-contract

@@ -1,0 +1,8 @@
+schema_version: 1
+kind: regional-objectives
+id: northwind-regional-objectives
+owner: reliability-program
+rto: as-fast-as-possible
+rpo: unmeasured
+review_trigger: never
+status: recovered

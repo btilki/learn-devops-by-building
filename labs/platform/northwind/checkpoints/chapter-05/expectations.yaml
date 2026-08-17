@@ -1,0 +1,12 @@
+required_job: ship-on-paved-road
+required_systems:
+  - storefront-api
+  - fulfillment-api
+required_defaults:
+  - artifact-digest
+  - workload-identity-claims
+  - no-cluster-admin
+required_remaining_guardrails:
+  - artifact-digest
+  - workload-identity-claims
+  - no-cluster-admin

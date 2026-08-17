@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "regional-constraints.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "isolation",
+    "provider_regionality",
+    "no_silent_cross_region",
+    "insufficient_restores",
+    "insufficient_identities",
+    "limitations_consumed"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "regional-constraints"},
+    "id": {"type": "string", "minLength": 1},
+    "isolation": {
+      "type": "object",
+      "required": ["tenants", "survives_failover"],
+      "properties": {
+        "tenants": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "survives_failover": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "provider_regionality": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["provider", "constraint"],
+        "properties": {
+          "provider": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "constraint": {"const": "region-scoped"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "no_silent_cross_region": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "insufficient_restores": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "insufficient_identities": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "limitations_consumed": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "additionalProperties": false
+}

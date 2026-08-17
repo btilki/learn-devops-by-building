@@ -1,0 +1,20 @@
+schema_version: 1
+kind: fleet-migrations
+id: northwind-fleet-migrations
+migrations:
+  - id: storefront-storage-2-0
+    tenant: storefront
+    capability: tenant-storage
+    from_version: "1.0"
+    to_version: "2.0"
+    applied_version: "2.0"
+    note: class-becomes-sku
+    evidence: complete
+  - id: fulfillment-storage-2-0
+    tenant: fulfillment
+    capability: tenant-storage
+    from_version: "1.0"
+    to_version: "2.0"
+    applied_version: "2.0"
+    note: class-becomes-sku
+    evidence: pending

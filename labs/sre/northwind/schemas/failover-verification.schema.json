@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "failover-verification.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "journeys",
+    "elapsed_seconds",
+    "rpo_lost_seconds",
+    "isolation_holds",
+    "mixed_replay",
+    "inherited_restores_insufficient",
+    "limitations_consumed"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "failover-verification"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "journeys": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+    },
+    "elapsed_seconds": {"type": "integer", "minimum": 1},
+    "rpo_lost_seconds": {"type": "integer", "minimum": 0},
+    "isolation_holds": {"const": true},
+    "mixed_replay": {"const": "rejected"},
+    "inherited_restores_insufficient": {"const": true},
+    "limitations_consumed": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"enum": ["not-regional-loss", "not-portfolio-rto"]}
+    }
+  },
+  "additionalProperties": false
+}

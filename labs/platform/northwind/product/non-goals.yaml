@@ -1,0 +1,13 @@
+schema_version: 1
+kind: platform-non-goals
+id: northwind-platform-non-goals
+non_goals:
+  - id: order-pricing-logic
+    statement: Custom order-pricing rules stay with the application team that owns the commercial decision.
+    remaining_owner: storefront-team
+  - id: threat-model-rebuild
+    statement: Threat modeling, risk registers, and restored-trust claims remain DevSecOps outcomes the platform may expose, not rebuild.
+    remaining_owner: delivery-security
+  - id: portfolio-slo-governance
+    statement: Portfolio service-level objectives, error-budget policy, and regional-loss programs remain SRE.
+    remaining_owner: reliability-program

@@ -1,0 +1,6 @@
+schema_version: 1
+kind: permitted-data-uses
+uses:
+  - {purpose: send-order-confirmation, subject: notification-service, fields: [order_id, customer_email, order_total], stores: [runtime-memory]}
+  - {purpose: support-order-inquiry, subject: support-engineer, fields: [order_id, customer_email], stores: [support-session]}
+  - {purpose: payment-reconciliation, subject: order-worker, fields: [order_id, payment_reference, order_total], stores: [primary]}

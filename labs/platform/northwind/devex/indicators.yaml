@@ -1,0 +1,19 @@
+schema_version: 1
+kind: devex-indicators
+id: northwind-devex-indicators
+indicators:
+  - id: time-to-first-environment
+    job: obtain-bounded-environment
+    owner: platform-team
+    class: platform-product-sli
+    evidence_kind: lagging
+  - id: paved-road-completion
+    job: ship-on-paved-road
+    owner: platform-team
+    class: platform-product-sli
+    evidence_kind: lagging
+  - id: catalog-freshness
+    job: publish-owned-path
+    owner: platform-team
+    class: platform-product-sli
+    evidence_kind: lagging

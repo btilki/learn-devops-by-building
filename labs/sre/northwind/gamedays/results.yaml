@@ -1,0 +1,30 @@
+schema_version: 1
+kind: gameday-results
+id: northwind-gameday-results
+results:
+  - id: result-freeze
+    scenario: gameday-error-budget-freeze
+    disposition: in-bounds
+    as_of: "2026-08-16T00:00:00Z"
+  - id: result-page-path
+    scenario: gameday-oncall-page-path
+    disposition: in-bounds
+    as_of: "2026-08-16T00:00:00Z"
+  - id: result-dependency
+    scenario: gameday-dependency-loss
+    disposition: in-bounds
+    feeds_action: verify-payment-retry-shed
+    as_of: "2026-08-16T00:00:00Z"
+  - id: result-regional-tabletop
+    scenario: gameday-regional-loss-tabletop
+    disposition: in-bounds
+    as_of: "2026-08-16T00:00:00Z"
+  - id: result-abort-unbounded
+    scenario: gameday-unbounded-chaos
+    disposition: abort
+    abort_reason: blast-radius-exceeds-contract
+    as_of: "2026-08-16T00:00:00Z"
+  - id: result-mixed-backup
+    scenario: gameday-mixed-backup
+    disposition: insufficient-alone
+    as_of: "2026-08-16T00:00:00Z"

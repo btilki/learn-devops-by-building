@@ -1,0 +1,37 @@
+schema_version: 1
+kind: slo-catalog
+id: northwind-slo-catalog
+owner: reliability-program
+slos:
+  - id: slo-accept-and-complete-order
+    journey: accept-and-complete-order
+    sli: order_success_ratio
+    window: rolling-30d
+    target: 0.995
+    criticality: critical
+    owner: reliability-program
+    review_trigger: order-path-changes-good-event-definition
+  - id: slo-accept-and-complete-order-latency
+    journey: accept-and-complete-order
+    sli: order_latency
+    window: rolling-30d
+    target: 0.99
+    criticality: critical
+    owner: reliability-program
+    review_trigger: order-path-changes-latency-definition
+  - id: slo-dispatch-fulfillment
+    journey: dispatch-fulfillment
+    sli: dispatch_success_ratio
+    window: rolling-28d
+    target: 0.99
+    criticality: critical
+    owner: reliability-program
+    review_trigger: warehouse-contract-changes-good-event-definition
+non_critical:
+  - id: notification-service
+    reason: confirmation-email-is-not-a-protected-journey
+    remaining_owner: storefront-team
+legal_products:
+  - id: customer-availability-sla
+    status: out-of-scope
+    reason: sla-is-not-an-slo-target

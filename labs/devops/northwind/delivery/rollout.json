@@ -1,0 +1,30 @@
+{
+  "strategy": "canary",
+  "stable_artifact": "ghcr.io/northwind-commerce/storefront-api@sha256:ecc55173e6c10ec59cac9538a34ac7142c52e8ff504d7e045ed3103c650efb32",
+  "candidate_artifact": "ghcr.io/northwind-commerce/storefront-api@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "steps": [
+    {"traffic_percent": 5, "pause_seconds": 300},
+    {"traffic_percent": 25, "pause_seconds": 600},
+    {"traffic_percent": 50, "pause_seconds": 900},
+    {"traffic_percent": 100, "pause_seconds": 0}
+  ],
+  "analysis": {
+    "minimum_requests": 50,
+    "indicators": ["order_success_ratio", "order_latency"],
+    "minimum_success_ratio": 0.995,
+    "maximum_latency_p95_ms": 750,
+    "automatic_abort": true,
+    "inconclusive_action": "pause"
+  },
+  "handoff": {
+    "candidate_source": "verified-release-digest",
+    "proposal_path": "reviewed-delivery-change",
+    "promotion_path": "controller-authored-reviewed-change",
+    "stable_transition": "copy-candidate-after-100-percent-and-recovery-verification"
+  },
+  "promotion_authority": "production-release-approver",
+  "rollback": {
+    "target": "ghcr.io/northwind-commerce/storefront-api@sha256:ecc55173e6c10ec59cac9538a34ac7142c52e8ff504d7e045ed3103c650efb32",
+    "verify_indicators": true
+  }
+}

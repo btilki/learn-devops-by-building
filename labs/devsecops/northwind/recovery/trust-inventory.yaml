@@ -1,0 +1,62 @@
+schema_version: 1
+kind: trust-inventory
+case_id: INC-2026-0815-01
+roots:
+- id: human-identity-policy
+  material: northwind-human-idp
+  status: contained
+  owner: identity-team
+  dependents:
+  - compromised-session
+- id: compromised-session
+  material: compromised-session
+  status: invalidated
+  owner: identity-team
+  dependents: []
+  invalidation_reason: incident-maintainer-authority
+- id: release-automation
+  material: release-workflow
+  status: suspect
+  owner: delivery-security
+  dependents:
+  - registry-cache
+- id: compromised-artifact
+  material: sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09
+  status: invalidated
+  owner: delivery-security
+  dependents:
+  - registry-cache
+  - order-worker-runtime
+  invalidation_reason: incident-admitted-artifact
+- id: registry-cache
+  material: northwind-registry/order-worker
+  status: suspect
+  owner: platform-team
+  dependents:
+  - order-worker-runtime
+- id: trusted-build-root
+  material: northwind-builder-v3/release-key-v3
+  status: trusted
+  owner: delivery-security
+  dependents:
+  - rebuilt-artifact
+- id: rebuilt-artifact
+  material: sha256:4444444444444444444444444444444444444444444444444444444444444444
+  status: trusted
+  owner: delivery-security
+  dependents:
+  - order-worker-runtime
+- id: order-worker-runtime
+  material: northwind-production/order-worker
+  status: contained
+  owner: order-service
+  dependents: []
+- id: payment-credential
+  material: payment-provider-credential/payment-v2
+  status: suspect
+  owner: payments-team
+  dependents:
+  - order-worker-runtime
+owner: security-response
+scope_limit: modeled identities, artifacts, caches, runtime, and payment authority
+  in incident INC-2026-0815-01

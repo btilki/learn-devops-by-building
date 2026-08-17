@@ -1,0 +1,6 @@
+schema_version: 1
+kind: inherited-control-interface
+id: devsecops-v1.0-control
+required_fields: [id, control, control_type, owner, implementation, review_trigger, limitations]
+platform_may_expose: true
+platform_may_rebuild: false

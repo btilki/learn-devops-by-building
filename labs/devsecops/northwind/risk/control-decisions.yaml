@@ -1,0 +1,27 @@
+schema_version: 1
+kind: control-decision-register
+decisions:
+  - id: control-maintainer-supply-chain-payment
+    risk: maintainer-supply-chain-payment-risk
+    controls:
+      - {id: independent-sensitive-path-approval, type: prevent}
+      - {id: dependency-origin-admission, type: prevent}
+      - {id: correlated-runtime-behavior, type: detect}
+      - {id: revoke-and-isolate-path, type: respond}
+      - {id: rebuild-from-trusted-roots, type: recover}
+    rationale: No single source or identity control covers the complete path; prevention, detection, response, and recovery must remain independent.
+    owner: delivery-security
+    due_at: "2026-10-01T00:00:00Z"
+    evidence: [approval-decision, admission-decision, correlated-alert, containment-record, recovery-verification]
+    review_trigger: attack-path-control-or-evidence-changes
+  - id: control-support-data-purpose
+    risk: support-data-purpose-risk
+    controls:
+      - {id: purpose-and-field-authorization, type: prevent}
+      - {id: sensitive-field-access-detection, type: detect}
+      - {id: revoke-support-session, type: respond}
+    rationale: Valid support identity does not prove authorized purpose; field policy and attributable detection must complement each other.
+    owner: data-governance
+    due_at: "2026-09-15T00:00:00Z"
+    evidence: [field-access-decision, sensitive-access-event, session-revocation-result]
+    review_trigger: support-workflow-or-data-use-changes

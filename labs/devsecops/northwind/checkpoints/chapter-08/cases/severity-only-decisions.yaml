@@ -1,0 +1,22 @@
+schema_version: 1
+kind: vulnerability-decisions
+decisions:
+  - finding: CVE-2026-4100|legacy-pdf|1.8.0
+    priority: 1
+    treatment: remediate
+    decided_at: "2026-08-15T00:00:00Z"
+    deadline: "2026-08-17T00:00:00Z"
+    rationale: Critical severity sorts first.
+    verification: deploy-fixed-library-and-confirm-version
+    owner: document-services
+    uncertainty: [runtime-reachability-coverage]
+  - finding: CVE-2026-2207|order-parser|4.2.0
+    priority: 2
+    treatment: monitor
+    decided_at: "2026-08-15T00:00:00Z"
+    deadline: "2026-09-15T00:00:00Z"
+    rationale: High severity sorts second.
+    verification: monitor-runtime-requests
+    owner: storefront-team
+    uncertainty: [exploitation-intelligence-latency]
+    exception: exception-parser-score-only

@@ -1,0 +1,13 @@
+schema_version: 1
+kind: toil-bound
+id: northwind-toil-bound
+owner: reliability-program
+bound_fraction: 0.5
+available_hours_per_week: 20
+review_trigger: toil-fraction-meets-or-exceeds-bound
+scope_proposals:
+  - id: propose-notification-critical-slo
+    slo: notification-service
+    criticality: critical
+    decision: deny
+    reason: non-critical-journey-and-toil-bound

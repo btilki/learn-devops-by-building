@@ -1,0 +1,18 @@
+schema_version: 1
+kind: oncall-systems
+id: northwind-oncall-systems
+systems:
+  - id: storefront-oncall
+    catalog_contact: storefront-oncall
+    owner: storefront-team
+    journeys: [accept-and-complete-order]
+    page_load_limit: 8
+    compensation: operational-constraint
+    training: operational-constraint
+  - id: storefront-oncall-system
+    catalog_contact: platform-oncall
+    owner: storefront-team
+    journeys: []
+    page_load_limit: 8
+    compensation: operational-constraint
+    training: operational-constraint

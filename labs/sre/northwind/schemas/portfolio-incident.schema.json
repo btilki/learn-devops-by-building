@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "portfolio-incident.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owner", "traces"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "portfolio-incident-traces"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "traces": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "support_kind",
+          "commander",
+          "commander_role",
+          "oncall_systems",
+          "status",
+          "as_of"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "support_kind": {"enum": ["platform-product", "tenant-application"]},
+          "commander": {"type": "string", "minLength": 1},
+          "commander_role": {"const": "commander"},
+          "affected_journeys": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "oncall_systems": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "freeze_join": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "journey_states": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["journey", "state"],
+              "properties": {
+                "journey": {"type": "string", "minLength": 1},
+                "state": {"enum": ["open", "degraded", "failing", "green"]}
+              },
+              "additionalProperties": false
+            }
+          },
+          "job_time_indicators": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "status": {"enum": ["open", "contained"]},
+          "as_of": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

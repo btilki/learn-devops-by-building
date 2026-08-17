@@ -1,0 +1,10 @@
+schema_version: 1
+kind: detection-hypotheses
+hypotheses:
+  - id: compromised-maintainer-progression
+    attack_path: compromised-maintainer-to-payment
+    required_actions: [credential-misuse, unusual-dependency-change, denied-elevation, undeclared-egress]
+    threshold: 4
+    maximum_window_seconds: 1800
+    owner: security-response
+    response: investigate-and-isolate-order-worker

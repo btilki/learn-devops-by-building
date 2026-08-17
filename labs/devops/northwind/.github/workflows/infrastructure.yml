@@ -1,0 +1,42 @@
+name: infrastructure
+
+on:
+  pull_request:
+    paths: ["infra/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: python tools/reconcile_infra.py reset
+      - run: python tools/reconcile_infra.py import-existing
+      - run: python tools/reconcile_infra.py plan
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-production-plan
+          path: .northwind-infra/production.plan.json
+          retention-days: 1
+
+  apply:
+    if: github.event_name == 'workflow_dispatch'
+    needs: plan
+    runs-on: ubuntu-latest
+    environment: production-infrastructure
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: python tools/reconcile_infra.py reset
+      - run: python tools/reconcile_infra.py import-existing
+      - uses: actions/download-artifact@v4
+        with:
+          name: reviewed-production-plan
+          path: .northwind-infra
+      - run: python tools/reconcile_infra.py apply

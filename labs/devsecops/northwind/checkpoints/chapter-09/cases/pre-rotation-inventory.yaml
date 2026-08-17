@@ -1,0 +1,13 @@
+schema_version: 1
+kind: secret-inventory
+secrets:
+  - id: payment-provider-credential
+    purpose: authorize-payment-provider-api
+    owner: payments-team
+    custodian: ci-variable
+    storage: ci-variable
+    consumers: [order-worker, compromised-maintainer]
+    versions:
+      - {id: payment-v1, status: active, issued_at: "2026-07-01T00:00:00Z", retire_by: "2026-09-01T00:00:00Z"}
+    rotation: manual
+    exception: null

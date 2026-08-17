@@ -1,0 +1,26 @@
+schema_version: 1
+kind: recovery-verification
+id: northwind-recovery-verification
+plane: kubernetes-control-plane
+restored_snapshot: plane-newest-corrupt
+restored_version: "1.1"
+status: recovered
+platform_jobs:
+  - obtain-bounded-environment
+tenant_decisions:
+  - tenant: storefront
+    decision: freeze
+    source: accident
+  - tenant: fulfillment
+    decision: freeze
+    source: accident
+traffic_return:
+  - tenant: storefront
+    evidence: [order_success_ratio]
+  - tenant: fulfillment
+    evidence: [order_success_ratio]
+limitations:
+  - regional-loss-complete
+recovered_indicators:
+  - order_success_ratio
+  - csat

@@ -1,0 +1,6 @@
+{
+  "name": "storefront-api",
+  "artifact": "ghcr.io/northwind-commerce/storefront-api@sha256:ecc55173e6c10ec59cac9538a34ac7142c52e8ff504d7e045ed3103c650efb32",
+  "replicas": 2,
+  "admin_cidr": "10.40.0.0/16"
+}

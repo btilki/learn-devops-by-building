@@ -1,0 +1,23 @@
+schema_version: 1
+kind: vulnerability-context
+contexts:
+  - finding: CVE-2026-4100|legacy-pdf|1.8.0
+    deployed: true
+    reachable: false
+    exposure: internal
+    known_exploitation: false
+    affected_configuration: disabled-pdf-export
+    assets: [customer-order-data]
+    plausible_harm: sensitive-document-disclosure
+    compensating_controls: [module-disabled, import-alert]
+    owner: document-services
+  - finding: CVE-2026-2207|order-parser|4.2.0
+    deployed: true
+    reachable: true
+    exposure: internet
+    known_exploitation: true
+    affected_configuration: vulnerable-parser-enabled
+    assets: [order-outcome]
+    plausible_harm: unauthorized-order-state-change
+    compensating_controls: [request-rate-limit]
+    owner: storefront-team

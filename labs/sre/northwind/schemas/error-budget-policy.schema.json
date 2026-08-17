@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "error-budget-policy.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owner", "bands"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "error-budget-policy"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "bands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["action", "remaining_min"],
+        "properties": {
+          "action": {"enum": ["continue", "slow", "freeze"]},
+          "remaining_min": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,23 @@
+schema_version: 1
+kind: portfolio-failover
+id: northwind-portfolio-failover
+owner: reliability-program
+follows: northwind-regional-architecture
+lost: region-primary
+target: region-standby
+when: region-primary-lost
+mode: active-passive
+last_known_good:
+  - region: region-standby
+    identity: region-standby-lkg
+commander: storefront-primary-a
+insufficient_restores:
+  - devops-one-environment-reconstruction
+  - platform-plane-restore
+insufficient_identities:
+  - "1.0"
+  - tenant-storage-1.0
+insufficient_evidence:
+  - gameday-regional-loss-tabletop
+  - mixed-backup
+review_trigger: architecture-objectives-or-tenancy-change

@@ -1,0 +1,15 @@
+schema_version: 1
+kind: containment-plan
+case_id: INC-2026-0815-01
+actions:
+  - {id: preserve-evidence, order: 1, target: incident-evidence, effect: snapshot-before-mutation}
+  - {id: revoke-session, order: 2, target: compromised-session, effect: deny-new-actions}
+  - {id: freeze-release, order: 3, target: production-release-path, effect: deny-new-releases}
+  - {id: preserve-business-state, order: 4, target: order-queue-and-database, effect: retain-without-destructive-replay}
+  - {id: isolate-workload, order: 5, target: order-worker, effect: deny-network-and-execution}
+service_mode: bounded-intake
+monitor: no-new-attacker-action
+owner: incident-commander
+communications:
+  internal: security-operations-and-order-service-owner
+  legal_escalation: privacy-or-payment-impact-confirmed

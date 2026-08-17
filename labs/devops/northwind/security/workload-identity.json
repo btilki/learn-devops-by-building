@@ -1,0 +1,42 @@
+{
+  "workload": "order-worker",
+  "kubernetes_service_account": "order-worker",
+  "token": {
+    "delivery": "projected-file",
+    "audience_bound": true,
+    "short_lived": true,
+    "automatic_refresh": true
+  },
+  "federation": {
+    "cloud": true,
+    "broker": true,
+    "database": true
+  },
+  "payment_provider": {
+    "supports_federation": false,
+    "credential_delivery": "brokered-file-reference",
+    "rotation": "overlapping-live-reload",
+    "overlap_window": true
+  },
+  "authorization": {
+    "scope": "dependency-specific",
+    "default_deny": true
+  },
+  "revocation": {
+    "trust_binding_can_be_disabled": true,
+    "does_not_require_application_rebuild": true
+  },
+  "break_glass": {
+    "identity": "individual-federated-operator",
+    "time_bound": true,
+    "approval_required": true
+  },
+  "evidence": {
+    "subject": true,
+    "audience": true,
+    "issuer": true,
+    "expiry": true,
+    "decision_audit": true,
+    "redaction_required": true
+  }
+}

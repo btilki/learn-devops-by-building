@@ -1,0 +1,9 @@
+schema_version: 1
+kind: error-budget-exceptions
+id: northwind-error-budget-exceptions
+exceptions:
+  - id: exception-ship-anyway
+    owner: reliability-program
+    scope: storage-1-0-to-2-0
+    remaining_journey_risk: ""
+    removal_path: ship-the-upgrade

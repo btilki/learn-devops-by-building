@@ -1,0 +1,31 @@
+schema_version: 1
+kind: assurance-report
+id: northwind-post-incident-assurance
+owner: delivery-security
+status: pass
+evaluated_at: "2026-08-15T11:30:00Z"
+criteria:
+  exceptions_bounded: true
+  detection_covers_priority_paths: true
+  telemetry_complete_for_claimed_window: true
+  incident_evidence_custody_valid: true
+  recovery_claim_within_limits: true
+  attack_path_register_current: true
+  material_change_review_complete: true
+active_exceptions: [exception-dependency-mirror-2026-08]
+evidence:
+  mechanism_evidence:
+    - build/chapter-11-recovery.json#normal_enforcement
+    - build/chapter-13-recovery.json#alert.result
+  decision_evidence:
+    - policy/exceptions.yaml#exceptions
+    - build/chapter-14-containment.json#authority
+  outcome_evidence:
+    - build/chapter-15-business-reconciliation.json#terminal_order_outcomes
+  recovery_evidence:
+    - build/chapter-15-recovery-verification.json#criteria
+limitations:
+  - Assurance is bounded to the modeled controls and locally generated evidence.
+  - This report does not certify compliance with any legal or industry framework.
+improvement_refs:
+  - governance/review-calendar.yaml#material_change_triggers

@@ -1,0 +1,17 @@
+schema_version: 1
+kind: paved-road-conformance
+id: northwind-production-conformance
+entries:
+  - system: storefront-api
+    path: paved
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]
+  - system: order-worker
+    path: paved
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]
+  - system: notification-service
+    path: exited
+    exit: notification-skip-slow-template
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]
+  - system: fulfillment-api
+    path: paved
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]

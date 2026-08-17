@@ -1,0 +1,11 @@
+schema_version: 1
+kind: support-model
+id: northwind-support-model
+owner: platform-team
+plane: kubernetes-control-plane
+tiers: [platform-product, tenant-application]
+error_budget_indicators:
+  - order_success_ratio
+  - csat
+unsupported: [unofficial-fork]
+communication_cadence: chat-history

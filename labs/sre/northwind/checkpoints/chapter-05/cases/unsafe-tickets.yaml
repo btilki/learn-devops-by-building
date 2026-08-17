@@ -1,0 +1,4 @@
+schema_version: 1
+kind: burn-tickets
+id: northwind-burn-tickets
+tickets: []

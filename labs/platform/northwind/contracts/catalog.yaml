@@ -1,0 +1,63 @@
+schema_version: 1
+kind: infrastructure-catalog
+id: northwind-infrastructure-catalog
+capabilities:
+  - id: tenant-storage
+    owner: platform-team
+  - id: workload-identity
+    owner: platform-team
+  - id: tenant-network
+    owner: platform-team
+  - id: artifact-promotion
+    owner: platform-team
+bindings:
+  - tenant: storefront
+    environment: storefront-nonprod
+    capability: tenant-storage
+    version: "2.0"
+    parameters:
+      sku: small
+      size-gb: 20
+  - tenant: storefront
+    environment: storefront-nonprod
+    capability: workload-identity
+    version: "1.0"
+    parameters:
+      subject: storefront-nonprod
+  - tenant: storefront
+    environment: storefront-nonprod
+    capability: tenant-network
+    version: "1.0"
+    parameters:
+      isolation: tenant-default-deny
+  - tenant: storefront
+    environment: storefront-nonprod
+    capability: artifact-promotion
+    version: "1.0"
+    parameters:
+      artifact-digest: sha256:storefront-nonprod
+  - tenant: fulfillment
+    environment: fulfillment-nonprod
+    capability: tenant-storage
+    version: "1.0"
+    parameters:
+      class: small
+      size-gb: 20
+  - tenant: fulfillment
+    environment: fulfillment-nonprod
+    capability: workload-identity
+    version: "1.0"
+    parameters:
+      subject: fulfillment-nonprod
+  - tenant: fulfillment
+    environment: fulfillment-nonprod
+    capability: tenant-network
+    version: "1.0"
+    parameters:
+      isolation: tenant-default-deny
+  - tenant: fulfillment
+    environment: fulfillment-nonprod
+    capability: artifact-promotion
+    version: "1.0"
+    parameters:
+      artifact-digest: sha256:fulfillment-nonprod

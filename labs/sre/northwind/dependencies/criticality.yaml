@@ -1,0 +1,21 @@
+schema_version: 1
+kind: dependency-criticality
+id: northwind-dependency-criticality
+assignments:
+  - id: payment-order-path
+    provider: payment
+    journey: accept-and-complete-order
+    sli: order_success_ratio
+    criticality: critical
+    failure_effect: journey-burn
+  - id: warehouse-dispatch-path
+    provider: warehouse
+    journey: dispatch-fulfillment
+    sli: dispatch_success_ratio
+    criticality: critical
+    failure_effect: journey-burn
+  - id: notification-email
+    provider: notification-service
+    criticality: non-critical
+    failure_effect: record
+    remaining_owner: storefront-team

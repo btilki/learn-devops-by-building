@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gameday-scenarios.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "scenarios"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "gameday-scenarios"},
+    "id": {"type": "string", "minLength": 1},
+    "scenarios": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "joins", "max_blast_radius"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "kind": {
+            "enum": [
+              "error-budget-freeze",
+              "on-call-page-path",
+              "dependency-loss",
+              "regional-loss-tabletop",
+              "mixed-backup",
+              "unbounded-chaos"
+            ]
+          },
+          "joins": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "max_blast_radius": {"const": "declared-scenario"},
+          "insufficient_alone": {"type": "boolean"},
+          "mode": {"enum": ["tabletop", "simulated"]},
+          "feeds_action": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

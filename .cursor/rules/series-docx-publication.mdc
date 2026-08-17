@@ -1,0 +1,22 @@
+---
+description: Practical Engineering series Word publication style for current and future DOCX files
+globs: tools/docx/**/*.py,**/build_*docx*.py,SERIES-PUBLICATION-STYLE.md,SERIES-DECISIONS.md,releases/*.docx
+alwaysApply: true
+---
+
+# Series DOCX publication
+
+When building or restyling any Practical Engineering Word file, follow `SERIES-PUBLICATION-STYLE.md` and import colors from `tools/docx/series_style.py`. Do not invent a new palette.
+
+Required treatment:
+
+- Author is `Birol Tilki` on the title page and in document properties.
+- First published edition of every book is `v1.0`. Title line: `Version 1.0`. Filenames: `practical-<book>-engineering-v1.0.docx` and `.pdf`.
+- Contents omits How to Use This Book. List numbers match chapter numbers. Put the number inside the hyperlink text. Wrap the heading text with the bookmark.
+- Running header is the numbered chapter title only. Do not put the book name in the header.
+- Table header cells: `#D9D9D9`. Body rows alternate `#FFFFFF` and `#E8E8E8`. Borders: `#4B5563`. No blue-gray fills.
+- Two-column tables are equal width. Bold the After column only in Before/After tables.
+- Practice boxes: `#EAF4FF` with a `#2E74B5` left bar.
+- Source Code paragraphs: `#F2F2F2` (Gray-5%).
+
+Apply this to every future series DOCX (SRE, Platform Engineering, and later books), not only DevOps and DevSecOps.

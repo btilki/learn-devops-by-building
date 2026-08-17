@@ -1,0 +1,23 @@
+schema_version: 1
+kind: build-provenance
+artifact:
+  name: order-worker
+  digest: sha256:7777777777777777777777777777777777777777777777777777777777777777
+source:
+  revision: 8a19e60
+dependency_resolution: sha256:3bf2802d2beeaf1c327954060aa2f4df1dbdb538d25b64420e018fb810c10e2e
+builder:
+  id: northwind-builder-v3
+  isolated: true
+  hermetic: true
+parameters:
+  release: true
+signature:
+  valid: true
+  key_id: release-key-v2
+sbom_digest: sha256:8888888888888888888888888888888888888888888888888888888888888888
+transparency_entry: northwind-log-pre-rotation
+release:
+  requester: release-bot
+  approvers: [release-manager]
+  target: production

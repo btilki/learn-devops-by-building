@@ -1,0 +1,25 @@
+{
+  "active": {
+    "version": "config-v1",
+    "source_revision": "northwind-config@8f31e2a",
+    "values": {
+      "order_mode": "async",
+      "dependency_timeout_ms": 1500
+    }
+  },
+  "candidate": {
+    "version": "config-v2",
+    "source_revision": "northwind-config@91bad00",
+    "values": {
+      "order_mode": "async",
+      "dependency_timeout_ms": "fast",
+      "unknown_toggle": true
+    }
+  },
+  "expected": {
+    "candidate_accepted": false,
+    "active_version_after_reload": "config-v1",
+    "readiness_after_reload": true,
+    "validation_event_required": true
+  }
+}

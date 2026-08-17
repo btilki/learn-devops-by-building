@@ -1,0 +1,24 @@
+schema_version: 1
+kind: assurance-report
+id: Q3-2026-corrected-assurance
+owner: delivery-security
+status: fail
+evaluated_at: "2026-08-15T12:30:00Z"
+criteria:
+  exceptions_bounded: true
+  detection_covers_priority_paths: true
+  telemetry_complete_for_claimed_window: false
+  incident_evidence_custody_valid: true
+  recovery_claim_within_limits: true
+  attack_path_register_current: false
+  material_change_review_complete: false
+active_exceptions: []
+evidence:
+  mechanism_evidence: [governance/control-catalog.yaml#objectives]
+  decision_evidence: [risk/risk-register.yaml#risks]
+  outcome_evidence: [build/chapter-15-business-reconciliation.json#terminal_order_outcomes]
+  recovery_evidence: [build/chapter-15-recovery-verification.json#trust_restored]
+limitations:
+  - Assurance remains failed until telemetry, attack-path coverage, and review evidence are restored.
+  - This report does not certify compliance with any legal or industry framework.
+improvement_refs: [governance/review-calendar.yaml#obligations]

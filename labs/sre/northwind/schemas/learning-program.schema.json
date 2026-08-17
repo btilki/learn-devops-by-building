@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "learning-program.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "required_incidents",
+    "forbidden_actions",
+    "forbidden_substitutes",
+    "verification_independent",
+    "toil_join",
+    "program_fails_when",
+    "review_trigger"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "learning-program"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "required_incidents": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "forbidden_substitutes": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "enum": ["devsecops-eradication", "devops-one-change-retrospective"]
+      }
+    },
+    "verification_independent": {"const": true},
+    "toil_join": {"const": "northwind-toil-bound"},
+    "program_fails_when": {"const": "repeated-cascade-without-verified-action"},
+    "review_trigger": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

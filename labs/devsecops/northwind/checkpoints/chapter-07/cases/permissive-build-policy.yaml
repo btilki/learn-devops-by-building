@@ -1,0 +1,8 @@
+schema_version: 1
+kind: build-trust-policy
+trusted_builders: [northwind-builder-v3, compromised-builder-v2]
+trusted_signing_keys: [release-key-v2, release-key-v3]
+require_isolation: false
+require_hermetic: false
+allowed_parameters:
+  release: [true]

@@ -1,0 +1,23 @@
+schema_version: 1
+kind: build-provenance
+artifact:
+  name: order-worker
+  digest: sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+source:
+  revision: 8a19e60
+dependency_resolution: sha256:3bf2802d2beeaf1c327954060aa2f4df1dbdb538d25b64420e018fb810c10e2e
+builder:
+  id: compromised-builder-v2
+  isolated: false
+  hermetic: false
+parameters:
+  release: true
+signature:
+  valid: true
+  key_id: release-key-v2
+sbom_digest: sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+transparency_entry: northwind-log-attack-19
+release:
+  requester: compromised-maintainer
+  approvers: [release-manager]
+  target: production

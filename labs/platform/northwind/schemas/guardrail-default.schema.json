@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "guardrail-default.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "exits_allowed",
+    "defaults"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "guardrail-defaults"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "exits_allowed": {"type": "boolean"},
+    "defaults": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "owner", "enforcement_point", "inherited_policy", "applies_to"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "enforcement_point": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "inherited_policy": {"type": "string", "minLength": 1},
+          "applies_to": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"enum": ["paved", "exit"]}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

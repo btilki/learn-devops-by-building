@@ -1,0 +1,19 @@
+schema_version: 1
+kind: devex-samples
+id: northwind-devex-samples
+samples:
+  - indicator: time-to-first-environment
+    tenant: fulfillment
+    observed_at: "2026-08-16T12:00:00Z"
+    value: 48
+    unit: hours
+  - indicator: paved-road-completion
+    tenant: fulfillment
+    system: fulfillment-api
+    observed_at: "2026-08-16T12:00:00Z"
+    value: 1
+    unit: completions
+  - indicator: catalog-freshness
+    observed_at: "2026-08-16T12:00:00Z"
+    value: 1
+    unit: current-entries

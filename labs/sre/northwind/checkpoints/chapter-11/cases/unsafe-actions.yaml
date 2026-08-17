@@ -1,0 +1,10 @@
+schema_version: 1
+kind: learning-actions
+id: northwind-learning-actions
+actions:
+  - id: be-more-careful
+    incident: spanning-payment-and-dispatch
+    change: be-more-careful
+    verification:
+      producer: polished-postmortem
+      independent_of_record: false

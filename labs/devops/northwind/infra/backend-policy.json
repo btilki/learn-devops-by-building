@@ -1,0 +1,7 @@
+{
+  "backend": "remote",
+  "encryption": true,
+  "locking": true,
+  "plan_role": "infrastructure-planner",
+  "apply_role": "infrastructure-applier"
+}

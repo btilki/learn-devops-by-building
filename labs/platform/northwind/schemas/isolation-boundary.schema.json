@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "isolation-boundary.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "dimensions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "isolation-boundaries"},
+    "id": {"type": "string", "minLength": 1},
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "allowed_sharing", "denied_inheritance", "blast_radius"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "allowed_sharing": {"type": "string", "minLength": 1},
+          "denied_inheritance": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "blast_radius": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

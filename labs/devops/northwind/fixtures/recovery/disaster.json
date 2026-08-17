@@ -1,0 +1,21 @@
+{
+  "incident_minute": 0,
+  "last_safe_database_minute": -5,
+  "accepted_orders": 1000,
+  "database_orders_at_safe_point": 995,
+  "durable_queue_orders_after_safe_point": 5,
+  "provider_payments": 1000,
+  "duplicate_charges": 0,
+  "inventory_discrepancies": 0,
+  "desired_revision": "northwind-prod@8f31e2a",
+  "restored_revision": "northwind-prod@8f31e2a",
+  "restore_durations_minutes": {
+    "emergency-identity": 5,
+    "infrastructure": 7,
+    "postgres-and-wal": 15,
+    "durable-queue": 7,
+    "workloads": 9,
+    "gitops-controller": 5,
+    "business-reconciliation": 4
+  }
+}

@@ -1,0 +1,16 @@
+schema_version: 1
+kind: contract-compatibility
+id: northwind-contract-compatibility
+breaking:
+  - tenant-parameter-add
+  - tenant-parameter-remove
+  - tenant-parameter-rename
+allowed_without_bump:
+  - hidden-module-refactor
+changes:
+  - capability: tenant-storage
+    version: "2.0"
+    kind: tenant-parameter-rename
+    from_field: class
+    to_field: sku
+    migration_note: class-becomes-sku

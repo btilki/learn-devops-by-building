@@ -1,0 +1,11 @@
+required_page_slis:
+  - order_success_ratio
+  - dispatch_success_ratio
+page_destinations:
+  order_success_ratio: storefront-oncall
+  dispatch_success_ratio: fulfillment-oncall
+job_time_ticket_sli: time-to-first-environment
+job_time_ticket_destination: platform-oncall
+forbidden_page_slis:
+  - cpu-utilization
+  - replica-ready

@@ -1,0 +1,16 @@
+schema_version: 1
+kind: learning-program
+id: northwind-learning-program
+owner: reliability-program
+required_incidents:
+  - spanning-payment-and-dispatch
+  - platform-product-job-time
+forbidden_actions:
+  - be-more-careful
+forbidden_substitutes:
+  - devsecops-eradication
+  - devops-one-change-retrospective
+verification_independent: true
+toil_join: northwind-toil-bound
+program_fails_when: repeated-cascade-without-verified-action
+review_trigger: chapter-10-incident-ids-or-toil-bound-change

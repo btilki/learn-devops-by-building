@@ -1,0 +1,19 @@
+schema_version: 1
+kind: failover-isolation
+id: northwind-failover-isolation
+fulfillment_intent: storefront
+mixed_replay: applied
+tenants:
+  - id: storefront
+    serving: continue
+    change: continue
+    policy_join: none
+    last_known_good: newest
+  - id: storefront
+    serving: continue
+    change: continue
+    policy_join: none
+    last_known_good: newest
+rejected_replays: []
+survives_failover: false
+source: mixed-backup

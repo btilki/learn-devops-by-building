@@ -1,0 +1,7 @@
+schema_version: 1
+kind: portfolio-incident-roles
+id: northwind-incident-roles
+roles:
+  - id: whoever-answered
+    kind: command
+    may_close: true

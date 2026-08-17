@@ -1,0 +1,14 @@
+{
+  "stable": {
+    "requests": 950,
+    "order_success_ratio": 0.998,
+    "order_latency_p95_ms": 380
+  },
+  "candidate": {
+    "requests": 50,
+    "order_success_ratio": 0.88,
+    "order_latency_p95_ms": 2300,
+    "ready": true,
+    "dependency": "payment-provider"
+  }
+}

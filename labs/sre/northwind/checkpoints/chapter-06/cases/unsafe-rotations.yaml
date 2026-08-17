@@ -1,0 +1,10 @@
+schema_version: 1
+kind: oncall-rotations
+id: northwind-oncall-rotations
+rotations:
+  - id: storefront-chat
+    system: storefront-oncall
+    primary: slack
+    secondary: ""
+    living_primary: false
+    as_of: "2026-08-16T00:00:00Z"

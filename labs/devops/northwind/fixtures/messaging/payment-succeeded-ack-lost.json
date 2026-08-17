@@ -1,0 +1,14 @@
+{
+  "message_id": "order-1042-payment-v1",
+  "order_id": "1042",
+  "deliveries": 2,
+  "first_delivery": {
+    "payment_result": "accepted",
+    "state_committed": true,
+    "acknowledgement": "lost"
+  },
+  "second_delivery": {
+    "same_message_id": true,
+    "unprotected_handler_would_request_payment": true
+  }
+}

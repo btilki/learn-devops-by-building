@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "tenancy-sharing.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "shared", "denied"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "tenancy-sharing"},
+    "id": {"type": "string", "minLength": 1},
+    "shared": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "mode", "reason", "tenants_may_not_inherit"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "mode": {"enum": ["shared-control-plane", "shared-nothing", "shared-quota-pool"]},
+          "reason": {"type": "string", "minLength": 1},
+          "tenants_may_not_inherit": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "denied": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "reason"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,25 @@
+schema_version: 1
+kind: evidence-manifest
+case_id: INC-2026-0815-01
+custodian: security-response
+items:
+- path: response/evidence/build/chapter-13-alert.json
+  sha256: sha256:e2f4a8db9186e7b2db493365f9454a93ceb32dcfe43d25198360c13228148190
+  collected_at: '2026-08-15T10:20:00Z'
+  provenance: build/chapter-13-alert.json
+- path: response/evidence/runtime/events.jsonl
+  sha256: sha256:98001eb304ba91a4c73f33879645633c1542b93a8abda7ca22c91487478ea02c
+  collected_at: '2026-08-15T10:20:00Z'
+  provenance: runtime/events.jsonl
+- path: response/evidence/identity/subjects.yaml
+  sha256: sha256:c7baabfd3351b53bdb51dee62ac35704ec03b4ad658ff015ec9e7bbb068415d4
+  collected_at: '2026-08-15T10:20:00Z'
+  provenance: identity/subjects.yaml
+- path: response/evidence/supply-chain/deployment-evidence.yaml
+  sha256: sha256:20c8ca277e9cb79dca1b7ced7971c7505e58fe0b01189d343f319c5aebc8c746
+  collected_at: '2026-08-15T10:20:00Z'
+  provenance: supply-chain/deployment-evidence.yaml
+- path: response/evidence/data-security/payment-reconciliation.yaml
+  sha256: sha256:185185b9d3818c32af316e6368bab730f738527bf0bcab20fff7c65c96bc2d13
+  collected_at: '2026-08-15T10:20:00Z'
+  provenance: data-security/payment-reconciliation.yaml

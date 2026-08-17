@@ -1,0 +1,6 @@
+schema_version: 1
+kind: toil-inventory
+id: northwind-toil-inventory
+items:
+  - id: tickets
+    hours_per_week: 10

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fleet-migrations.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "migrations"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "fleet-migrations"},
+    "id": {"type": "string", "minLength": 1},
+    "migrations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "tenant",
+          "capability",
+          "from_version",
+          "to_version",
+          "applied_version",
+          "note",
+          "evidence"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "tenant": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "capability": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "from_version": {"type": "string", "minLength": 1},
+          "to_version": {"type": "string", "minLength": 1},
+          "applied_version": {"type": "string", "minLength": 1},
+          "note": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "evidence": {"enum": ["pending", "complete"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

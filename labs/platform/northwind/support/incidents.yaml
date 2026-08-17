@@ -1,0 +1,15 @@
+schema_version: 1
+kind: support-incidents
+id: northwind-support-incidents
+incidents:
+  - id: fulfillment-warehouse-delay
+    system: fulfillment-api
+    class: tenant-application
+    owner: fulfillment-team
+    escalation: fulfillment-oncall
+  - id: environment-lease-wait
+    system: environment-provisioning
+    class: platform-product
+    owner: platform-team
+    escalation: platform-oncall
+    indicator: time-to-first-environment

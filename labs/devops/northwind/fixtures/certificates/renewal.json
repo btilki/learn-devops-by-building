@@ -1,0 +1,31 @@
+{
+  "current_certificate": {
+    "serial": "cert-old",
+    "not_before_day": -345,
+    "not_after_day": 20,
+    "hostnames": ["checkout.northwind.example"],
+    "chain_valid": true
+  },
+  "renewal": {
+    "requested_day": -10,
+    "replacement_issued_day": -9,
+    "endpoint_switched_day": -8
+  },
+  "replacement_certificate": {
+    "serial": "cert-new",
+    "not_before_day": -9,
+    "not_after_day": 356,
+    "hostnames": ["checkout.northwind.example"],
+    "chain_valid": true
+  },
+  "endpoint_after_switch": {
+    "served_serial": "cert-new",
+    "tls_available": true,
+    "plaintext_fallback": false
+  },
+  "expired_without_replacement": {
+    "observation_day": 21,
+    "tls_available": false,
+    "plaintext_fallback": false
+  }
+}

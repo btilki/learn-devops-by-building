@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "owner.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owners"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "reliability-owners"},
+    "id": {"type": "string", "minLength": 1},
+    "owners": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "role", "journeys"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "role": {"type": "string", "minLength": 1},
+          "journeys": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

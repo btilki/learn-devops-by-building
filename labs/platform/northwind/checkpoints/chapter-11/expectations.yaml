@@ -1,0 +1,9 @@
+required_pool: cluster-capacity-pool
+required_units:
+  - environment-hour
+  - successful-provision
+denied_burst: unlimited-burst-into-peer-quota
+quality_gates:
+  environment-hour: lease-bound-on-pool
+  successful-provision: time-to-first-environment-sampled
+as_of: "2026-08-16T12:00:00Z"

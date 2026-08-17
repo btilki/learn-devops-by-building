@@ -1,0 +1,29 @@
+{
+  "artifact_before": "storefront-api@sha256:stable",
+  "artifact_after": "storefront-api@sha256:stable",
+  "initial_active_version": "config-v1",
+  "candidate": {
+    "version": "config-v2",
+    "source_revision": "8c31config",
+    "reviewed": true,
+    "schema_valid": true
+  },
+  "environment_observations": [
+    {"environment": "development", "order_success_ratio": 0.999},
+    {"environment": "staging", "order_success_ratio": 0.997},
+    {"environment": "production", "order_success_ratio": 0.91}
+  ],
+  "recovery": {
+    "revision": "9d42config-revert",
+    "reviewed": true,
+    "version": "config-v1",
+    "order_success_ratio": 0.999
+  },
+  "emergency_override": {
+    "actor": "operator-17",
+    "created_minute": 0,
+    "expires_minute": 30,
+    "observed_minute": 31,
+    "backport_revision": "9d42config-revert"
+  }
+}

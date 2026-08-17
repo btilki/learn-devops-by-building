@@ -1,0 +1,20 @@
+schema_version: 1
+kind: portfolio-failover
+id: northwind-portfolio-failover
+owner: reliability-program
+follows: northwind-regional-architecture
+lost: region-primary
+target: region-primary
+when: we-have-backups
+mode: restore-in-place
+replay: newest-mixed-region
+last_known_good:
+  - region: region-primary
+    identity: newest
+commander: slack
+recovery: devops-one-environment-reconstruction
+insufficient_restores: []
+insufficient_identities:
+  - "1.0"
+insufficient_evidence: []
+review_trigger: never

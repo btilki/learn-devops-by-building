@@ -1,0 +1,15 @@
+{
+  "coordination": {
+    "scope": "all-northwind-controllers",
+    "global_parallel_apply_limit": 10,
+    "retry_jitter_required": true
+  },
+  "waves": {
+    "ordered": true,
+    "stop_after_unhealthy_wave": true
+  },
+  "degraded_control_plane": {
+    "prune_action": "suspend",
+    "source_mutation": "forbidden"
+  }
+}

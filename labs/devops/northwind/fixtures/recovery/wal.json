@@ -1,0 +1,6 @@
+{
+  "base_backup_id": "base-001",
+  "continuous_from_minute": -60,
+  "continuous_to_minute": -5,
+  "orders_after_replay": 995
+}

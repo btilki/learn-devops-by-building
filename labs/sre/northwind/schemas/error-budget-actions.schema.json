@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "error-budget-actions.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "actions"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "error-budget-actions"},
+    "id": {"type": "string", "minLength": 1},
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "action",
+          "change_kind",
+          "target",
+          "owner",
+          "expires_at",
+          "review_trigger"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "slo": {"type": "string", "minLength": 1},
+          "action": {"enum": ["continue", "slow", "freeze"]},
+          "change_kind": {"enum": ["release", "fleet", "non-critical"]},
+          "target": {"type": "string", "minLength": 1},
+          "promotion_identity": {"type": "string", "minLength": 1},
+          "freeze_reason": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "expires_at": {"type": "string", "minLength": 1},
+          "review_trigger": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

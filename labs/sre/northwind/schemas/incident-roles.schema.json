@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "incident-roles.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "roles"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "portfolio-incident-roles"},
+    "id": {"type": "string", "minLength": 1},
+    "roles": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "may_close"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "kind": {"enum": ["command", "operate"]},
+          "may_close": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

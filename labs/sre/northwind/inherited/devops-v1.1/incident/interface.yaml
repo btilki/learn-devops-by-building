@@ -1,0 +1,4 @@
+schema_version: 1
+kind: inherited-incident-interface
+id: devops-v1.1-incident
+required_recovery_evidence: [desired_actual_agreement, healthy_consecutive_samples, terminal_order_outcomes]

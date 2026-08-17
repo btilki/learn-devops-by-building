@@ -1,0 +1,17 @@
+schema_version: 1
+kind: catalog-ownership
+id: northwind-catalog-ownership
+ownership:
+  - system: storefront-api
+    owner: storefront-team
+    escalation: storefront-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: fulfillment-api
+    owner: fulfillment-legacy-group
+    escalation: chat-history
+    last_reviewed_at: "2025-12-01T00:00:00Z"
+    reported_status: green
+  - system: software-catalog
+    owner: platform-team
+    escalation: platform-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"

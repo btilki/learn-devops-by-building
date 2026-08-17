@@ -1,0 +1,23 @@
+schema_version: 1
+kind: guardrail-scorecards
+id: northwind-guardrail-scorecards
+scorecards:
+  - system: storefront-api
+    tenant: storefront
+    path: paved
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]
+  - system: order-worker
+    tenant: storefront
+    path: paved
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]
+  - system: notification-service
+    tenant: storefront
+    path: exit
+    exit: notification-skip-slow-template
+    defaults_present: [artifact-digest, workload-identity-claims, no-cluster-admin]
+  - system: fulfillment-api
+    tenant: fulfillment
+    path: paved
+    defaults_present: [workload-identity-claims, no-cluster-admin]
+    exception: exception-dependency-mirror-2026-08
+    reported_status: green

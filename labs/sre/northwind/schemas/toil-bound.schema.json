@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "toil-bound.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "bound_fraction",
+    "available_hours_per_week",
+    "review_trigger",
+    "scope_proposals"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "toil-bound"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "bound_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+    "available_hours_per_week": {"type": "number", "exclusiveMinimum": 0},
+    "review_trigger": {"type": "string", "minLength": 1},
+    "scope_proposals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "slo", "criticality", "decision", "reason"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "slo": {"type": "string", "minLength": 1},
+          "criticality": {"enum": ["critical", "supporting"]},
+          "decision": {"enum": ["deny"]},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

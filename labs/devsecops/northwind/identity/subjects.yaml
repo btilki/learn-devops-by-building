@@ -1,0 +1,13 @@
+schema_version: 1
+kind: identity-subject-register
+subjects:
+  - id: order-worker
+    type: workload
+    status: active
+    issuer: northwind-workload-issuer
+    audiences: [payment-provider, postgresql, email-provider]
+    roles: [order-processor]
+  - {id: maintainer-alice, type: human, issuer: northwind-human-idp, audiences: [northwind-source], roles: [source-maintainer], status: active}
+  - {id: release-workflow, type: automation, issuer: northwind-oidc, audiences: [northwind-registry], roles: [artifact-publisher], status: active}
+  - {id: deployment-controller, type: automation, issuer: northwind-oidc, audiences: [northwind-production], roles: [production-reconciler], status: active}
+  - {id: compromised-session, type: human, issuer: northwind-human-idp, audiences: [northwind-source], roles: [source-maintainer], status: active}

@@ -1,0 +1,29 @@
+{
+  "ownership": {
+    "hostname": "checkout.northwind.example",
+    "service_owner": "checkout-platform",
+    "issuer": "managed-acme",
+    "provisioning": "declarative"
+  },
+  "key_material": {
+    "source": "managed-reference",
+    "embedded_in_state": false
+  },
+  "renewal": {
+    "automated": true,
+    "renew_before_expiry_days": 30,
+    "overlap_required": true,
+    "alert_when_remaining_days": 21
+  },
+  "validation": {
+    "hostname": true,
+    "chain": true,
+    "served_serial": true,
+    "not_after": true
+  },
+  "expiry": {
+    "behavior": "tls-unavailable",
+    "plaintext_fallback": false,
+    "traffic_release_requires_valid_certificate": true
+  }
+}

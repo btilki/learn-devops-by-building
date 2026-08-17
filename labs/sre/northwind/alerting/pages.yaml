@@ -1,0 +1,20 @@
+schema_version: 1
+kind: burn-pages
+id: northwind-burn-pages
+pages:
+  - id: page-order-success-fast
+    burn: order-success-fast-burn
+    destination: storefront-oncall
+    destination_kind: catalog-contact
+  - id: page-order-success-slow
+    burn: order-success-slow-burn
+    destination: storefront-oncall
+    destination_kind: catalog-contact
+  - id: page-dispatch-success-fast
+    burn: dispatch-success-fast-burn
+    destination: fulfillment-oncall
+    destination_kind: catalog-contact
+  - id: page-dispatch-success-slow
+    burn: dispatch-success-slow-burn
+    destination: fulfillment-oncall
+    destination_kind: catalog-contact

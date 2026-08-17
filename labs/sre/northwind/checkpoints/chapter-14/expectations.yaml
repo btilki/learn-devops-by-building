@@ -1,0 +1,5 @@
+rto_seconds: 14400
+rpo_seconds: 900
+required_journeys:
+  - accept-and-complete-order
+  - dispatch-fulfillment

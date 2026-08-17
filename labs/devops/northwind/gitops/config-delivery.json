@@ -1,0 +1,30 @@
+{
+  "source": {
+    "path": "environments/production/storefront-config.yaml",
+    "versioned": true,
+    "protected_review": true,
+    "runtime_contract": "config/runtime-contract.json"
+  },
+  "promotion": {
+    "order": ["development", "staging", "production"],
+    "artifact_and_config_separate": true,
+    "production_failure_action": "freeze-candidate"
+  },
+  "reconciliation": {
+    "apply": "validate-then-atomic",
+    "report_active_version": true,
+    "failed_candidate": "retain-evidence-and-last-known-good"
+  },
+  "recovery": {
+    "method": "reviewed-config-revert",
+    "target": "last-known-good",
+    "verify_active_version": true
+  },
+  "emergency_override": {
+    "identity": "individual",
+    "maximum_minutes": 30,
+    "audit_required": true,
+    "backport_required": true,
+    "auto_remove_at_expiry": true
+  }
+}

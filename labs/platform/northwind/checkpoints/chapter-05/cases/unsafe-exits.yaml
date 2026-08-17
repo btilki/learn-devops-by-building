@@ -1,0 +1,4 @@
+schema_version: 1
+kind: supported-exits
+id: northwind-supported-exits
+exits: []

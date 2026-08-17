@@ -1,0 +1,12 @@
+schema_version: 1
+kind: sli-method
+id: northwind-sli-selection
+owner: reliability-program
+treatments: [accept, adjacent, reject]
+required_fields:
+  - owner
+forbidden_justifications: []
+allowed_classes:
+  - user-journey-sli
+  - platform-product-sli
+  - component-uptime

@@ -1,0 +1,5 @@
+schema_version: 1
+kind: inherited-gitops-interface
+id: devops-v1.1-gitops
+required_state: [reviewed_intent, immutable_artifact, independent_configuration, reconciliation_result]
+controller_may_rewrite_source: false

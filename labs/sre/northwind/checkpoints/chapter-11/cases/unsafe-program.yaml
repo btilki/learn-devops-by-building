@@ -1,0 +1,12 @@
+schema_version: 1
+kind: learning-program
+id: northwind-learning-program
+owner: reliability-program
+required_incidents:
+  - spanning-payment-and-dispatch
+forbidden_actions: []
+forbidden_substitutes: []
+verification_independent: false
+toil_join: none
+program_fails_when: never
+review_trigger: never

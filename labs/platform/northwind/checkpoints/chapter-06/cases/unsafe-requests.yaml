@@ -1,0 +1,16 @@
+schema_version: 1
+kind: environment-requests
+id: northwind-environment-requests
+requests:
+  - id: request-storefront-nonprod
+    tenant: storefront
+    environment: storefront-nonprod
+    requester: storefront-team
+    class: ephemeral
+    requested_at: "2026-08-16T00:00:00Z"
+  - id: request-fulfillment-nonprod
+    tenant: fulfillment
+    environment: fulfillment-nonprod
+    requester: fulfillment-team
+    class: ephemeral
+    requested_at: "2026-08-16T00:00:00Z"

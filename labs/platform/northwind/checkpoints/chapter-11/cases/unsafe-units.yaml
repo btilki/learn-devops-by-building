@@ -1,0 +1,17 @@
+schema_version: 1
+kind: quota-units
+id: northwind-quota-units
+pool: cluster-capacity-pool
+units:
+  - id: environment-hour
+    meters: cluster-capacity-pool
+    quality_gate: lease-bound-on-pool
+    owner: platform-team
+  - id: successful-provision
+    meters: obtain-bounded-environment
+    quality_gate: time-to-first-environment-sampled
+    owner: platform-team
+  - id: order_success_ratio
+    meters: storefront-orders
+    quality_gate: none
+    owner: platform-team

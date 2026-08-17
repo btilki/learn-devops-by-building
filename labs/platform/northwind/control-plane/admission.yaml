@@ -1,0 +1,36 @@
+schema_version: 1
+kind: control-plane-admission
+id: northwind-control-plane-admission
+admitted_versions:
+  - capability: tenant-storage
+    version: "1.0"
+  - capability: tenant-storage
+    version: "2.0"
+  - capability: workload-identity
+    version: "1.0"
+  - capability: tenant-network
+    version: "1.0"
+  - capability: artifact-promotion
+    version: "1.0"
+decisions:
+  - subject: platform-team
+    action: approve-plane-upgrade
+    resource: kubernetes-control-plane
+    context: plane-upgrade-1-1
+    policy_identity: northwind-plane-admission
+    result: allow
+    reason: reviewed-plane-upgrade
+  - subject: plane-reconciler
+    action: reconcile
+    resource: storefront-nonprod
+    context: tenant-storage/2.0
+    policy_identity: northwind-plane-admission
+    result: allow
+    reason: admitted-contract-version
+  - subject: plane-reconciler
+    action: reconcile
+    resource: fulfillment-nonprod
+    context: tenant-storage/1.0
+    policy_identity: northwind-plane-admission
+    result: allow
+    reason: admitted-contract-version

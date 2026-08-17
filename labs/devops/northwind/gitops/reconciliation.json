@@ -1,0 +1,41 @@
+{
+  "source": {
+    "declarative": true,
+    "versioned": true,
+    "protected_production_path": true,
+    "artifact_identity": "verified-digest",
+    "secrets": "references-only"
+  },
+  "promotion": {
+    "release_automation": "propose-change",
+    "merge_authority": "protected-review",
+    "candidate_field": "candidate_artifact",
+    "stable_transition": "reviewed-after-rollout-verification"
+  },
+  "controller": {
+    "mode": "pull",
+    "repository_access": "read",
+    "cluster_scope": "northwind-namespace",
+    "workload_identity": true,
+    "can_write_source": false
+  },
+  "reconciliation": {
+    "continuous": true,
+    "drift_detection": true,
+    "self_heal": "safe-drift-only",
+    "prune": "allowlisted-with-confirmation",
+    "ordered_dependencies": true,
+    "health_timeout": 900,
+    "failed_health_action": "pause-and-alert"
+  },
+  "exception": {
+    "suspension_time_bound": true,
+    "audit_required": true,
+    "backport_required": true
+  },
+  "recovery": {
+    "method": "reviewed-revert",
+    "preserve_failed_revision_evidence": true,
+    "verify_stable_health": true
+  }
+}

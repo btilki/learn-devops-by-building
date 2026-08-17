@@ -1,0 +1,35 @@
+{
+  "interfaces": {
+    "flags": {
+      "use_for": ["listen-address", "config-path"],
+      "change_behavior": "restart-required"
+    },
+    "environment": {
+      "use_for": ["deployment-environment", "config-version"],
+      "change_behavior": "restart-required",
+      "explicit_keys_only": true
+    },
+    "mounted_file": {
+      "path": "/etc/northwind/runtime.yaml",
+      "use_for": "structured-non-secret-runtime-config",
+      "read_only": true,
+      "reloadable": true
+    }
+  },
+  "validation": {
+    "schema_version": "1",
+    "required_keys": ["order_mode", "dependency_timeout_ms"],
+    "type_check": true,
+    "reject_unknown_keys": true,
+    "validate_before_ready": true
+  },
+  "reload": {
+    "atomic": true,
+    "invalid_candidate": "reject-and-keep-last-known-good",
+    "emit_result": true
+  },
+  "evidence": {
+    "config_version_in_telemetry": true,
+    "source_revision_required": true
+  }
+}

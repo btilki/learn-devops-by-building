@@ -1,0 +1,6 @@
+{
+  "maximum_oldest_message_age_seconds": 300,
+  "minimum_order_success_ratio": 0.995,
+  "maximum_duplicate_charges": 0,
+  "minimum_consecutive_samples": 2
+}

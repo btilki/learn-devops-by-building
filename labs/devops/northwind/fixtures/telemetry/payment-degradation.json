@@ -1,0 +1,9 @@
+{
+  "requests": [
+    {"route": "/catalog", "status": 200, "latency_ms": 42, "dependency": "none"},
+    {"route": "/orders", "status": 503, "latency_ms": 2200, "dependency": "payment-provider"},
+    {"route": "/orders", "status": 503, "latency_ms": 2400, "dependency": "payment-provider"}
+  ],
+  "process_cpu_percent": 31,
+  "release_digest": "sha256:ecc55173e6c10ec59cac9538a34ac7142c52e8ff504d7e045ed3103c650efb32"
+}

@@ -1,0 +1,15 @@
+schema_version: 1
+kind: toil-bound
+id: northwind-toil-bound
+owner: reliability-program
+bound: we-are-busy
+toil_fraction: 0.1
+available_hours_per_week: 20
+review_trigger: never
+scope_proposals:
+  - id: propose-notification-critical-slo
+    slo: notification-service
+    criticality: critical
+    decision: allow
+    justification: on-call-already-watches-email
+    reason: on-call-already-watches-email

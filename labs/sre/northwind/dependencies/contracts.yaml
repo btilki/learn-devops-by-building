@@ -1,0 +1,26 @@
+schema_version: 1
+kind: dependency-contracts
+id: northwind-dependency-contracts
+owner: reliability-program
+contracts:
+  - id: payment-order-contract
+    provider: payment
+    timeout: 2s
+    retry_budget: 1
+    fallback: fail-closed
+    evidence: payment-timeout-is-storefront-burn
+    review_trigger: payment-timeout-or-criticality-changes
+  - id: warehouse-dispatch-contract
+    provider: warehouse
+    timeout: 5s
+    retry_budget: 1
+    fallback: fail-closed
+    evidence: warehouse-timeout-is-fulfillment-burn
+    review_trigger: warehouse-timeout-or-criticality-changes
+  - id: notification-email-contract
+    provider: notification-service
+    timeout: 10s
+    retry_budget: 0
+    fallback: skip-and-record
+    evidence: email-failure-is-not-order-burn
+    review_trigger: notification-criticality-or-fallback-changes

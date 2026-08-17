@@ -1,0 +1,8 @@
+schema_version: 1
+kind: contract-compatibility
+id: northwind-contract-compatibility
+breaking:
+  - none
+allowed_without_bump:
+  - hidden-module-refactor
+changes: []

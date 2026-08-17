@@ -1,0 +1,35 @@
+schema_version: 1
+kind: inherited-interface-manifest
+id: practical-devsecops-engineering-v1.0
+source:
+  release: v1.0
+  companion_lab_commit: unpublished-working-tree
+interfaces:
+  - id: authorization-decision-shape
+    source_path: identity/trust-policy.yaml
+    source_sha256: 6d967bccd712174b09f77c63dcb24445887d34865256fdd647e24fc2e52bae81
+    local_path: authorization/interface.yaml
+    local_sha256: 29c310bf79b0aa63f367ed7982cc139499a4cd9b65fa973ea38a99e7e10e062b
+    representation: reduced-interface
+    consumers: [8, 9]
+  - id: exception-shape
+    source_path: policy/exceptions.yaml
+    source_sha256: 43fabbba9c910a3609ea9b0b6bca41ca6f7859912d853ca4302a8fc4b531ffe7
+    local_path: exceptions/interface.yaml
+    local_sha256: c0547daa245669a217bc8ed0bdbdd81f7320364b5a707a5f2c397319d1530bac
+    representation: reduced-interface
+    consumers: [9]
+  - id: control-catalog-shape
+    source_path: governance/control-catalog.yaml
+    source_sha256: 03202beed71e0e7ba6b095c8f808eb260e4420a21518c4d6907d464ceca7d8e5
+    local_path: controls/interface.yaml
+    local_sha256: 71501c9eacf6bfb7489655699b134631d2ac87b07ac7b49fff7871e40b61aaa5
+    representation: reduced-interface
+    consumers: [9]
+  - id: evidence-map-shape
+    source_path: governance/evidence-map.yaml
+    source_sha256: 2471bdf4aa8e208e3496552f704722d4a62f8ffc20aad6c076142c21bbcdf350
+    local_path: evidence/interface.yaml
+    local_sha256: 0fac95754018369936d3e649fce2804977fdec21d2a5136c058b52b378a1d7e3
+    representation: reduced-interface
+    consumers: [9, 13]

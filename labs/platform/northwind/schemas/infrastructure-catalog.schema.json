@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "infrastructure-catalog.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "capabilities", "bindings"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "infrastructure-catalog"},
+    "id": {"type": "string", "minLength": 1},
+    "capabilities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "owner"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "bindings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["tenant", "environment", "capability", "version", "parameters"],
+        "properties": {
+          "tenant": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "environment": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "capability": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "version": {"type": "string", "minLength": 1},
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {"type": ["string", "integer"]}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

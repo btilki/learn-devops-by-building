@@ -1,0 +1,4 @@
+kind: synthetic-data-exposure
+store: nonproduction
+fields: [order_id, customer_email, payment_reference]
+values: [synthetic-order-9001, synthetic@example.invalid, synthetic-payment-ref]

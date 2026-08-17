@@ -1,0 +1,32 @@
+schema_version: 1
+kind: catalog-ownership
+id: northwind-catalog-ownership
+ownership:
+  - system: storefront-api
+    owner: storefront-team
+    escalation: storefront-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: order-worker
+    owner: storefront-team
+    escalation: storefront-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: notification-service
+    owner: storefront-team
+    escalation: storefront-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: fulfillment-api
+    owner: fulfillment-team
+    escalation: fulfillment-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: software-catalog
+    owner: platform-team
+    escalation: platform-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: environment-provisioning
+    owner: platform-team
+    escalation: platform-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"
+  - system: artifact-promotion
+    owner: platform-team
+    escalation: platform-oncall
+    last_reviewed_at: "2026-08-16T00:00:00Z"

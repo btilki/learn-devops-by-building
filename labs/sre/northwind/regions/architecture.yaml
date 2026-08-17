@@ -1,0 +1,14 @@
+schema_version: 1
+kind: regional-architecture
+id: northwind-regional-architecture
+owner: reliability-program
+mode: active-passive
+regions:
+  - id: region-primary
+    role: primary
+  - id: region-standby
+    role: standby
+failover_order:
+  - from: region-primary
+    to: region-standby
+    when: region-primary-lost

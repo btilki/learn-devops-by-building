@@ -1,0 +1,15 @@
+schema_version: 1
+kind: failover-verification
+id: northwind-failover-verification
+owner: reliability-program
+journeys:
+  - accept-and-complete-order
+  - dispatch-fulfillment
+elapsed_seconds: 3600
+rpo_lost_seconds: 300
+isolation_holds: true
+mixed_replay: rejected
+inherited_restores_insufficient: true
+limitations_consumed:
+  - not-regional-loss
+  - not-portfolio-rto

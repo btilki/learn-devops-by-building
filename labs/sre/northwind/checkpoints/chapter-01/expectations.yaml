@@ -1,0 +1,16 @@
+required_owners:
+  - reliability-program
+  - storefront-team
+  - fulfillment-team
+  - platform-team
+required_journeys:
+  - accept-and-complete-order
+  - dispatch-fulfillment
+required_refusals:
+  - cluster-api-uptime
+  - platform-job-time-as-slo
+  - inherited-restore-as-portfolio-recovery
+required_later_proofs:
+  accept-and-complete-order: order_success_ratio
+  dispatch-fulfillment: dispatch_success_ratio
+brief_owner: reliability-program

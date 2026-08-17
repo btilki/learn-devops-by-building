@@ -1,0 +1,4 @@
+schema_version: 1
+kind: inherited-platform-catalog-interface
+id: platform-v1.0-catalog
+escalation_contacts: [storefront-oncall, fulfillment-oncall, platform-oncall]

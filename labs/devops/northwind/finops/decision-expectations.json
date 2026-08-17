@@ -1,0 +1,5 @@
+{
+  "minimum_order_success_ratio": 0.995,
+  "maximum_order_completion_p95_seconds": 300,
+  "maximum_oldest_message_age_seconds": 900
+}

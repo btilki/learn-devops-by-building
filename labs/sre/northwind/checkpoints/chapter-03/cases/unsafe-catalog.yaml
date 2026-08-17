@@ -1,0 +1,17 @@
+schema_version: 1
+kind: slo-catalog
+id: northwind-slo-catalog
+owner: reliability-program
+slos:
+  - id: slo-accept-and-complete-order
+    journey: accept-and-complete-order
+    sli: order_success_ratio
+    window: rolling-30d
+    target: 0.999
+    criticality: critical
+    remaining_budget: 1.0
+    sla: "99.9 percent availability per customer contract"
+    owner: reliability-program
+    review_trigger: never
+non_critical: []
+legal_products: []

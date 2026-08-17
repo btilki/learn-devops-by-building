@@ -1,0 +1,40 @@
+{
+  "objectives": {
+    "rpo_minutes": 10,
+    "rto_minutes": 60,
+    "measured_from_exercise": true
+  },
+  "backup": {
+    "encrypted": true,
+    "immutable": true,
+    "isolated_identity": true,
+    "manifest_verified_before_restore": true,
+    "restore_tested": true,
+    "continuous_wal_required": true
+  },
+  "authority": {
+    "break_glass": "individual-time-bound",
+    "source_evidence_read_only": true,
+    "actions_audited": true
+  },
+  "restore": {
+    "clean_environment": true,
+    "dependency_order": [
+      "emergency-identity",
+      "infrastructure",
+      "postgres-and-wal",
+      "durable-queue",
+      "workloads",
+      "gitops-controller"
+    ],
+    "gitops_controller_restored_last": true,
+    "traffic_blocked_until_validation": true
+  },
+  "reconciliation": {
+    "database_queue_provider": true,
+    "terminal_orders_required": true,
+    "duplicate_charge_check": true,
+    "inventory_check": true,
+    "desired_actual_check": true
+  }
+}

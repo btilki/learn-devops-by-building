@@ -1,0 +1,15 @@
+schema_version: 1
+kind: catalog-systems
+id: northwind-catalog-systems
+systems:
+  - id: storefront-api
+    kind: runnable-service
+    lifecycle: active
+    tenant: storefront
+  - id: fulfillment-api
+    kind: runnable-service
+    lifecycle: active
+    tenant: fulfillment
+  - id: software-catalog
+    kind: platform-product
+    lifecycle: active

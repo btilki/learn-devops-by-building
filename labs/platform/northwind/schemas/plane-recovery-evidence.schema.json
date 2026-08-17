@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "plane-recovery-evidence.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owner", "plane", "last_known_good", "snapshots"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "plane-recovery-evidence"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "plane": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "last_known_good": {"type": "string", "minLength": 1},
+    "snapshots": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "version",
+          "newest",
+          "mixed_tenants",
+          "corrupt",
+          "independently_verified",
+          "roots"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "version": {"type": "string", "minLength": 1},
+          "newest": {"type": "boolean"},
+          "mixed_tenants": {"type": "boolean"},
+          "corrupt": {"type": "boolean"},
+          "independently_verified": {"type": "boolean"},
+          "roots": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^[a-z0-9_]+$"}
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+schema_version: 1
+kind: sli-candidates
+id: northwind-sli-candidates
+candidates:
+  - id: order_success_ratio
+    summary: Inherited DevOps outcome indicator for correctly completed Storefront orders.
+  - id: order_latency
+    summary: Inherited DevOps outcome indicator for Storefront order-path latency users can feel.
+  - id: dispatch_success_ratio
+    summary: Chapter 1 later proof that an accepted order reaches a correct warehouse dispatch state.
+  - id: time-to-first-environment
+    summary: Inherited Platform job proof for bounded environment wait time.
+  - id: paved-road-completion
+    summary: Inherited Platform job proof for paved-road completion time.
+  - id: catalog-freshness
+    summary: Inherited Platform job proof for catalog freshness.
+  - id: cpu-utilization
+    summary: Host or container CPU utilization treated as a reliability graph.
+  - id: replica-ready
+    summary: Kubernetes replica Ready counts treated as a reliability graph.
+  - id: portal-availability
+    summary: Developer portal availability treated as a user-journey SLI.

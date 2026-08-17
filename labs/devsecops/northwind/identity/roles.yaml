@@ -1,0 +1,13 @@
+schema_version: 1
+kind: authorization-role-register
+policy_version: "2026-08-15.1"
+roles:
+  - id: source-maintainer
+    allows:
+      - {action: propose-change, resource: northwind-source, environment: repository}
+  - id: artifact-publisher
+    allows:
+      - {action: publish-artifact, resource: northwind-registry, environment: build}
+  - id: production-reconciler
+    allows:
+      - {action: reconcile-deployment, resource: northwind-production, environment: production}

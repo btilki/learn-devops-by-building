@@ -1,0 +1,39 @@
+schema_version: 1
+kind: control-plane-subjects
+id: northwind-control-plane-subjects
+subjects:
+  - id: plane-reconciler
+    kind: plane
+    role: platform-operator
+    granted_role: cluster-admin
+    may_approve_plane_change: true
+    credentials:
+      subject: plane-reconciler
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: cluster-admin
+  - id: storefront-operator
+    kind: tenant
+    tenant: storefront
+    role: tenant-operator
+    granted_role: tenant-operator
+    may_approve_plane_change: false
+    credentials:
+      subject: storefront-nonprod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: tenant-scoped
+  - id: fulfillment-operator
+    kind: tenant
+    tenant: fulfillment
+    role: tenant-operator
+    granted_role: tenant-operator
+    may_approve_plane_change: false
+    credentials:
+      subject: fulfillment-nonprod
+      issuer: northwind-workload-identity
+      audience: kubernetes-control-plane
+      expiry: "2026-08-23T00:00:00Z"
+      policy: tenant-scoped

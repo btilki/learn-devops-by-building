@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["schema_version","kind","stores","backup_constraint"],"properties":{"schema_version":{"const":1},"kind":{"const":"data-retention-policy"},"stores":{"type":"object","required":["primary","telemetry","nonproduction","backup"]},"backup_constraint":{"type":"string"}},"additionalProperties":false}

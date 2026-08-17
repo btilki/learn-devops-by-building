@@ -1,0 +1,12 @@
+required_users:
+  - storefront-team
+  - fulfillment-team
+  - platform-team
+required_jobs:
+  - obtain-bounded-environment
+  - ship-on-paved-road
+  - publish-owned-path
+required_non_goals:
+  - order-pricing-logic
+  - threat-model-rebuild
+  - portfolio-slo-governance

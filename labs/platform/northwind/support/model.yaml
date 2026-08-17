@@ -1,0 +1,11 @@
+schema_version: 1
+kind: support-model
+id: northwind-support-model
+owner: platform-team
+plane: kubernetes-control-plane
+tiers: [platform-product, tenant-application]
+error_budget_indicators:
+  - time-to-first-environment
+  - paved-road-completion
+unsupported: [unofficial-fork, chat-history]
+communication_cadence: freeze-window

@@ -1,0 +1,18 @@
+schema_version: 1
+kind: modeled-registry-cache
+id: order-worker-registry-cache
+state: available
+entries:
+  - digest: sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09
+    source: pre-incident-cache
+    status: retained
+    servable: true
+  - digest: sha256:4444444444444444444444444444444444444444444444444444444444444444
+    source: clean-room-rebuild
+    status: staged
+    servable: false
+attempt:
+  subject: release-workflow
+  controller: deployment-controller
+  target: northwind-production/order-worker
+  result_if_reconciliation_resumes: compromised-artifact-reintroduced

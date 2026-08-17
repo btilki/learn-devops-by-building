@@ -1,0 +1,17 @@
+schema_version: 1
+kind: vulnerability-findings
+findings:
+  - id: CVE-2026-4100|legacy-pdf|1.8.0
+    vulnerability: CVE-2026-4100
+    component: legacy-pdf
+    affected_version: 1.8.0
+    severity: critical
+    sources: [image-scanner, sbom-scanner]
+    confidence: high
+  - id: CVE-2026-2207|order-parser|4.2.0
+    vulnerability: CVE-2026-2207
+    component: order-parser
+    affected_version: 4.2.0
+    severity: high
+    sources: [image-scanner, runtime-inventory]
+    confidence: high

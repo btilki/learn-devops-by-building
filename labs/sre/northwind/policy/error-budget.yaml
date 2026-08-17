@@ -1,0 +1,11 @@
+schema_version: 1
+kind: error-budget-policy
+id: northwind-error-budget-policy
+owner: reliability-program
+bands:
+  - action: continue
+    remaining_min: 0.5
+  - action: slow
+    remaining_min: 0.1
+  - action: freeze
+    remaining_min: 0.0

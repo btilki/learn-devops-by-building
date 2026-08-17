@@ -1,0 +1,7 @@
+schema_version: 1
+kind: inherited-observability-interface
+id: devops-v1.1-observability
+log_fields: [timestamp, level, message, service, route, status, dependency, trace_id, request_id]
+trace_headers: [traceparent, tracestate]
+resource_attributes: [service.name, service.version, deployment.environment.name]
+outcome_indicators: [order_success_ratio, order_latency]

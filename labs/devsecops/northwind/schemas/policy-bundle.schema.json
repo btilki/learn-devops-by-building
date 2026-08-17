@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "kind", "version", "rules"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "kind": { "const": "security-policy-bundle" },
+    "version": { "type": "string", "minLength": 1 },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "owner", "unsafe_result"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "owner": { "type": "string", "minLength": 1 },
+          "unsafe_result": { "enum": ["deny", "detect"] }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

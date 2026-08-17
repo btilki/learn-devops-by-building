@@ -1,0 +1,7 @@
+schema_version: 1
+kind: security-policy-bundle
+version: security-policy-v1
+rules:
+  - {id: dependency-admission, owner: platform-security, unsafe_result: deny}
+  - {id: release-admission, owner: delivery-security, unsafe_result: deny}
+  - {id: data-field-access, owner: data-governance, unsafe_result: deny}

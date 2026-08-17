@@ -1,0 +1,14 @@
+schema_version: 1
+kind: failover-verification
+id: northwind-failover-verification
+owner: reliability-program
+journeys:
+  - time-to-first-environment
+slo_met: true
+elapsed_seconds: 86400
+rpo_lost_seconds: 7200
+isolation_holds: false
+mixed_replay: applied
+inherited_restores_insufficient: false
+limitations_consumed: []
+status: recovered

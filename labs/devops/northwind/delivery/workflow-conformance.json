@@ -1,0 +1,15 @@
+{
+  "template_id": "ci-v1",
+  "required_jobs": ["lint", "test", "build"],
+  "required_needs": {
+    "test": "lint",
+    "build": "test"
+  },
+  "required_commands": {
+    "lint": "ruff check services tools checkpoints",
+    "test": "pytest -q",
+    "build": "tools/context_gate.py"
+  },
+  "default_permission": "contents: read",
+  "forbidden_permissions": ["packages: write", "contents: write"]
+}

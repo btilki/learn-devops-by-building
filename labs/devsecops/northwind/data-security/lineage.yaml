@@ -1,0 +1,8 @@
+schema_version: 1
+kind: data-lineage
+copies:
+  - {id: notification-runtime, source: primary, target: runtime-memory, fields: [order_id, customer_email, order_total], deletion_inherits: runtime-memory}
+  - {id: support-view, source: primary, target: support-session, fields: [order_id, customer_email], deletion_inherits: support-session}
+  - {id: order-telemetry, source: primary, target: telemetry, fields: [order_id, order_state], deletion_inherits: telemetry}
+  - {id: sanitized-test-data, source: primary, target: nonproduction, fields: [order_id, order_state], deletion_inherits: nonproduction}
+  - {id: primary-backup, source: primary, target: backup, fields: [order_id, customer_email, payment_reference, order_total, order_state], deletion_inherits: backup}

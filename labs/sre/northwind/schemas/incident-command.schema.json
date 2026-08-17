@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "incident-command.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "cadence",
+    "forbidden_commanders",
+    "insufficient_close_evidence",
+    "review_trigger"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "portfolio-incident-command"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "cadence": {"type": "string", "pattern": "^[1-9][0-9]*m$"},
+    "forbidden_commanders": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "insufficient_close_evidence": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "review_trigger": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

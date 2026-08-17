@@ -1,0 +1,16 @@
+schema_version: 1
+kind: reliability-owners
+id: northwind-reliability-owners
+owners:
+  - id: reliability-program
+    role: reliability-program-owner
+    journeys: [accept-and-complete-order, dispatch-fulfillment]
+  - id: storefront-team
+    role: application-team
+    journeys: [accept-and-complete-order]
+  - id: fulfillment-team
+    role: application-team
+    journeys: [dispatch-fulfillment]
+  - id: platform-team
+    role: platform-product-owner
+    journeys: []

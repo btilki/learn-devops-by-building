@@ -1,0 +1,42 @@
+schema_version: 1
+kind: attack-path-register
+attack_paths:
+  - id: compromised-maintainer-to-payment
+    actor: external-attacker
+    capability: control-an-active-maintainer-session
+    prerequisites: [maintainer-session-compromised, dependency-change-permitted]
+    steps:
+      - flow: maintainer-source-change
+        boundary: human-to-source
+        action: introduce-lookalike-payment-dependency
+      - flow: source-build-input
+        boundary: source-to-build
+        action: trigger-build-from-approved-looking-change
+      - flow: build-artifact-publication
+        boundary: build-to-registry
+        action: publish-artifact-containing-malicious-dependency
+      - flow: artifact-deployment
+        boundary: registry-to-production
+        action: present-valid-but-insufficient-supply-chain-evidence
+      - flow: controller-runtime-change
+        boundary: control-plane-to-runtime
+        action: run-malicious-dependency-with-order-worker-authority
+      - flow: order-payment-effect
+        boundary: workload-to-provider
+        action: attempt-payment-effect-outside-valid-order-context
+    threatens: [attributable-payment-effects, governed-production-release, correct-order-terminal-state]
+    existing_controls: [reviewed-source, digest-promotion, workload-identity, provider-idempotency]
+    missing_evidence: [maintainer-session-assurance, dependency-origin-decision, runtime-behavior-correlation]
+    owner: delivery-security
+  - id: overprivileged-support-data-access
+    actor: internal-support-user
+    capability: use-valid-support-session
+    prerequisites: [support-session-active, field-policy-overbroad]
+    steps:
+      - flow: support-data-access
+        boundary: human-to-data
+        action: request-order-fields-beyond-support-purpose
+    threatens: [governed-order-data]
+    existing_controls: [individual-human-identity]
+    missing_evidence: [field-purpose-decision, sensitive-field-access-event]
+    owner: data-governance

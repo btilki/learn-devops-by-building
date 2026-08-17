@@ -1,0 +1,17 @@
+{
+  "initial_revision": "9a11stable",
+  "stable_artifact": "storefront-api@sha256:stable",
+  "revision": "4d72bad",
+  "reviewed": true,
+  "candidate_digest_verified": true,
+  "runtime_health": "degraded",
+  "order_success_ratio": 0.81,
+  "stable_traffic_healthy": true,
+  "controller_attempts": 3,
+  "recovery": {
+    "revision": "6e91revert",
+    "reviewed": true,
+    "runtime_health": "healthy",
+    "order_success_ratio": 0.998
+  }
+}

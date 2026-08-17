@@ -1,0 +1,6 @@
+schema_version: 1
+kind: inherited-identity-interface
+id: devops-v1.1-workload-identity
+required_claims: [subject, issuer, audience, expiry, policy]
+credential_model: short-lived-federated
+unsupported_provider_model: referenced-rotatable-secret

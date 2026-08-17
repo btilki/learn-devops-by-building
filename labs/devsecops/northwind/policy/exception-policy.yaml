@@ -1,0 +1,9 @@
+schema_version: 1
+kind: exception-governance-policy
+evaluation_time: "2026-08-15T11:00:00Z"
+maximum_duration_seconds: 14400
+non_exceptable_rules: [release-admission]
+forbidden_scopes: ["*", release, all-releases]
+placeholder_values: [none, manual, ship-now]
+minimum_evidence_items: 2
+require_independent_compensation_point: true

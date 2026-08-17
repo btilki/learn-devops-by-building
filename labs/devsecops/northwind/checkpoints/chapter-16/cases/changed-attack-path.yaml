@@ -1,0 +1,13 @@
+changes:
+  - id: registry-node-cache-redeploy
+    attack_path: compromised-maintainer-to-payment
+    changed_at: "2026-08-15T12:10:00Z"
+    flow: node-cache-redeploy
+    boundary: registry-to-production
+    action: restore-invalidated-artifact-from-retained-node-cache
+    layer: node-cache
+    required_control: node-cache-invalidation
+    distinct_from: registry-cache-invalidation
+    reason: >-
+      Registry-cache invalidation already exists, but a node-local cache is a
+      different persistence layer with a different owner and evidence requirement.

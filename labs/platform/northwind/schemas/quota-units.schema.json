@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "quota-units.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "pool", "units"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "quota-units"},
+    "id": {"type": "string", "minLength": 1},
+    "pool": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "meters", "quality_gate", "owner"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "meters": {"type": "string", "minLength": 1},
+          "quality_gate": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+workload: order-worker
+subject: order-worker
+claim_id: workload-claim-920
+deployment: northwind-production/order-worker
+artifact_digest: sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09
+behaviors:
+  - {type: filesystem-read, resource: /var/run/secrets/payment-token}
+  - {type: process, resource: /bin/sh}
+  - {type: egress, resource: c2.invalid}

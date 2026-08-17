@@ -1,0 +1,16 @@
+schema_version: 1
+kind: evidence-map
+links:
+  - {objective: obj-supply-chain-admission, category: mechanism_evidence, ref: "build/chapter-11-recovery.json#normal_enforcement", producer: chapter-11-policy-engine, independent: true, collected_at: "2026-08-15T10:40:00Z"}
+  - {objective: obj-supply-chain-admission, category: decision_evidence, ref: "policy/exceptions.yaml#exceptions", producer: chapter-11-exception-register, independent: true, collected_at: "2026-08-15T10:40:00Z"}
+  - {objective: obj-correlated-detection, category: mechanism_evidence, ref: "build/chapter-13-recovery.json#alert.result", producer: chapter-13-correlation-engine, independent: true, collected_at: "2026-08-15T10:45:00Z"}
+  - {objective: obj-correlated-detection, category: recovery_evidence, ref: build/chapter-13-corrected-events.json, producer: chapter-13-recovery, independent: true, collected_at: "2026-08-15T10:45:00Z"}
+  - {objective: obj-incident-containment, category: decision_evidence, ref: "build/chapter-14-containment.json#authority", producer: chapter-14-containment, independent: true, collected_at: "2026-08-15T10:50:00Z"}
+  - {objective: obj-incident-containment, category: mechanism_evidence, ref: "response/evidence-manifest.yaml#items", producer: chapter-14-custody, independent: true, collected_at: "2026-08-15T10:50:00Z"}
+  - {objective: obj-trust-restoration, category: recovery_evidence, ref: "build/chapter-15-recovery-verification.json#criteria", producer: chapter-15-verification, independent: true, collected_at: "2026-08-15T11:10:00Z"}
+  - {objective: obj-trust-restoration, category: outcome_evidence, ref: "build/chapter-15-business-reconciliation.json#terminal_order_outcomes", producer: chapter-15-reconciliation, independent: true, collected_at: "2026-08-15T11:10:00Z"}
+  - {objective: obj-cache-persistence-control, category: mechanism_evidence, ref: "build/chapter-15-eradication.json#cache_state", producer: chapter-15-eradication, independent: true, collected_at: "2026-08-15T11:05:00Z"}
+  - {objective: obj-cache-persistence-control, category: recovery_evidence, ref: "build/chapter-15-trust-inventory.yaml#roots", producer: chapter-15-trust-reconciliation, independent: true, collected_at: "2026-08-15T11:10:00Z"}
+  - {objective: obj-support-field-authorization, category: decision_evidence, ref: "data-security/access-policy.yaml#deny_undeclared_fields", producer: chapter-10-field-policy, independent: true, collected_at: "2026-08-15T10:30:00Z"}
+  - {objective: obj-support-field-detection, category: mechanism_evidence, ref: "policy/enforcement-points.yaml#data-query", producer: chapter-11-enforcement-map, independent: true, collected_at: "2026-08-15T10:35:00Z"}
+  - {objective: obj-support-session-revocation, category: recovery_evidence, ref: "build/chapter-10-recovery.json#exposed_values_absent", producer: chapter-10-recovery, independent: true, collected_at: "2026-08-15T10:35:00Z"}

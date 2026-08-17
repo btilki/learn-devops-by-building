@@ -1,0 +1,17 @@
+required_journeys:
+  - accept-and-complete-order
+  - dispatch-fulfillment
+required_slos:
+  - slo-accept-and-complete-order
+  - slo-dispatch-fulfillment
+required_sli:
+  accept-and-complete-order: order_success_ratio
+  dispatch-fulfillment: dispatch_success_ratio
+required_non_critical:
+  - notification-service
+required_legal_out_of_scope:
+  - customer-availability-sla
+storefront_order_slo: slo-accept-and-complete-order
+fulfillment_slo: slo-dispatch-fulfillment
+forbidden_critical_systems:
+  - notification-service

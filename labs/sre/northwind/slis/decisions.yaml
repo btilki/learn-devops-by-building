@@ -1,0 +1,76 @@
+schema_version: 1
+kind: sli-decisions
+id: northwind-sli-decisions
+decisions:
+  - id: decide-order-success-ratio
+    candidate: order_success_ratio
+    treatment: accept
+    class: user-journey-sli
+    journey: accept-and-complete-order
+    justification: inherited-outcome-matches-named-journey
+    owner: reliability-program
+    review_trigger: order-path-changes-good-event-definition
+  - id: decide-order-latency
+    candidate: order_latency
+    treatment: accept
+    class: user-journey-sli
+    journey: accept-and-complete-order
+    justification: inherited-latency-matches-named-journey
+    owner: reliability-program
+    review_trigger: order-path-changes-latency-definition
+  - id: decide-dispatch-success-ratio
+    candidate: dispatch_success_ratio
+    treatment: accept
+    class: user-journey-sli
+    journey: dispatch-fulfillment
+    justification: chapter-1-later-proof-for-dispatch
+    owner: reliability-program
+    review_trigger: warehouse-contract-changes-good-event-definition
+  - id: decide-time-to-first-environment
+    candidate: time-to-first-environment
+    treatment: adjacent
+    class: platform-product-sli
+    remaining_owner: platform-team
+    justification: inherited-platform-job-proof
+    owner: reliability-program
+    review_trigger: platform-product-jobs-change
+  - id: decide-paved-road-completion
+    candidate: paved-road-completion
+    treatment: adjacent
+    class: platform-product-sli
+    remaining_owner: platform-team
+    justification: inherited-platform-job-proof
+    owner: reliability-program
+    review_trigger: platform-product-jobs-change
+  - id: decide-catalog-freshness
+    candidate: catalog-freshness
+    treatment: adjacent
+    class: platform-product-sli
+    remaining_owner: platform-team
+    justification: inherited-platform-job-proof
+    owner: reliability-program
+    review_trigger: platform-product-jobs-change
+  - id: decide-cpu-utilization
+    candidate: cpu-utilization
+    treatment: reject
+    class: component-uptime
+    remaining_owner: platform-team
+    justification: chapter-1-cluster-api-uptime-refusal
+    owner: reliability-program
+    review_trigger: theater-graph-proposed-as-journey-sli
+  - id: decide-replica-ready
+    candidate: replica-ready
+    treatment: reject
+    class: component-uptime
+    remaining_owner: platform-team
+    justification: chapter-1-cluster-api-uptime-refusal
+    owner: reliability-program
+    review_trigger: theater-graph-proposed-as-journey-sli
+  - id: decide-portal-availability
+    candidate: portal-availability
+    treatment: reject
+    class: component-uptime
+    remaining_owner: platform-team
+    justification: chapter-1-cluster-api-uptime-refusal
+    owner: reliability-program
+    review_trigger: theater-graph-proposed-as-journey-sli

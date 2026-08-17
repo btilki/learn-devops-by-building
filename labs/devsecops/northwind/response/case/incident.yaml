@@ -1,0 +1,18 @@
+schema_version: 1
+kind: incident-case
+id: INC-2026-0815-01
+status: investigating
+severity: critical
+hypothesis: compromised maintainer authority produced the admitted artifact and the
+  order-worker foothold
+facts:
+- correlated detection fired for four distinct actions
+- compromised-session remains active
+- admitted artifact digest is running in order-worker
+- sampled payment effects reconcile with recorded order state
+inferences:
+- builder authority may remain attacker-controlled
+- in-flight orders may have attacker-influenced effects
+unknowns:
+- whether another persistence path exists
+owner: security-response

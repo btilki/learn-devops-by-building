@@ -1,0 +1,15 @@
+schema_version: 1
+kind: gameday-program
+id: northwind-gameday-program
+owner: reliability-program
+cadence: 90d
+required_kinds:
+  - error-budget-freeze
+  - on-call-page-path
+  - dependency-loss
+  - regional-loss-tabletop
+abort_when: blast-radius-exceeds-contract
+learning_join: northwind-learning-actions
+forbidden_complete_on: mixed-backup
+not_chapter_14_failover: true
+review_trigger: freeze-oncall-dependency-or-region-change

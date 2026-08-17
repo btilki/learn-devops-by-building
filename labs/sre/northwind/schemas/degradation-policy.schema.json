@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "degradation-policy.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owner", "denials"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "degradation-cascade"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "denials": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_provider",
+          "source_journey",
+          "must_not_page",
+          "must_not_burn"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "source_provider": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "source_journey": {"type": "string", "minLength": 1},
+          "must_not_page": {"const": "fulfillment-oncall"},
+          "must_not_burn": {"const": "dispatch-fulfillment"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

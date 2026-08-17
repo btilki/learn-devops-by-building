@@ -1,0 +1,16 @@
+schema_version: 1
+kind: paved-road-contract
+id: northwind-production-path
+owner: platform-team
+job: ship-on-paved-road
+version: "1.0"
+support_level: paved
+steps:
+  - id: catalog-entry
+  - id: digest-pinned-artifact
+  - id: workload-identity
+  - id: reviewed-promotion
+defaults:
+  - artifact-digest
+  - workload-identity-claims
+  - no-cluster-admin

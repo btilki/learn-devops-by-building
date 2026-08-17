@@ -1,0 +1,14 @@
+schema_version: 1
+kind: eradication-plan
+case_id: INC-2026-0815-01
+reconciliation: paused
+actions:
+  - {id: verify-evidence-custody, order: 1, target: response/evidence-manifest.yaml, effect: hash-before-mutation}
+  - {id: detect-persistence, order: 2, target: registry-cache, effect: prove-stale-digest-served}
+  - {id: rotate-missed-automation, order: 3, target: release-workflow, effect: revoke-and-reissue}
+  - {id: invalidate-caches, order: 4, target: registry-cache, effect: purge-invalid-digests}
+  - {id: rebuild-from-trusted-roots, order: 5, target: supply-chain, effect: clean-room-artifact}
+  - {id: reconcile-business-state, order: 6, target: order-queue-and-payment, effect: terminal-outcomes}
+  - {id: restore-monitored-service, order: 7, target: order-worker, effect: bounded-traffic-return}
+monitoring: heightened-through-recovery
+owner: incident-commander

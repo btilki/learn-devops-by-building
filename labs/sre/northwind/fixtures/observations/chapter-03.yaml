@@ -1,0 +1,16 @@
+schema_version: 1
+kind: slo-observations
+id: northwind-slo-observations
+observations:
+  - id: observe-accept-and-complete-order
+    slo: slo-accept-and-complete-order
+    good_events: 19940
+    valid_events: 20000
+  - id: observe-accept-and-complete-order-latency
+    slo: slo-accept-and-complete-order-latency
+    good_events: 19820
+    valid_events: 20000
+  - id: observe-dispatch-fulfillment
+    slo: slo-dispatch-fulfillment
+    good_events: 9930
+    valid_events: 10000

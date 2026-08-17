@@ -1,0 +1,13 @@
+schema_version: 1
+kind: inherited-exception-records
+id: devsecops-v1.0-exception-records
+exceptions:
+  - id: exception-dependency-mirror-2026-08
+    owner: platform-security
+    scope: northwind-public-http-signing-2.1.0-mirror
+    rationale: Approved registry mirror is temporarily unavailable.
+    compensating_controls: [verify-locked-hash, alert-on-resolution]
+    evidence: [mirror-incident-441, locked-resolution-id]
+    expires_at: "2026-08-15T12:00:00Z"
+    removal_path: restore-approved-mirror-and-remove-exception
+    status: active

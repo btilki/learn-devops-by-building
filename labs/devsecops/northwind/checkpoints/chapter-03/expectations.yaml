@@ -1,0 +1,2 @@
+required_risks: [maintainer-supply-chain-payment-risk, support-data-purpose-risk]
+required_control_types: [prevent, detect, respond, recover]

@@ -1,0 +1,41 @@
+schema_version: 1
+kind: control-plane-reconciliation
+id: northwind-control-plane-reconciliation
+results:
+  - id: storefront-nonprod-storage
+    tenant: storefront
+    environment: storefront-nonprod
+    capability: tenant-storage
+    version: "2.0"
+    actor: plane-reconciler
+    mode: reconcile
+    mutated_tenants: [storefront]
+    source_rewritten: false
+    reviewed_intent: true
+    immutable_artifact: sha256:storefront-nonprod
+    independent_configuration: true
+    reconciliation_result: applied
+    admission: admitted
+  - id: fulfillment-nonprod-storage
+    tenant: fulfillment
+    environment: fulfillment-nonprod
+    capability: tenant-storage
+    version: "1.0"
+    actor: plane-reconciler
+    mode: reconcile
+    mutated_tenants: [fulfillment]
+    source_rewritten: false
+    reviewed_intent: true
+    immutable_artifact: sha256:fulfillment-nonprod
+    independent_configuration: true
+    reconciliation_result: applied
+    admission: admitted
+upgrades:
+  - id: plane-upgrade-1-1
+    from_version: "1.0"
+    to_version: "1.1"
+    requested_by: plane-reconciler
+    approved_by: platform-team
+    result: failed
+    last_known_good: "1.0"
+    current_version: "1.0"

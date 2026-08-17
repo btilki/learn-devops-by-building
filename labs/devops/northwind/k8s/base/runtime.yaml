@@ -1,0 +1,167 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: storefront-api
+data:
+  DEPLOYMENT_ENVIRONMENT: "production"
+  CONFIG_VERSION: "config-v1"
+  runtime.yaml: |
+    schema_version: "1"
+    order_mode: async
+    dependency_timeout_ms: 1500
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: storefront-api
+automountServiceAccountToken: false
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storefront-api
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: storefront-api
+  template:
+    metadata:
+      labels:
+        app: storefront-api
+      annotations:
+        northwind.io/config-version: config-v1
+    spec:
+      serviceAccountName: storefront-api
+      terminationGracePeriodSeconds: 30
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: storefront-api
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: storefront-api
+          image: ghcr.io/northwind-commerce/storefront-api@sha256:ecc55173e6c10ec59cac9538a34ac7142c52e8ff504d7e045ed3103c650efb32
+          args:
+            - --listen=:8080
+            - --config=/etc/northwind/runtime.yaml
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: DEPLOYMENT_ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: storefront-api
+                  key: DEPLOYMENT_ENVIRONMENT
+            - name: CONFIG_VERSION
+              valueFrom:
+                configMapKeyRef:
+                  name: storefront-api
+                  key: CONFIG_VERSION
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: runtime-config
+              mountPath: /etc/northwind
+              readOnly: true
+            - name: tmp
+              mountPath: /tmp
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
+          startupProbe:
+            httpGet:
+              path: /health/live
+              port: http
+            periodSeconds: 2
+            failureThreshold: 30
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: http
+            periodSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: http
+            periodSeconds: 5
+            failureThreshold: 2
+      volumes:
+        - name: runtime-config
+          configMap:
+            name: storefront-api
+        - name: tmp
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: storefront-api
+spec:
+  selector:
+    app: storefront-api
+  ports:
+    - port: 80
+      targetPort: http
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: storefront-api
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      app: storefront-api
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: storefront-api-default-deny
+spec:
+  podSelector:
+    matchLabels:
+      app: storefront-api
+  policyTypes:
+    - Ingress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: storefront-api-allow-gateway
+spec:
+  podSelector:
+    matchLabels:
+      app: storefront-api
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              networking.northwind.io/ingress: "true"
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/component: gateway
+      ports:
+        - protocol: TCP
+          port: http

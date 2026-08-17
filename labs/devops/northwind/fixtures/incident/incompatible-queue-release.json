@@ -1,0 +1,20 @@
+{
+  "release": {
+    "candidate_revision": "8f31event-v2",
+    "stable_producer_digest": "storefront-api@sha256:stable",
+    "candidate_producer_schema": "v2",
+    "stable_consumer_schemas": ["v1"]
+  },
+  "impact": {
+    "api_order_success_ratio": 0.998,
+    "queue_decode_error_ratio": 0.18,
+    "oldest_message_age_seconds": 1200,
+    "pending_v2_messages": 600,
+    "duplicate_charges": 0
+  },
+  "recovery_samples": [
+    {"pending_messages": 600, "oldest_message_age_seconds": 800, "order_success_ratio": 0.998, "duplicate_charges": 0},
+    {"pending_messages": 200, "oldest_message_age_seconds": 300, "order_success_ratio": 0.998, "duplicate_charges": 0},
+    {"pending_messages": 0, "oldest_message_age_seconds": 100, "order_success_ratio": 0.999, "duplicate_charges": 0}
+  ]
+}

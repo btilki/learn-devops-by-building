@@ -1,0 +1,9 @@
+schema_version: 1
+kind: gameday-scenarios
+id: northwind-gameday-scenarios
+scenarios:
+  - id: gameday-mixed-backup
+    kind: mixed-backup
+    joins: slack
+    insufficient_alone: false
+    max_blast_radius: live-portfolio

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "exception-binding.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "bindings"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "exception-bindings"},
+    "id": {"type": "string", "minLength": 1},
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "exception",
+          "tenant",
+          "system",
+          "path",
+          "remaining_isolation",
+          "scorecard_effect"
+        ],
+        "properties": {
+          "exception": {"type": "string", "minLength": 1},
+          "tenant": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "system": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "path": {"enum": ["paved", "exit"]},
+          "exit": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "remaining_isolation": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+          },
+          "scorecard_effect": {
+            "enum": ["none", "waive-artifact-digest"]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

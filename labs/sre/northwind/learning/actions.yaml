@@ -1,0 +1,13 @@
+schema_version: 1
+kind: learning-actions
+id: northwind-learning-actions
+actions:
+  - id: verify-payment-retry-shed
+    incident: spanning-payment-and-dispatch
+    owner: reliability-program
+    due_at: "2026-08-30T00:00:00Z"
+    change: consume-chapter-09-payment-shed
+    addresses: chapter-09-cascade
+    verification:
+      producer: shed-storefront-payment-overload
+      independent_of_record: true

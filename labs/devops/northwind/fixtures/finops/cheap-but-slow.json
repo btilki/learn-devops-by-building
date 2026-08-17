@@ -1,0 +1,31 @@
+{
+  "change": "halve-order-worker-capacity",
+  "currency": "USD",
+  "observation_window": "one-hour-cohort",
+  "baseline": {
+    "workload_costs": {
+      "direct-worker-cost": 75.0,
+      "allocated-shared-runtime-cost": 25.0
+    },
+    "delivery_cost": 6.0,
+    "quality_qualified_terminal_orders": 1000.0
+  },
+  "candidate": {
+    "workload_costs": {
+      "direct-worker-cost": 41.0,
+      "allocated-shared-runtime-cost": 25.0
+    },
+    "delivery_cost": 6.0,
+    "quality_qualified_terminal_orders": 717.3913043478,
+    "order_success_ratio": 0.998,
+    "order_completion_p95_seconds": 780,
+    "oldest_message_age_seconds": 1900
+  },
+  "recovery": {
+    "initial_backlog": 1200,
+    "arrival_rate_per_minute": 100,
+    "verified_processing_rate_per_minute": 140,
+    "provider_limit_per_minute": 150,
+    "minutes": 30
+  }
+}

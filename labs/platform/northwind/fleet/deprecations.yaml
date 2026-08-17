@@ -1,0 +1,10 @@
+schema_version: 1
+kind: fleet-deprecations
+id: northwind-fleet-deprecations
+deprecations:
+  - id: tenant-storage-1-0
+    capability: tenant-storage
+    version: "1.0"
+    window_ends_at: "2026-11-16T00:00:00Z"
+    remaining_tenants: [fulfillment]
+    status: open

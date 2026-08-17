@@ -1,0 +1,56 @@
+schema_version: 1
+kind: inherited-interface-manifest
+id: practical-platform-engineering-v1.0
+source:
+  release: v1.0
+  companion_lab_commit: unpublished-working-tree
+interfaces:
+  - id: platform-product
+    source_path: product/jobs.yaml
+    source_sha256: 9ee55a3d1ae45f45165b3d9a21906cc65de78c4ec9abbd5c063b88f475a3cb04
+    local_path: product/interface.yaml
+    local_sha256: bed38c41a57ea86f9bc8ac5c7cffbcfb98e1dc2d9ce5bcb4d68983f65fc8e146
+    representation: reduced-interface
+    consumers: [1, 2]
+  - id: platform-tenancy
+    source_path: tenancy/tenants.yaml
+    source_sha256: b7a5d5bcc61d8bf336dce6b685bbfa30ac91d369715b01d9f8cb05613838d27c
+    local_path: tenancy/interface.yaml
+    local_sha256: 0ba3350ff569f623e9986c83d7cf2fec7d14307e5b146576c9541c4be3c5e686
+    representation: reduced-interface
+    consumers: [10, 14]
+  - id: platform-catalog
+    source_path: catalog/ownership.yaml
+    source_sha256: b34ab3fc42a3aa6694e285d0272bf9cf583cd6b050f090b752ab3e905e269f1a
+    local_path: catalog/interface.yaml
+    local_sha256: 899a2b5578eeef0c6a45feffeda1c191cd65cccee1de3a0e48c6f42b53087fc1
+    representation: reduced-interface
+    consumers: [6]
+  - id: platform-devex
+    source_path: devex/indicators.yaml
+    source_sha256: 714a065956bc9ddcf3baeda16ef3f7d59b4a8d0ee511b8a096a244431db8a969
+    local_path: devex/interface.yaml
+    local_sha256: bf923270fc7f50ea45482ece4f28a33a94a754f624ea2b3c90c1b220e3dbe4d9
+    representation: reduced-interface
+    consumers: [1, 2]
+  - id: platform-fleet
+    source_path: fleet/upgrades.yaml
+    source_sha256: 00cab51495136274dced849ff0bb980ed1be418ff271b870ecc16d665fcb0967
+    local_path: fleet/interface.yaml
+    local_sha256: ce139afa9749e2f6cfef2cd12de03b7812ac2feba7fed1e360b99df5049b34d7
+    representation: reduced-interface
+    consumers: [4]
+  - id: platform-support
+    source_path: support/escalation.yaml
+    source_sha256: f56c356e15c9f4ec38b96dc72b761cf58d4b892369816649a666ca9547b777a5
+    local_path: support/interface.yaml
+    local_sha256: 0eed703cc0c6f723ad7efd84c30a1955bb1349a6cdf9bddf0a53dbe123e9f264
+    representation: reduced-interface
+    consumers: [6, 10]
+  - id: platform-recovery
+    source_path: recovery/verification.yaml
+    source_sha256: a1663dff0ae9eeed9fbad80c683c721861e44fcfc0b4e9968e0cb151cfe6fc36
+    local_path: recovery/interface.yaml
+    local_sha256: c2d2a0cbeda7f47e9a1604e77bc4034f0abb40f874087a53fd1822702e02a56e
+    representation: reduced-interface
+    consumers: [1, 12, 14]

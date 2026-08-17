@@ -1,0 +1,7 @@
+{
+  "maximum_rpo_minutes": 10,
+  "maximum_rto_minutes": 60,
+  "maximum_duplicate_charges": 0,
+  "maximum_inventory_discrepancies": 0,
+  "required_terminal_orders": 1000
+}

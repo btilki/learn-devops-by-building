@@ -1,0 +1,8 @@
+schema_version: 1
+kind: reliability-brief
+id: northwind-reliability-program
+promise: Keep the graphs green.
+owner: unassigned
+success_evidence:
+  - cluster-uptime
+  - api-uptime

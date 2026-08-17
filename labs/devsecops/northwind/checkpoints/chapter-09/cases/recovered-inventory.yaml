@@ -1,0 +1,14 @@
+schema_version: 1
+kind: secret-inventory
+secrets:
+  - id: payment-provider-credential
+    purpose: authorize-payment-provider-api
+    owner: payments-team
+    custodian: northwind-secret-broker
+    storage: managed-secret-store
+    consumers: [order-worker]
+    versions:
+      - {id: payment-v1, status: retired, issued_at: "2026-07-01T00:00:00Z", retired_at: "2026-08-15T10:20:00Z"}
+      - {id: payment-v2, status: active, issued_at: "2026-08-15T10:10:00Z", retire_by: "2026-09-15T00:00:00Z"}
+    rotation: overlap-then-revoke
+    exception: null

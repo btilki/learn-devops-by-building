@@ -1,0 +1,19 @@
+schema_version: 1
+kind: fleet-onboarding
+id: northwind-fleet-onboarding
+owner: platform-team
+tenants:
+  - tenant: storefront
+    system: storefront-api
+    environment: storefront-nonprod
+    granted_role: tenant-operator
+    paved_road: northwind-production-path
+    quota_floor_respected: true
+    status: complete
+  - tenant: fulfillment
+    system: fulfillment-api
+    environment: fulfillment-nonprod
+    granted_role: cluster-admin
+    paved_road: northwind-production-path
+    quota_floor_respected: false
+    status: complete

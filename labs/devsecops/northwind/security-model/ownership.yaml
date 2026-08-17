@@ -1,0 +1,15 @@
+schema_version: 1
+kind: ownership-register
+owners:
+  - id: commerce-operations
+    accountable_for: [order-outcome]
+    escalation: incident-commander
+  - id: payments-security
+    accountable_for: [payment-authority]
+    escalation: security-incident-commander
+  - id: data-governance
+    accountable_for: [customer-order-data]
+    escalation: data-incident-lead
+  - id: delivery-security
+    accountable_for: [release-authority]
+    escalation: security-incident-commander

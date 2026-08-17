@@ -1,0 +1,8 @@
+schema_version: 1
+kind: inherited-platform-product-interface
+id: platform-v1.0-product
+jobs: [obtain-bounded-environment, ship-on-paved-road, publish-owned-path]
+job_proofs: [time-to-first-environment, paved-road-completion, catalog-freshness]
+non_goals:
+  - id: portfolio-slo-governance
+    remaining_owner: reliability-program

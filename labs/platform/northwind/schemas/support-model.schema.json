@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "support-model.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "plane",
+    "tiers",
+    "error_budget_indicators",
+    "unsupported",
+    "communication_cadence"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "support-model"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "plane": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+    "tiers": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"enum": ["platform-product", "tenant-application"]}
+    },
+    "error_budget_indicators": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "unsupported": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+    },
+    "communication_cadence": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+  },
+  "additionalProperties": false
+}

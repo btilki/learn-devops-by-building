@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["claim_id", "subject", "action", "resource", "environment", "issuer", "audience", "session_lifetime_seconds", "reusable_claim", "authorization_policy_version", "trust_policy_version", "result", "reasons"],
+  "properties": {
+    "recorded_at": {"type": "string", "minLength": 1},
+    "claim_id": {"type": "string", "minLength": 1},
+    "subject": {"type": "string", "minLength": 1},
+    "action": {"type": "string", "minLength": 1},
+    "resource": {"type": "string", "minLength": 1},
+    "environment": {"type": "string", "minLength": 1},
+    "issuer": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "session_lifetime_seconds": {"type": "integer", "exclusiveMinimum": 0},
+    "reusable_claim": {"type": "boolean"},
+    "authorization_policy_version": {"type": "string", "minLength": 1},
+    "trust_policy_version": {"type": "string", "minLength": 1},
+    "result": {"enum": ["allow", "deny"]},
+    "reasons": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "allOf": [{"if": {"properties": {"result": {"const": "deny"}}}, "then": {"properties": {"reasons": {"minItems": 1}}}}],
+  "additionalProperties": false
+}

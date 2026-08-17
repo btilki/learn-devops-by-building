@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "failover-isolation.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "tenants",
+    "rejected_replays",
+    "survives_failover",
+    "source"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "failover-isolation"},
+    "id": {"type": "string", "minLength": 1},
+    "tenants": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "serving",
+          "change",
+          "policy_join",
+          "last_known_good"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "serving": {"enum": ["continue", "freeze"]},
+          "change": {"enum": ["continue", "slow", "freeze"]},
+          "policy_join": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "last_known_good": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "rejected_replays": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"enum": ["mixed-tenant", "mixed-region"]}
+    },
+    "survives_failover": {"const": true},
+    "source": {"const": "explicit-tenant-decision"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+schema_version: 1
+kind: regional-constraints
+id: northwind-regional-constraints
+claims: regional-recovery
+recovery:
+  - devops-reconstruction
+  - platform-plane-restore
+isolation:
+  tenants: [storefront]
+  survives_failover: false
+provider_regionality: []
+no_silent_cross_region: []
+insufficient_restores: []
+insufficient_identities:
+  - "1.0"
+limitations_consumed: []

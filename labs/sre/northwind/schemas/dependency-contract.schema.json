@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dependency-contract.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "owner", "contracts"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "dependency-contracts"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "contracts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "provider",
+          "timeout",
+          "retry_budget",
+          "fallback",
+          "evidence",
+          "review_trigger"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "provider": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "timeout": {"type": "string", "pattern": "^[1-9][0-9]*s$"},
+          "retry_budget": {"type": "integer", "minimum": 0, "maximum": 2},
+          "fallback": {"enum": ["fail-closed", "skip-and-record"]},
+          "evidence": {"type": "string", "minLength": 1},
+          "review_trigger": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

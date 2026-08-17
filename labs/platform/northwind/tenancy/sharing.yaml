@@ -1,0 +1,21 @@
+schema_version: 1
+kind: tenancy-sharing
+id: northwind-tenancy-sharing
+shared:
+  - id: kubernetes-control-plane
+    mode: shared-control-plane
+    reason: Tenants consume the plane as a product; they do not receive plane-admin.
+    tenants_may_not_inherit: [cluster-admin, platform-operator]
+  - id: cluster-capacity-pool
+    mode: shared-quota-pool
+    reason: Capacity is finite; Chapter 11 will allocate floors and ceilings.
+    tenants_may_not_inherit: [unlimited-burst-into-peer-quota]
+denied:
+  - id: cluster-admin
+    reason: Shared cluster-admin is the cumulative product failure this book interrupts.
+  - id: peer-tenant-secrets
+    reason: Tenant credentials are not a shared platform product.
+  - id: peer-tenant-workload-network
+    reason: Default-deny between tenants; the control-plane API is the shared exception.
+  - id: peer-tenant-change-authority
+    reason: A tenant change must not mutate another tenant or the control plane.

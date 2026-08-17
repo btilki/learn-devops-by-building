@@ -1,0 +1,7 @@
+schema_version: 1
+kind: slo-windows
+id: northwind-slo-windows
+windows:
+  - id: rolling-30d
+    duration_days: 30
+    calendar: rolling

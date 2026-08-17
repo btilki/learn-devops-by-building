@@ -1,0 +1,21 @@
+required_objectives:
+  - obj-supply-chain-admission
+  - obj-correlated-detection
+  - obj-incident-containment
+  - obj-trust-restoration
+  - obj-cache-persistence-control
+  - obj-support-field-authorization
+  - obj-support-field-detection
+  - obj-support-session-revocation
+required_evidence_categories:
+  - mechanism_evidence
+  - decision_evidence
+  - outcome_evidence
+  - recovery_evidence
+minimum_links_per_objective: 1
+required_control_types_for_priority_risk: [prevent, detect, respond, recover]
+priority_risk: maintainer-supply-chain-payment-risk
+priority_attack_path: compromised-maintainer-to-payment
+forbidden_evidence_prefixes:
+  - governance/assurance-report.yaml
+  - checkpoints/chapter-16/cases/green-theater-report.yaml

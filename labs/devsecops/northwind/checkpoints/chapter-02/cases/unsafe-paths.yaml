@@ -1,0 +1,15 @@
+schema_version: 1
+kind: attack-path-register
+attack_paths:
+  - id: generic-hacker-path
+    actor: hacker
+    capability: attack-system
+    prerequisites: [internet-access]
+    steps:
+      - flow: unknown-flow
+        boundary: trusted-network
+        action: compromise-everything
+    threatens: [be-secure]
+    existing_controls: []
+    missing_evidence: [more-logs]
+    owner: security

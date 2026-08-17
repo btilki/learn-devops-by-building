@@ -1,0 +1,19 @@
+schema_version: 1
+kind: asset-register
+assets:
+  - id: order-outcome
+    name: Correct terminal order outcome
+    owner: commerce-operations
+    harms: [duplicate-charge, invalid-inventory, permanent-order-loss]
+  - id: payment-authority
+    name: Authority to cause payment effects
+    owner: payments-security
+    harms: [unauthorized-charge, payment-fraud]
+  - id: customer-order-data
+    name: Customer and order data
+    owner: data-governance
+    harms: [unauthorized-disclosure, unauthorized-modification]
+  - id: release-authority
+    name: Authority to admit production releases
+    owner: delivery-security
+    harms: [malicious-release, unreviewed-production-change]

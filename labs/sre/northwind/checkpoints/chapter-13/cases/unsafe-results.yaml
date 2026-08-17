@@ -1,0 +1,9 @@
+schema_version: 1
+kind: gameday-results
+id: northwind-gameday-results
+results:
+  - id: result-mixed-backup
+    scenario: gameday-mixed-backup
+    disposition: complete
+    status: recovered
+    as_of: "2026-08-16T00:00:00Z"

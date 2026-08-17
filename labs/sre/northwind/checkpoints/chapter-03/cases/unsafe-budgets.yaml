@@ -1,0 +1,9 @@
+schema_version: 1
+kind: error-budgets
+id: northwind-error-budgets
+budgets:
+  - id: budget-accept-and-complete-order
+    slo: slo-accept-and-complete-order
+    observation: observe-accept-and-complete-order
+    remaining_budget: 1.0
+    owner: reliability-program

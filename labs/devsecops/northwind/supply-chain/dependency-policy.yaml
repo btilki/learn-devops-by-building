@@ -1,0 +1,9 @@
+schema_version: 1
+kind: dependency-admission-policy
+registries:
+  pypi.org:
+    allowed_namespaces: [northwind-public-]
+  packages.northwind.example:
+    allowed_namespaces: [northwind-payment]
+require_lock_hash: true
+require_attributable_update: true

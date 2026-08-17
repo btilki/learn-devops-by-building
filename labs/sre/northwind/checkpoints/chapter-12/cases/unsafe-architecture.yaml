@@ -1,0 +1,12 @@
+schema_version: 1
+kind: regional-architecture
+id: northwind-regional-architecture
+owner: reliability-program
+mode: restore-in-place
+regions:
+  - id: region-primary
+    role: primary
+failover_order:
+  - from: region-primary
+    to: region-primary
+    when: we-have-backups

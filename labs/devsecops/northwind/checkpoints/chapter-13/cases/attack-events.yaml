@@ -1,0 +1,4 @@
+events:
+  - {time: "2026-08-15T10:00:00Z", source: identity, subject: compromised-session, session_id: compromised-session, action: credential-misuse, outcome: denied, policy_version: "2026-08-15.1", integrity: verified}
+  - {time: "2026-08-15T10:04:00Z", source: supply-chain, subject: compromised-session, session_id: compromised-session, action: unusual-dependency-change, outcome: denied, artifact_digest: sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09, policy_version: security-policy-v1, integrity: verified}
+  - {time: "2026-08-15T10:07:00Z", source: privilege, subject: compromised-session, session_id: compromised-session, action: denied-elevation, outcome: denied, policy_version: "2026-08-15.1", integrity: verified}

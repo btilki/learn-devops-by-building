@@ -1,0 +1,10 @@
+{
+  "phase": "coexistence",
+  "writer_version": "stable-old",
+  "written_fields": {
+    "total_cents": 4299,
+    "order_total_cents": null
+  },
+  "reader_version": "candidate-new",
+  "rollback_requested": true
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "devex-samples.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "samples"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "devex-samples"},
+    "id": {"type": "string", "minLength": 1},
+    "samples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["indicator", "observed_at", "value", "unit"],
+        "properties": {
+          "indicator": {"type": "string", "minLength": 1},
+          "tenant": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "system": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "observed_at": {"type": "string", "minLength": 1},
+          "value": {"type": ["integer", "number"]},
+          "unit": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "prior_value": {"type": ["integer", "number"]},
+          "unofficial_paths_deleted": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

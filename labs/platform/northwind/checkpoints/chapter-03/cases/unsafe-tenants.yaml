@@ -1,0 +1,16 @@
+schema_version: 1
+kind: tenants
+id: northwind-tenants
+tenants:
+  - id: storefront
+    owner: storefront-team
+    environments: [storefront]
+    isolation_dimensions: [namespace-label]
+    prohibited_inherited_roles: []
+    blast_radius: the-cluster
+  - id: fulfillment
+    owner: fulfillment-team
+    environments: [fulfillment]
+    isolation_dimensions: [namespace-label]
+    prohibited_inherited_roles: []
+    blast_radius: the-cluster

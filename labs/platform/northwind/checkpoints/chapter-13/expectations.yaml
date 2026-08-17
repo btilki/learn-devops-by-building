@@ -1,0 +1,11 @@
+required_plane: kubernetes-control-plane
+required_cadence: freeze-window
+required_budget:
+  - time-to-first-environment
+  - paved-road-completion
+required_unsupported:
+  - unofficial-fork
+  - chat-history
+forbidden_roles:
+  - cluster-admin
+as_of: "2026-08-16T12:00:00Z"

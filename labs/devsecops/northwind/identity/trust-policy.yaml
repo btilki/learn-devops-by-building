@@ -1,0 +1,8 @@
+schema_version: 1
+kind: identity-trust-policy
+policy_version: "2026-08-15.1"
+issuers:
+  - {id: northwind-human-idp, audiences: [northwind-source]}
+  - {id: northwind-oidc, audiences: [northwind-registry, northwind-production]}
+max_session_seconds: 3600
+reusable_tokens_allowed: false

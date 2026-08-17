@@ -1,0 +1,20 @@
+schema_version: 1
+kind: tenancy-roles
+id: northwind-tenancy-roles
+roles:
+  - id: tenant-developer
+    scope: tenant
+    never_inherit: [cluster-admin, platform-operator]
+  - id: tenant-operator
+    scope: tenant
+    never_inherit: [cluster-admin, platform-operator]
+  - id: platform-operator
+    scope: control-plane
+    never_inherit: [cluster-admin]
+bindings:
+  - principal: storefront-team
+    tenant: storefront
+    role: tenant-operator
+  - principal: fulfillment-team
+    tenant: fulfillment
+    role: tenant-operator

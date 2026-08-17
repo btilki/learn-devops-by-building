@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "asset.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "assets"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "asset-register"},
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "owner", "harms"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "name": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "harms": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

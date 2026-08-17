@@ -1,0 +1,12 @@
+schema_version: 1
+kind: runtime-contract
+workload: order-worker
+identity: order-worker
+artifact_digest: sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09
+allowed_processes: [order-worker]
+allowed_writes: [/tmp/order-worker/, /var/run/order-worker/]
+allowed_egress: [postgresql, payment-provider, email-provider]
+required_egress: [postgresql, payment-provider, email-provider]
+linux_capabilities: []
+allow_privilege_escalation: false
+read_only_root_filesystem: true

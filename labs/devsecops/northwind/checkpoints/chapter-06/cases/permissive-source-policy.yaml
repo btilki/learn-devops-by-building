@@ -1,0 +1,7 @@
+schema_version: 1
+kind: source-trust-policy
+trusted_origins: [https://github.com/northwind/order-platform.git]
+protected_refs: [refs/heads/main]
+sensitive_paths: []
+minimum_independent_approvals: 1
+automation_subject: dependency-bot

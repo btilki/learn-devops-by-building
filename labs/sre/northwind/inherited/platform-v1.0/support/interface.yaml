@@ -1,0 +1,5 @@
+schema_version: 1
+kind: inherited-platform-support-interface
+id: platform-v1.0-support
+kinds: [platform-product, tenant-application]
+job_time_indicators: [time-to-first-environment, paved-road-completion]

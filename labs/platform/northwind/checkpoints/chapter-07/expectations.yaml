@@ -1,0 +1,12 @@
+required_capabilities:
+  - tenant-storage
+  - workload-identity
+  - tenant-network
+  - artifact-promotion
+required_environments:
+  - storefront-nonprod
+  - fulfillment-nonprod
+required_breaking:
+  - tenant-parameter-add
+  - tenant-parameter-remove
+  - tenant-parameter-rename

@@ -1,0 +1,7 @@
+{
+  "promotion_order": ["development", "staging", "production"],
+  "initial_active_version": "config-v1",
+  "candidate_version": "config-v2",
+  "minimum_order_success_ratio": 0.995,
+  "maximum_emergency_override_minutes": 30
+}

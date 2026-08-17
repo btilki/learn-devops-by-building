@@ -1,0 +1,10 @@
+events:
+  - time: "2026-08-15T11:25:00Z"
+    source: modeled-runtime-sensor
+    subject: order-worker
+    action: undeclared-egress
+    outcome: blocked
+    policy_version: runtime-v2-recovery
+    integrity: verified
+    deployment: northwind-production/order-worker
+    artifact_digest: sha256:4444444444444444444444444444444444444444444444444444444444444444

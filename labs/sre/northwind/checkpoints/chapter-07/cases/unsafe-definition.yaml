@@ -1,0 +1,7 @@
+schema_version: 1
+kind: toil-definition
+id: northwind-toil-definition
+owner: reliability-program
+classes: [toil, engineering]
+kinds: [interrupt, project]
+forbidden_measurements: []

@@ -1,0 +1,37 @@
+schema_version: 1
+kind: portfolio-incident-traces
+id: northwind-incident-traces
+owner: reliability-program
+traces:
+  - id: spanning-payment-and-dispatch
+    support_kind: tenant-application
+    commander: storefront-primary-a
+    commander_role: commander
+    affected_journeys:
+      - accept-and-complete-order
+      - dispatch-fulfillment
+    oncall_systems:
+      - storefront-oncall-system
+      - fulfillment-oncall-system
+    freeze_join:
+      - freeze-storefront-releases
+      - freeze-fleet-storage-upgrade
+    journey_states:
+      - journey: accept-and-complete-order
+        state: degraded
+      - journey: dispatch-fulfillment
+        state: failing
+    status: open
+    as_of: "2026-08-16T00:00:00Z"
+  - id: platform-product-job-time
+    support_kind: platform-product
+    commander: platform-primary-a
+    commander_role: commander
+    affected_journeys: []
+    oncall_systems:
+      - platform-oncall-system
+    freeze_join: []
+    job_time_indicators:
+      - time-to-first-environment
+    status: open
+    as_of: "2026-08-16T00:00:00Z"

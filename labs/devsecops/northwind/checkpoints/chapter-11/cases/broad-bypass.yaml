@@ -1,0 +1,13 @@
+id: bypass-release-pressure
+rule: all
+enforcement_points: [source-merge, production-deploy]
+scope: "*"
+owner: release-manager
+rationale: ship-now
+compensating_controls: []
+compensation_enforcement_points: []
+evidence: []
+effective_at: "2026-08-15T10:00:00Z"
+expires_at: null
+removal_path: null
+status: active

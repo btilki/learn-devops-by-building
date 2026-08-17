@@ -1,0 +1,10 @@
+schema_version: 1
+kind: catalog-dependencies
+id: northwind-catalog-dependencies
+dependencies:
+  - system: storefront-api
+    depends_on: [postgresql]
+  - system: fulfillment-api
+    depends_on: [warehouse-dispatch]
+  - system: software-catalog
+    depends_on: []

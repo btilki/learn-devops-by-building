@@ -1,0 +1,15 @@
+required_tenants:
+  - storefront
+  - fulfillment
+required_dimensions:
+  - identity
+  - network
+  - quota
+  - secrets
+  - change-authority
+required_sharing:
+  - kubernetes-control-plane
+required_denied:
+  - cluster-admin
+prohibited_tenant_roles:
+  - cluster-admin

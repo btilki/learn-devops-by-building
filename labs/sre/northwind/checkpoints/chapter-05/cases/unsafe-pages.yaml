@@ -1,0 +1,13 @@
+schema_version: 1
+kind: burn-pages
+id: northwind-burn-pages
+pages:
+  - id: page-cpu
+    burn: cpu-utilization-symptom
+    destination: storefront-oncall
+    destination_kind: catalog-contact
+    user_impact: true
+  - id: page-job-time
+    burn: time-to-first-environment-burn
+    destination: storefront-oncall
+    destination_kind: catalog-contact

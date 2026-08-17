@@ -1,0 +1,5 @@
+{"event":"requested","request_id":"privilege-001","subject":"responder-alice","at":"2026-08-15T10:00:00Z"}
+{"event":"approved","request_id":"privilege-001","subject":"responder-alice","approver":"incident-commander","at":"2026-08-15T10:02:00Z"}
+{"event":"used","request_id":"privilege-001","subject":"responder-alice","action":"isolate-workload","resource":"northwind-production/order-worker","at":"2026-08-15T10:05:00Z"}
+{"event":"revoked","request_id":"privilege-001","subject":"responder-alice","at":"2026-08-15T10:12:00Z"}
+{"event":"reviewed","request_id":"privilege-001","subject":"responder-alice","at":"2026-08-15T11:00:00Z"}

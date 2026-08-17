@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "devex-non-metrics.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "non_metrics"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "devex-non-metrics"},
+    "id": {"type": "string", "minLength": 1},
+    "non_metrics": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "reason"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "category": {"enum": ["vanity", "tenant-workload"]},
+          "reason": {"type": "string", "pattern": "^[a-z0-9-]+$"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

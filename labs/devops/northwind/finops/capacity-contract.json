@@ -1,0 +1,47 @@
+{
+  "allocation": {
+    "owner": true,
+    "service": true,
+    "environment": true,
+    "cost_center": true,
+    "shared_cost_policy": "documented-allocation"
+  },
+  "economics": {
+    "unit": "cost-per-successful-order",
+    "denominator_quality_gate": true,
+    "delivery_cost_measured": true
+  },
+  "reliability_evidence": {
+    "order_success": true,
+    "order_latency": true,
+    "oldest_message_age": true,
+    "recovery_capacity": true
+  },
+  "capacity": {
+    "requests_based_on_measurement": true,
+    "autoscaling_metrics": ["cpu", "oldest-message-age"],
+    "minimum_capacity": "tested-recovery-floor",
+    "maximum_capacity_tested": true,
+    "headroom_policy": "failure-and-growth-tested",
+    "dependency_limit": "provider-rate-limit",
+    "downscale_stabilization": true
+  },
+  "financial_controls": {
+    "forecast": true,
+    "budget_alerts": "forecast-and-anomaly",
+    "anomaly_owner": "service-owner",
+    "commitments_after_baseline": true
+  },
+  "optimization_change": {
+    "reviewed": true,
+    "progressive": true,
+    "reliability_gated": true,
+    "rollback_capacity": "last-verified-envelope",
+    "evidence_window": "peak-and-recovery"
+  },
+  "governance": {
+    "exception_expiry": true,
+    "team_showback": true,
+    "individual_ranking_forbidden": true
+  }
+}

@@ -1,0 +1,6 @@
+schema_version: 1
+kind: deployment-evidence
+environment: production
+artifact_digest: sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09
+admission_result: allow
+policy_version: release-trust-v3

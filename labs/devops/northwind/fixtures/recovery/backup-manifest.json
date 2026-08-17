@@ -1,0 +1,14 @@
+{
+  "candidates": [
+    {
+      "backup_id": "base-002",
+      "path": "fixtures/recovery/backups/base-002.json",
+      "expected_sha256": "647e17a7ebfa64de9b0b708de7f813d800439a7ec61389a5ff5967f44d5fa47c"
+    },
+    {
+      "backup_id": "base-001",
+      "path": "fixtures/recovery/backups/base-001.json",
+      "expected_sha256": "0791f2e02a1620d01d6b43ad4603312ae4760c7e20b205fb1e2e69b48dd6bdc2"
+    }
+  ]
+}

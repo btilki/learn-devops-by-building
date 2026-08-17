@@ -1,0 +1,7 @@
+{
+  "artifactName": "ghcr.io/northwind-commerce/storefront-api",
+  "builderId": "https://github.com/northwind-commerce/storefront/.github/workflows/release.yml@refs/heads/main",
+  "buildType": "https://northwind.example/build-types/storefront-container/v1",
+  "sourceRepository": "https://github.com/northwind-commerce/storefront",
+  "sourceRevision": "chapter-02-complete"
+}

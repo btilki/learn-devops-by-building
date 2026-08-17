@@ -1,0 +1,6 @@
+schema_version: 1
+kind: chapter-expectations
+id: chapter-02
+required_boundaries: [human-to-source, source-to-build, build-to-registry, registry-to-production, control-plane-to-runtime, workload-to-provider, workload-to-data, human-to-data]
+required_attack_paths: [compromised-maintainer-to-payment, overprivileged-support-data-access]
+required_priority_invariants: [attributable-payment-effects, governed-production-release, correct-order-terminal-state, governed-order-data]

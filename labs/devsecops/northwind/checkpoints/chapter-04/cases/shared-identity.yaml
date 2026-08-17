@@ -1,0 +1,23 @@
+# Chapter 4 start state: one shared subject, issuer-only audience trust,
+# day-long reusable tokens, and a single accumulated role.
+subjects:
+  schema_version: 1
+  kind: identity-subject-register
+  subjects:
+    - {id: northwind-ci, type: automation, issuer: northwind-shared, audiences: [northwind-source, northwind-registry, northwind-production], roles: [maintainer], status: active}
+roles:
+  schema_version: 1
+  kind: authorization-role-register
+  roles:
+    - id: maintainer
+      allows:
+        - {action: propose-change, resource: northwind-source, environment: repository}
+        - {action: publish-artifact, resource: northwind-registry, environment: build}
+        - {action: reconcile-deployment, resource: northwind-production, environment: production}
+trust:
+  schema_version: 1
+  kind: identity-trust-policy
+  issuers:
+    - {id: northwind-shared, audiences: [northwind-source, northwind-registry, northwind-production]}
+  max_session_seconds: 86400
+  reusable_tokens_allowed: true

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gameday-results.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "results"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "gameday-results"},
+    "id": {"type": "string", "minLength": 1},
+    "results": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "scenario", "disposition", "as_of"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "scenario": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "disposition": {
+            "enum": ["in-bounds", "abort", "insufficient-alone"]
+          },
+          "abort_reason": {"const": "blast-radius-exceeds-contract"},
+          "feeds_action": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "as_of": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,20 @@
+required_treatments:
+  - accept
+  - adjacent
+  - reject
+required_accept:
+  - order_success_ratio
+  - order_latency
+  - dispatch_success_ratio
+required_adjacent:
+  - time-to-first-environment
+  - paved-road-completion
+  - catalog-freshness
+required_reject:
+  - cpu-utilization
+  - replica-ready
+  - portal-availability
+required_accept_journeys:
+  order_success_ratio: accept-and-complete-order
+  order_latency: accept-and-complete-order
+  dispatch_success_ratio: dispatch-fulfillment

@@ -1,0 +1,14 @@
+schema_version: 1
+kind: user-journeys
+id: northwind-reliability-journeys
+journeys:
+  - id: accept-and-complete-order
+    user: storefront-team
+    failed_outcome: A valid order is not durably accepted or does not reach a correct terminal state.
+    owner: reliability-program
+    later_proof: order_success_ratio
+  - id: dispatch-fulfillment
+    user: fulfillment-team
+    failed_outcome: An accepted order does not reach a correct warehouse dispatch state.
+    owner: reliability-program
+    later_proof: dispatch_success_ratio

@@ -1,0 +1,31 @@
+schema_version: 1
+kind: gameday-scenarios
+id: northwind-gameday-scenarios
+scenarios:
+  - id: gameday-error-budget-freeze
+    kind: error-budget-freeze
+    joins: freeze-storefront-releases
+    max_blast_radius: declared-scenario
+  - id: gameday-oncall-page-path
+    kind: on-call-page-path
+    joins: storefront-oncall-system
+    max_blast_radius: declared-scenario
+  - id: gameday-dependency-loss
+    kind: dependency-loss
+    joins: payment
+    max_blast_radius: declared-scenario
+    feeds_action: verify-payment-retry-shed
+  - id: gameday-regional-loss-tabletop
+    kind: regional-loss-tabletop
+    joins: region-primary
+    mode: tabletop
+    max_blast_radius: declared-scenario
+  - id: gameday-mixed-backup
+    kind: mixed-backup
+    joins: platform-mixed-backup
+    insufficient_alone: true
+    max_blast_radius: declared-scenario
+  - id: gameday-unbounded-chaos
+    kind: unbounded-chaos
+    joins: live-portfolio
+    max_blast_radius: declared-scenario

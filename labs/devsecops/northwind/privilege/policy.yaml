@@ -1,0 +1,9 @@
+schema_version: 1
+kind: privileged-access-policy
+max_duration_seconds: 1800
+self_approval_allowed: false
+required_fields: [requester, subject, approver, purpose, action, resource, requested_at, approved_at, issued_at, expires_at, ended_at, reviewed_at, ticket]
+break_glass:
+  allowed_actions: [isolate-workload, revoke-subject]
+  requires_after_action_review: true
+  review_due_seconds: 86400

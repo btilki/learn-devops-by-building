@@ -1,0 +1,14 @@
+schema_version: 1
+kind: degradation-modes
+id: northwind-degradation-modes
+owner: reliability-program
+modes:
+  - id: payment-overload-degraded
+    journey: accept-and-complete-order
+    sli: order_success_ratio
+    trigger: payment-retry-budget-exhausted
+    user_visible: silent-drop
+    accounting: success
+    remaining_budget: 1.0
+    worker: order-worker
+    review_trigger: never

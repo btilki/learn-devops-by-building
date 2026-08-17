@@ -1,0 +1,9 @@
+schema_version: 1
+kind: quota-policy
+id: northwind-quota-policy
+owner: platform-team
+pool: cluster-capacity-pool
+capacity: 32
+tenants:
+  - tenant: storefront
+  - tenant: fulfillment

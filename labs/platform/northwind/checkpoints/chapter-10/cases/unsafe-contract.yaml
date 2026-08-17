@@ -1,0 +1,11 @@
+schema_version: 1
+kind: devex-contract
+id: northwind-devex-contract
+owner: platform-team
+indicators:
+  - time-to-first-environment
+  - paved-road-completion
+  - adoption-percentage
+  - order_success_ratio
+non_metrics:
+  - ticket-volume

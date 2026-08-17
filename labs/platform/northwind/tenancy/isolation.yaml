@@ -1,0 +1,24 @@
+schema_version: 1
+kind: isolation-boundaries
+id: northwind-isolation
+dimensions:
+  - id: identity
+    allowed_sharing: none
+    denied_inheritance: [cross-tenant-identity, cluster-admin]
+    blast_radius: a-stolen-tenant-credential-cannot-act-as-another-tenant
+  - id: network
+    allowed_sharing: kubernetes-control-plane
+    denied_inheritance: [peer-tenant-workload-network]
+    blast_radius: a-tenant-workload-cannot-reach-another-tenant-service-by-default
+  - id: quota
+    allowed_sharing: cluster-capacity-pool
+    denied_inheritance: [unlimited-burst-into-peer-quota]
+    blast_radius: one-tenant-cannot-starve-another-below-its-floor
+  - id: secrets
+    allowed_sharing: none
+    denied_inheritance: [peer-tenant-secret-read]
+    blast_radius: a-tenant-cannot-read-another-tenant-credentials
+  - id: change-authority
+    allowed_sharing: none
+    denied_inheritance: [cluster-admin, platform-operator, peer-tenant-change]
+    blast_radius: a-tenant-change-cannot-mutate-another-tenant-or-the-control-plane

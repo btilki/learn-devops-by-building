@@ -1,0 +1,10 @@
+{
+  "queue_seconds": 600,
+  "stages": [
+    {"name": "build", "seconds": 900, "needs": []},
+    {"name": "lint", "seconds": 35, "needs": ["build"]},
+    {"name": "test", "seconds": 130, "needs": ["lint"]},
+    {"name": "scan", "seconds": 150, "needs": ["test"]},
+    {"name": "publish", "seconds": 45, "needs": ["scan"]}
+  ]
+}

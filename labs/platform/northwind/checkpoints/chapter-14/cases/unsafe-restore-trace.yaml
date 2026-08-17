@@ -1,0 +1,24 @@
+schema_version: 1
+kind: restore-trace
+id: northwind-restore-trace
+restores:
+  - id: restore-newest-mixed
+    snapshot: plane-newest-corrupt
+    resource: kubernetes-control-plane
+    subject: plane-reconciler
+    approved_by: plane-reconciler
+    action: restore-newest
+    granted_role: cluster-admin
+    ticket: fulfillment-warehouse-delay
+    restored_version: "1.1"
+    last_known_good: "1.1"
+    mixed_backup: true
+    unofficial: true
+    source_rewritten: true
+    result: allow
+    roots:
+      - reviewed_intent
+      - artifact_identity
+      - configuration_identity
+      - durable_data
+      - identity_policy

@@ -1,0 +1,10 @@
+schema_version: 1
+kind: portfolio-incident-roles
+id: northwind-incident-roles
+roles:
+  - id: commander
+    kind: command
+    may_close: true
+  - id: operator
+    kind: operate
+    may_close: false

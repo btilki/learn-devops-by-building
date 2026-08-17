@@ -1,0 +1,31 @@
+schema_version: 1
+kind: plane-recovery-evidence
+id: northwind-plane-recovery-evidence
+owner: platform-team
+plane: kubernetes-control-plane
+last_known_good: "1.1"
+snapshots:
+  - id: plane-lkg-1-0
+    version: "1.0"
+    newest: false
+    mixed_tenants: false
+    corrupt: false
+    independently_verified: true
+    roots:
+      - reviewed_intent
+      - artifact_identity
+      - configuration_identity
+      - durable_data
+      - identity_policy
+  - id: plane-newest-corrupt
+    version: "1.1"
+    newest: true
+    mixed_tenants: true
+    corrupt: true
+    independently_verified: false
+    roots:
+      - reviewed_intent
+      - artifact_identity
+      - configuration_identity
+      - durable_data
+      - identity_policy

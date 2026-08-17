@@ -1,0 +1,19 @@
+schema_version: 1
+kind: user-jobs
+id: northwind-platform-jobs
+jobs:
+  - id: obtain-bounded-environment
+    user: fulfillment-team
+    finished_outcome: A tenant-scoped environment exists with a lease and no shared cluster-admin.
+    owner: platform-team
+    later_proof: time-to-first-environment
+  - id: ship-on-paved-road
+    user: fulfillment-team
+    finished_outcome: A new service reaches production on the reviewed path with identity and artifact defaults intact.
+    owner: platform-team
+    later_proof: paved-road-completion
+  - id: publish-owned-path
+    user: platform-team
+    finished_outcome: Teams can discover the path, owner, and support route without opening a ticket for orientation.
+    owner: platform-team
+    later_proof: catalog-freshness

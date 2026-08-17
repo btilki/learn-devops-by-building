@@ -1,0 +1,5 @@
+schema_version: 1
+kind: inherited-platform-devex-interface
+id: platform-v1.0-devex
+platform_product_slis: [time-to-first-environment, paved-road-completion, catalog-freshness]
+tenant_workload_non_metrics: [order_success_ratio, order_latency]

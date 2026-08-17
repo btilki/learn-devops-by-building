@@ -1,0 +1,6 @@
+schema_version: 1
+kind: security-event-contract
+required_fields: [time, source, subject, action, outcome, policy_version, integrity]
+accepted_integrity: [verified]
+retention_days: 90
+missing_telemetry_alert: true

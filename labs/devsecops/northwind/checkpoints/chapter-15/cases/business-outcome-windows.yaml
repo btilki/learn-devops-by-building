@@ -1,0 +1,34 @@
+schema_version: 1
+kind: recovery-evidence-windows
+cadence_seconds: 300
+thresholds:
+  minimum_order_success_ratio: 0.99
+  maximum_order_latency_ms: 250
+windows:
+  - id: recovery-window-rejected
+    observed_at: "2026-08-15T10:55:00Z"
+    desired_actual_agreement: true
+    terminal_order_outcomes: false
+    detection_active: true
+    new_persistence_alerts: 0
+    order_success_ratio: 0.98
+    order_latency_ms: 280
+    duplicate_payment_effects: 0
+  - id: recovery-window-1
+    observed_at: "2026-08-15T11:00:00Z"
+    desired_actual_agreement: true
+    terminal_order_outcomes: true
+    detection_active: true
+    new_persistence_alerts: 0
+    order_success_ratio: 0.995
+    order_latency_ms: 190
+    duplicate_payment_effects: 0
+  - id: recovery-window-2
+    observed_at: "2026-08-15T11:05:00Z"
+    desired_actual_agreement: true
+    terminal_order_outcomes: true
+    detection_active: true
+    new_persistence_alerts: 0
+    order_success_ratio: 0.998
+    order_latency_ms: 175
+    duplicate_payment_effects: 0

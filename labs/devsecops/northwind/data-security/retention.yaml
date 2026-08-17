@@ -1,0 +1,10 @@
+schema_version: 1
+kind: data-retention-policy
+stores:
+  primary: {retain_days: 365, deletion: tombstone-then-purge}
+  runtime-memory: {retain_days: 0, deletion: release-after-request}
+  support-session: {retain_days: 0, deletion: purge-at-session-close}
+  telemetry: {retain_days: 30, deletion: purge}
+  nonproduction: {retain_days: 7, deletion: purge}
+  backup: {retain_days: 90, deletion: expire-by-generation}
+backup_constraint: Individual deletion cannot rewrite immutable backup generations; restored data must reapply tombstones before use.

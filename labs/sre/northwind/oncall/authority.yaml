@@ -1,0 +1,31 @@
+schema_version: 1
+kind: oncall-authority
+id: northwind-oncall-authority
+authority:
+  - id: storefront-freeze-authority
+    system: storefront-oncall-system
+    action: freeze-storefront-releases
+    self_approval_forbidden: true
+    break_glass:
+      requester: storefront-primary-a
+      approver: reliability-program
+      expiry: "2026-08-16T04:00:00Z"
+      after_action_review: true
+  - id: fulfillment-freeze-authority
+    system: fulfillment-oncall-system
+    action: slow-fulfillment-releases
+    self_approval_forbidden: true
+    break_glass:
+      requester: fulfillment-primary-a
+      approver: reliability-program
+      expiry: "2026-08-16T04:00:00Z"
+      after_action_review: true
+  - id: platform-ticket-authority
+    system: platform-oncall-system
+    action: acknowledge-job-time-ticket
+    self_approval_forbidden: true
+    break_glass:
+      requester: platform-primary-a
+      approver: reliability-program
+      expiry: "2026-08-16T04:00:00Z"
+      after_action_review: true

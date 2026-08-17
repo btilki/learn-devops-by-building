@@ -1,0 +1,12 @@
+schema_version: 1
+kind: failover-trace
+id: northwind-failover-trace
+owner: reliability-program
+from: region-primary
+to: region-standby
+when: region-primary-lost
+started_at: "2026-08-16T00:00:00Z"
+completed_at: "2026-08-16T01:00:00Z"
+elapsed_seconds: 3600
+rpo_lost_seconds: 300
+lost_isolated: true

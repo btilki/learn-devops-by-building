@@ -1,0 +1,16 @@
+schema_version: 1
+kind: intake-method
+id: northwind-capability-intake
+owner: platform-team
+treatments: [productize, leave, decline]
+required_fields:
+  - user_job_or_remaining_owner
+  - repetition
+  - isolation_impact
+  - support_cost
+  - owner
+  - review_trigger
+forbidden_demand:
+  - two-teams-asked
+  - loudest-ticket
+  - portal-needed

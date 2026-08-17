@@ -1,0 +1,13 @@
+schema_version: 1
+kind: reliability-refusals
+id: northwind-reliability-refusals
+refusals:
+  - id: cluster-api-uptime
+    statement: Cluster, API, kubelet, and portal uptime must not count as reliability success.
+    remaining_owner: platform-team
+  - id: platform-job-time-as-slo
+    statement: Platform job-time proofs remain a job-time budget, not a portfolio SLO.
+    remaining_owner: platform-team
+  - id: inherited-restore-as-portfolio-recovery
+    statement: One-environment reconstruction and control-plane restore are not Evidence of portfolio recovery.
+    remaining_owner: reliability-program

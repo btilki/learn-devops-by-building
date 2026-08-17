@@ -1,0 +1,24 @@
+schema_version: 1
+kind: review-calendar
+evaluation_time: "2026-08-15T11:30:00Z"
+last_reviewed_at: "2026-08-15T11:20:00Z"
+cadence_days: 90
+evidence_freshness_days: 30
+material_change_triggers:
+  - id: incident-closed-with-recovery
+    source: response/case/incident.yaml#status
+    requires_review: [obj-correlated-detection, obj-trust-restoration, obj-cache-persistence-control]
+    completed_at: "2026-08-15T11:20:00Z"
+  - id: attack-path-register-change
+    source: threat-model/attack-paths.yaml
+    requires_review: [obj-supply-chain-admission, obj-correlated-detection]
+    completed_at: "2026-08-15T11:20:00Z"
+  - id: support-data-purpose-review
+    source: data-security/access-policy.yaml
+    requires_review: [obj-support-field-authorization, obj-support-field-detection, obj-support-session-revocation]
+    completed_at: "2026-08-15T12:15:00Z"
+obligations:
+  - id: post-incident-assurance
+    due_at: "2026-08-16T00:00:00Z"
+    owner: delivery-security
+    action: re-evaluate-all-objectives-after-incident

@@ -1,0 +1,11 @@
+schema_version: 1
+kind: supported-exits
+id: northwind-supported-exits
+exits:
+  - id: notification-skip-slow-template
+    system: notification-service
+    owner: storefront-team
+    lost_defaults: [golden-template-scaffold]
+    remaining_guardrails: [artifact-digest, workload-identity-claims, no-cluster-admin]
+    review_at: "2026-11-16T00:00:00Z"
+    reason: non-critical-confirmations-do-not-need-the-full-template

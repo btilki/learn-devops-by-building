@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "gameday-program.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "id",
+    "owner",
+    "cadence",
+    "required_kinds",
+    "abort_when",
+    "learning_join",
+    "forbidden_complete_on",
+    "not_chapter_14_failover",
+    "review_trigger"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "gameday-program"},
+    "id": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "cadence": {"const": "90d"},
+    "required_kinds": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "enum": [
+          "error-budget-freeze",
+          "on-call-page-path",
+          "dependency-loss",
+          "regional-loss-tabletop"
+        ]
+      }
+    },
+    "abort_when": {"const": "blast-radius-exceeds-contract"},
+    "learning_join": {"const": "northwind-learning-actions"},
+    "forbidden_complete_on": {"const": "mixed-backup"},
+    "not_chapter_14_failover": {"const": true},
+    "review_trigger": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

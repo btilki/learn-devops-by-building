@@ -1,0 +1,17 @@
+required_plane: kubernetes-control-plane
+required_capability: tenant-storage
+required_decision_source: explicit-tenant-decision
+required_jobs:
+  - obtain-bounded-environment
+  - ship-on-paved-road
+required_limitations:
+  - not-regional-loss
+  - not-portfolio-rto
+forbidden_roles:
+  - cluster-admin
+forbidden_indicators:
+  - order_success_ratio
+  - order_latency
+  - csat
+  - ticket-volume
+as_of: "2026-08-16T12:00:00Z"

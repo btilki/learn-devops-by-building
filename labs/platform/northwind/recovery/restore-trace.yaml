@@ -1,0 +1,22 @@
+schema_version: 1
+kind: restore-trace
+id: northwind-restore-trace
+restores:
+  - id: restore-plane-lkg
+    snapshot: plane-lkg-1-0
+    resource: kubernetes-control-plane
+    subject: platform-team
+    approved_by: platform-team
+    action: restore-last-known-good
+    restored_version: "1.0"
+    last_known_good: "1.0"
+    mixed_backup: false
+    unofficial: false
+    source_rewritten: false
+    result: allow
+    roots:
+      - reviewed_intent
+      - artifact_identity
+      - configuration_identity
+      - durable_data
+      - identity_policy

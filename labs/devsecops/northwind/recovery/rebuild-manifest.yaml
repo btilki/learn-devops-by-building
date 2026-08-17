@@ -1,0 +1,15 @@
+schema_version: 1
+kind: rebuild-manifest
+case_id: INC-2026-0815-01
+trusted_source_revision: 8a19e60
+trusted_builder: northwind-builder-v3
+trusted_signing_key: release-key-v3
+rebuilt_artifact_digest: sha256:4444444444444444444444444444444444444444444444444444444444444444
+invalidated_digests:
+  - sha256:9f4e7b3e0ac870d986f228f4d3869f46a7c506f77d5f4eaa59a24a1867d65f09
+required_roots: [reviewed_intent, artifact_identity, configuration_identity, durable_data, identity_policy]
+gitops:
+  desired_digest: sha256:4444444444444444444444444444444444444444444444444444444444444444
+  controller: deployment-controller
+  reconciliation: paused-until-validation
+owner: delivery-security

@@ -1,0 +1,24 @@
+schema_version: 1
+kind: recovery-verification
+id: northwind-recovery-verification
+plane: kubernetes-control-plane
+restored_snapshot: plane-lkg-1-0
+restored_version: "1.0"
+platform_jobs:
+  - obtain-bounded-environment
+  - ship-on-paved-road
+tenant_decisions:
+  - tenant: storefront
+    decision: continue
+    source: explicit-tenant-decision
+  - tenant: fulfillment
+    decision: continue
+    source: explicit-tenant-decision
+traffic_return:
+  - tenant: storefront
+    evidence: [reconciled_business_state, verified_service_outcome]
+  - tenant: fulfillment
+    evidence: [reconciled_business_state, verified_service_outcome]
+limitations:
+  - not-regional-loss
+  - not-portfolio-rto

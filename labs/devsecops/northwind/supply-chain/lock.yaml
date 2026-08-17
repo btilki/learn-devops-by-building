@@ -1,0 +1,11 @@
+schema_version: 1
+kind: dependency-lock
+dependencies:
+  - name: northwind-payment
+    version: 3.4.1
+    registry: packages.northwind.example
+    sha256: 6b71d45af938a0bb3cb1f47131dffca736da72ee3e826a6909f9850b05c36c3f
+  - name: northwind-public-http-signing
+    version: 2.1.0
+    registry: pypi.org
+    sha256: f12b89ca0f627c8ea587f2311432088c9a9cb41a38f9d52d6d5b46112c6908ae

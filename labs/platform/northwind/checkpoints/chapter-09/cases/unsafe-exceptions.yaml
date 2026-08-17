@@ -1,0 +1,14 @@
+schema_version: 1
+kind: exception-bindings
+id: northwind-exception-bindings
+bindings:
+  - exception: exception-dependency-mirror-2026-08
+    tenant: fulfillment
+    system: fulfillment-api
+    path: paved
+    remaining_isolation: [workload-identity-claims, no-cluster-admin]
+    scorecard_effect: waive-artifact-digest
+    owner: platform-security
+    scope: northwind-public-http-signing-2.1.0-mirror
+    compensating_controls: [verify-locked-hash]
+    expires_at: "2026-12-01T00:00:00Z"

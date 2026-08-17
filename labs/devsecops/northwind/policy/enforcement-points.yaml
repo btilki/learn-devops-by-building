@@ -1,0 +1,24 @@
+schema_version: 1
+kind: enforcement-point-map
+points:
+- id: source-merge
+  rules:
+  - dependency-admission
+  failure_mode: fail-closed
+  decision_log: required
+- id: production-deploy
+  rules:
+  - release-admission
+  failure_mode: fail-closed
+  decision_log: required
+  status: active
+- id: data-query
+  rules:
+  - data-field-access
+  failure_mode: fail-closed
+  decision_log: required
+- id: runtime-observation
+  rules:
+  - data-field-access
+  failure_mode: detect-only
+  decision_log: required

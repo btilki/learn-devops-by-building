@@ -1,0 +1,19 @@
+schema_version: 1
+kind: oncall-handoffs
+id: northwind-oncall-handoffs
+handoffs:
+  - id: storefront-handoff-2026-08-16
+    rotation: storefront-primary-rotation
+    from_primary: storefront-primary-b
+    to_primary: storefront-primary-a
+    recorded_at: "2026-08-16T00:00:00Z"
+  - id: fulfillment-handoff-2026-08-16
+    rotation: fulfillment-primary-rotation
+    from_primary: fulfillment-primary-b
+    to_primary: fulfillment-primary-a
+    recorded_at: "2026-08-16T00:00:00Z"
+  - id: platform-handoff-2026-08-16
+    rotation: platform-primary-rotation
+    from_primary: platform-primary-b
+    to_primary: platform-primary-a
+    recorded_at: "2026-08-16T00:00:00Z"

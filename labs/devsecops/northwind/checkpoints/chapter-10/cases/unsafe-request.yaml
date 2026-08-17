@@ -1,0 +1,4 @@
+subject: notification-service
+purpose: send-order-confirmation
+fields: [order_id, customer_email, order_total, payment_reference]
+store: telemetry

@@ -1,0 +1,40 @@
+# Local and generated — do not publish
+
+# Word working copies and lock files. Publish PDFs, not DOCX.
+*.docx
+*.docm
+*.doc
+~$*
+
+# Pandoc / Word / PDF build scratch
+/build/
+/tmp/
+
+# Python environments and caches
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+**/.pytest_cache/
+.ruff_cache/
+**/.ruff_cache/
+*.pyc
+*.pyo
+
+# Lab simulator output (recreated by make targets)
+labs/**/build/
+labs/**/evidence/
+labs/**/build-output/
+labs/**/dist/
+labs/**/.northwind-infra/
+
+# Editor and OS
+.DS_Store
+**/.DS_Store
+.vscode/
+Thumbs.db
+*.log
+
+# Nested lab git must stay local; never publish a renamed .git
+**/.git.publish-bak/

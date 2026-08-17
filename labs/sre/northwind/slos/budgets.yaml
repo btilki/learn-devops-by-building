@@ -1,0 +1,16 @@
+schema_version: 1
+kind: error-budgets
+id: northwind-error-budgets
+budgets:
+  - id: budget-accept-and-complete-order
+    slo: slo-accept-and-complete-order
+    observation: observe-accept-and-complete-order
+    owner: reliability-program
+  - id: budget-accept-and-complete-order-latency
+    slo: slo-accept-and-complete-order-latency
+    observation: observe-accept-and-complete-order-latency
+    owner: reliability-program
+  - id: budget-dispatch-fulfillment
+    slo: slo-dispatch-fulfillment
+    observation: observe-dispatch-fulfillment
+    owner: reliability-program

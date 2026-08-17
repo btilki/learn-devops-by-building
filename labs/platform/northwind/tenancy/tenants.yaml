@@ -1,0 +1,16 @@
+schema_version: 1
+kind: tenants
+id: northwind-tenants
+tenants:
+  - id: storefront
+    owner: storefront-team
+    environments: [storefront-nonprod, storefront-prod]
+    isolation_dimensions: [identity, network, quota, secrets, change-authority]
+    prohibited_inherited_roles: [cluster-admin, platform-operator]
+    blast_radius: storefront-workloads-and-order-path-only
+  - id: fulfillment
+    owner: fulfillment-team
+    environments: [fulfillment-nonprod, fulfillment-prod]
+    isolation_dimensions: [identity, network, quota, secrets, change-authority]
+    prohibited_inherited_roles: [cluster-admin, platform-operator]
+    blast_radius: fulfillment-workloads-and-warehouse-effects-only

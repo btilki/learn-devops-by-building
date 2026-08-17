@@ -1,0 +1,11 @@
+schema_version: 1
+kind: detection-rule
+id: correlate-maintainer-progression
+hypothesis: compromised-maintainer-progression
+correlation_fields: [subject, session_id, artifact_digest, deployment]
+required_context:
+  credential-misuse: [subject, session_id]
+  unusual-dependency-change: [subject, session_id, artifact_digest]
+  denied-elevation: [subject, session_id]
+  undeclared-egress: [subject, deployment, artifact_digest]
+noise_boundary: require-distinct-actions

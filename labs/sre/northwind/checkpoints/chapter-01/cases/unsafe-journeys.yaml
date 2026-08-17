@@ -1,0 +1,14 @@
+schema_version: 1
+kind: user-journeys
+id: northwind-reliability-journeys
+journeys:
+  - id: accept-and-complete-order
+    user: storefront-team
+    failed_outcome: The apiserver is not Ready.
+    owner: unassigned
+    later_proof: cluster-uptime
+  - id: dispatch-fulfillment
+    user: storefront-team
+    failed_outcome: The portal shows the warehouse.
+    owner: storefront-team
+    later_proof: api-uptime

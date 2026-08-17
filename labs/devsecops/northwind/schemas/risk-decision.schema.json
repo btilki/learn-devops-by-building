@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "risk-decision.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "risks"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "risk-register"},
+    "risks": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "attack_path", "assets", "exposure", "likelihood", "impact", "uncertainty", "treatment", "residual_risk", "owner", "review_trigger"],
+        "properties": {
+          "id": {"type": "string"}, "attack_path": {"type": "string"},
+          "assets": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "exposure": {"enum": ["limited", "internal", "external"]},
+          "likelihood": {"enum": ["low", "medium", "high"]},
+          "impact": {"enum": ["low", "medium", "high", "critical"]},
+          "uncertainty": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "treatment": {"enum": ["mitigate", "avoid", "transfer", "accept", "monitor"]},
+          "residual_risk": {"type": "string", "minLength": 1},
+          "owner": {"type": "string"}, "review_trigger": {"type": "string", "minLength": 1}
+        }, "additionalProperties": false
+      }
+    }
+  }, "additionalProperties": false
+}

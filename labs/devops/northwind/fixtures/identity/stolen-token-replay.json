@@ -1,0 +1,7 @@
+{
+  "token_subject": "system:serviceaccount:northwind:order-worker",
+  "issued_audience": "northwind-payment-broker",
+  "attempted_audience": "northwind-production-admin",
+  "trust_binding_status": "revoked",
+  "legitimate_replacement_subject": "system:serviceaccount:northwind:order-worker"
+}

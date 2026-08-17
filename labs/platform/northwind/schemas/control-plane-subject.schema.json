@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "control-plane-subject.schema.json",
+  "type": "object",
+  "required": ["schema_version", "kind", "id", "subjects"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "control-plane-subjects"},
+    "id": {"type": "string", "minLength": 1},
+    "subjects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "role",
+          "granted_role",
+          "may_approve_plane_change",
+          "credentials"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "kind": {"enum": ["plane", "tenant"]},
+          "tenant": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "role": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "granted_role": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+          "may_approve_plane_change": {"type": "boolean"},
+          "credentials": {
+            "type": "object",
+            "required": ["subject", "issuer", "audience", "expiry", "policy"],
+            "properties": {
+              "subject": {"type": "string", "minLength": 1},
+              "issuer": {"type": "string", "minLength": 1},
+              "audience": {"type": "string", "minLength": 1},
+              "expiry": {"type": "string", "minLength": 1},
+              "policy": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,6 @@
+schema_version: 1
+kind: inherited-privilege-interface
+id: devsecops-v1.0-privilege
+self_approval_forbidden: true
+required_fields: [requester, approver, action, resource, expiry, after_action_review]
+break_glass_requires_after_action_review: true

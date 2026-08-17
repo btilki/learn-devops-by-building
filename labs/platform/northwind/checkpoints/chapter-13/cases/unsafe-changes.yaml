@@ -1,0 +1,16 @@
+schema_version: 1
+kind: support-changes
+id: northwind-support-changes
+changes:
+  - id: live-plane-patch
+    resource: kubernetes-control-plane
+    subject: plane-reconciler
+    approved_by: plane-reconciler
+    action: patch-in-place
+    granted_role: cluster-admin
+    ticket: fulfillment-warehouse-delay
+    last_known_good: "1.1"
+    current_version: "1.1"
+    unofficial: true
+    source_rewritten: true
+    result: allow

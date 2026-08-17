@@ -1,0 +1,6 @@
+schema_version: 1
+kind: inherited-platform-recovery-interface
+id: platform-v1.0-recovery
+plane_last_known_good: "1.0"
+contract_last_known_good: tenant-storage-1.0
+limitations: [not-regional-loss, not-portfolio-rto]

@@ -1,0 +1,44 @@
+{
+  "declaration": {
+    "criteria": "user-impact",
+    "severity_model": "SEV-1"
+  },
+  "roles": {
+    "incident_commander": "incident-commander",
+    "operations_lead": "operations-lead",
+    "communications_lead": "communications-lead",
+    "scribe": "incident-scribe"
+  },
+  "control": {
+    "change_freeze": true,
+    "single_source_of_truth": true,
+    "hypothesis_log": true,
+    "break_glass": "individual-time-bound"
+  },
+  "communication": {
+    "cadence_minutes": 15,
+    "internal_audience": true,
+    "external_audience": true,
+    "next_update_time_required": true
+  },
+  "mitigation": {
+    "decision": "rollback-producer-rollforward-consumer",
+    "preserve_queue": true,
+    "rollback_uses_verified_digest": true,
+    "rollforward_is_reviewed": true
+  },
+  "recovery": {
+    "minimum_consecutive_samples": 2,
+    "order_success_required": true,
+    "oldest_message_age_required": true,
+    "terminal_orders_required": true,
+    "duplicate_charge_check": true,
+    "desired_actual_reconciled": true
+  },
+  "learning": {
+    "blameless": true,
+    "timeline_preserved": true,
+    "contributing_conditions": true,
+    "actions_require_owner_deadline_verification": true
+  }
+}

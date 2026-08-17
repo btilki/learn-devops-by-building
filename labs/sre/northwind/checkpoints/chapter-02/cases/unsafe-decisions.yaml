@@ -1,0 +1,20 @@
+schema_version: 1
+kind: sli-decisions
+id: northwind-sli-decisions
+decisions:
+  - id: decide-time-to-first-environment
+    candidate: time-to-first-environment
+    treatment: accept
+    class: portfolio-slo
+    journey: accept-and-complete-order
+    justification: leadership-can-see-it
+    owner: reliability-program
+    review_trigger: never
+  - id: decide-order-success-ratio
+    candidate: order_success_ratio
+    treatment: reject
+    class: tenant-workload
+    remaining_owner: storefront-team
+    justification: platform-already-excluded-it
+    owner: reliability-program
+    review_trigger: never

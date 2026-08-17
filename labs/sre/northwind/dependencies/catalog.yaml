@@ -1,0 +1,16 @@
+schema_version: 1
+kind: dependency-catalog
+id: northwind-dependency-catalog
+owner: reliability-program
+providers:
+  - id: payment
+    consumer: storefront
+    kind: external-provider
+  - id: warehouse
+    consumer: fulfillment
+    kind: external-provider
+  - id: notification-service
+    consumer: storefront
+    kind: supporting-service
+forbidden_claims:
+  - no-user-impact

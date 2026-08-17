@@ -1,0 +1,6 @@
+schema_version: 1
+kind: platform-users
+users:
+  - id: storefront-team
+    role: application-team
+    jobs: [obtain-bounded-environment]

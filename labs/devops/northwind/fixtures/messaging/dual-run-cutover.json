@@ -1,0 +1,12 @@
+{
+  "shadowed_operations": 10000,
+  "shadow_external_effects": 0,
+  "terminal_outcome_mismatches": 0,
+  "legacy_backlog": 0,
+  "rollback_window_closed": true,
+  "identity_preserved_across_routes": true,
+  "expected": {
+    "cutover_allowed": true,
+    "legacy_path_can_retire": true
+  }
+}

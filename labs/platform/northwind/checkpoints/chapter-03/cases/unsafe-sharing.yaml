@@ -1,0 +1,9 @@
+schema_version: 1
+kind: tenancy-sharing
+id: northwind-tenancy-sharing
+shared:
+  - id: cluster-admin
+    mode: shared-control-plane
+    reason: fulfillment-needs-to-ship-this-week
+    tenants_may_not_inherit: []
+denied: []

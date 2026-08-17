@@ -1,0 +1,32 @@
+schema_version: 1
+kind: support-escalation
+id: northwind-support-escalation
+routes:
+  - system: storefront-api
+    kind: tenant-application
+    owner: storefront-team
+    escalation: storefront-oncall
+  - system: order-worker
+    kind: tenant-application
+    owner: storefront-team
+    escalation: storefront-oncall
+  - system: notification-service
+    kind: tenant-application
+    owner: storefront-team
+    escalation: storefront-oncall
+  - system: fulfillment-api
+    kind: tenant-application
+    owner: fulfillment-team
+    escalation: fulfillment-oncall
+  - system: software-catalog
+    kind: platform-product
+    owner: platform-team
+    escalation: platform-oncall
+  - system: environment-provisioning
+    kind: platform-product
+    owner: platform-team
+    escalation: platform-oncall
+  - system: artifact-promotion
+    kind: platform-product
+    owner: platform-team
+    escalation: platform-oncall

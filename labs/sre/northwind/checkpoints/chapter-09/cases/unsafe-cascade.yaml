@@ -1,0 +1,12 @@
+schema_version: 1
+kind: degradation-cascade
+id: northwind-degradation-cascade
+owner: reliability-program
+page_cause: fulfillment-oncall
+denials:
+  - id: blame-fulfillment-for-payment
+    source_provider: payment
+    source_journey: accept-and-complete-order
+    page_cause: fulfillment-oncall
+    must_not_page: storefront-oncall
+    must_not_burn: accept-and-complete-order

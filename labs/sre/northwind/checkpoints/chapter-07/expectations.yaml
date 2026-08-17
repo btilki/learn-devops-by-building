@@ -1,0 +1,3 @@
+require_breach: true
+forbidden_critical_slos:
+  - notification-service

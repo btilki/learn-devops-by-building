@@ -1,0 +1,12 @@
+required_treatments:
+  - continue
+  - slow
+  - freeze
+required_freeze_targets:
+  - storefront-releases
+  - storage-1-0-to-2-0
+required_slow_targets:
+  - fulfillment-releases
+required_continue_targets:
+  - notification-service
+freeze_slo: slo-accept-and-complete-order

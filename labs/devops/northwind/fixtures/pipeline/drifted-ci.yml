@@ -1,0 +1,21 @@
+# northwind-template: ci-v0
+name: drifted-ci
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ruff check services tools checkpoints
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pytest -q
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: python tools/context_gate.py --root . --limit-bytes 209715200

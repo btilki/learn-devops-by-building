@@ -1,0 +1,10 @@
+schema_version: 1
+kind: degradation-cascade
+id: northwind-degradation-cascade
+owner: reliability-program
+denials:
+  - id: deny-payment-retry-into-fulfillment
+    source_provider: payment
+    source_journey: accept-and-complete-order
+    must_not_page: fulfillment-oncall
+    must_not_burn: dispatch-fulfillment

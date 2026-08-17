@@ -1,0 +1,5 @@
+schema_version: 1
+kind: inherited-release-interface
+id: devops-v1.1-release
+required_claims: [artifact_digest, source_identity, builder_identity, build_type, sbom, provenance]
+promotion_identity: artifact_digest

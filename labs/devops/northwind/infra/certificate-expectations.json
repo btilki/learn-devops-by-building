@@ -1,0 +1,6 @@
+{
+  "hostname": "checkout.northwind.example",
+  "minimum_renewal_lead_days": 30,
+  "maximum_unalerted_remaining_days": 21,
+  "minimum_replacement_validity_days": 300
+}

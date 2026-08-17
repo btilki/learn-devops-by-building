@@ -1,0 +1,10 @@
+schema_version: 1
+kind: burn-tickets
+id: northwind-burn-tickets
+tickets:
+  - id: ticket-time-to-first-environment
+    burn: time-to-first-environment-burn
+    destination: platform-oncall
+  - id: ticket-replica-ready
+    burn: replica-ready-symptom
+    destination: platform-oncall

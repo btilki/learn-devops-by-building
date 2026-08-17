@@ -1,0 +1,4 @@
+required_capability: tenant-storage
+forbidden_roles:
+  - cluster-admin
+as_of: "2026-08-16T12:00:00Z"

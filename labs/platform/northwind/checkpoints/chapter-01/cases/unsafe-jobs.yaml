@@ -1,0 +1,13 @@
+schema_version: 1
+kind: user-jobs
+jobs:
+  - id: obtain-bounded-environment
+    user: storefront-team
+    finished_outcome: Someone opens a ticket and an environment appears.
+    owner: unassigned
+    later_proof: time-to-first-environment
+  - id: ship-on-paved-road
+    user: storefront-team
+    finished_outcome: The portal shows the service.
+    owner: storefront-team
+    later_proof: portal-launch

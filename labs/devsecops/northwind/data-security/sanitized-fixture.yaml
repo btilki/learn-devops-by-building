@@ -1,0 +1,6 @@
+schema_version: 1
+kind: sanitized-order-fixture
+records:
+  - {order_id: synthetic-order-1, order_state: accepted}
+source_classes: [internal]
+contains_production_values: false

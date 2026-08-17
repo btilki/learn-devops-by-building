@@ -1,0 +1,7 @@
+schema_version: 1
+kind: dependency-admission-policy
+registries:
+  pypi.org:
+    allowed_namespaces: [northwind-]
+require_lock_hash: true
+require_attributable_update: true

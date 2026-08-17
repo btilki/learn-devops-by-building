@@ -1,0 +1,11 @@
+schema_version: 1
+kind: runtime-behavior-policy
+policy_version: runtime-v1
+actions:
+  shell-execution: prevent
+  credential-discovery: detect
+  undeclared-egress: prevent
+  privilege-escalation: prevent
+  root-filesystem-write: prevent
+require_attribution: true
+require_deployment_context: true
