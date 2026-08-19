@@ -32,7 +32,9 @@ practical-engineering/labs/**/.northwind-infra/
 
 # Local editor and publication helpers — do not publish
 .cursor/
+/tools/
 practical-engineering/tools/
+boutique-production/tools/
 
 # Editor and OS
 .DS_Store

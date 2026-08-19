@@ -16,18 +16,6 @@ Contract: [BOUTIQUE-SERIES.md](BOUTIQUE-SERIES.md) · Editorial: [BOUTIQUE-EDITO
 
 Reading order is optional. Start each title with `00-how-to-use-this-book.md`.
 
-## Tools
-
-Citation drift-check (local clones, no GitHub API):
-
-```bash
-# from books/boutique-production/
-python3 tools/citation_drift_check.py
-python3 tools/citation_drift_check.py --book gitops
-```
-
-See [tools/README.md](tools/README.md).
-
 ## License
 
 © Birol Tilki. Licensed under [CC BY 4.0](../LICENSE).
